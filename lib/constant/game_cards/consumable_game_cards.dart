@@ -1,3 +1,5 @@
+import 'package:card_crawler/constant/effect/consumable_effect.dart';
+
 import '../../model/game_card.dart';
 import '../effect/weapon_effect.dart';
 import '../game_card_type.dart';
@@ -7,8 +9,8 @@ String _spritePath(String fileName) => 'assets/card_sprites/consumables/$fileNam
 List<GameCard> _consumableGameCards = [
   GameCard(
     type: GameCardType.consumable,
-    value: 6,
-    effect: VampireMallet(),
+    value: 0,
+    effect: BloodthornBrew(),
     asset: _spritePath('2.png'),
   ),
   GameCard(

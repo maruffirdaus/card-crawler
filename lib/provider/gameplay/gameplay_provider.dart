@@ -1,3 +1,4 @@
+import 'package:card_crawler/constant/effect/consumable_effect.dart';
 import 'package:card_crawler/constant/effect/effect.dart';
 import 'package:card_crawler/constant/game_card_type.dart';
 import 'package:card_crawler/constant/game_cards/game_cards.dart';
@@ -141,8 +142,13 @@ class GameplayProvider extends ChangeNotifier {
           } else if (_data.isDungeonFieldEmpty() && _data.deck.isEmpty){
             _queueState(Finished(isWin: true));
           }
+
           _data.buff = 0;
           _data.tempBuff = 0;
+
+          if (_data.pickedCard!.effect is TemporalDew){
+            _data.hasHealed = false;
+          }
 
           if (_data.isDungeonFieldLow()){
             _data.refillDungeonField();
