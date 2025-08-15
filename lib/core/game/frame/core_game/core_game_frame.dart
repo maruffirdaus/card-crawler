@@ -5,9 +5,15 @@ import '../common/game_card/game_card.dart';
 import '../common/game_stage/game_stage.dart';
 
 class CoreGameFrame extends GameFrame {
-  CoreGameFrame({this.data, required this.gameCards, required this.gameStage});
+  CoreGameFrame({
+    this.data,
+    required this.gameCards,
+    required this.gameStage,
+    this.nextId,
+  });
 
   final CoreGameData? data;
   final List<GameCard> gameCards;
   final GameStage gameStage;
+  final int? nextId;
 }

@@ -12,7 +12,7 @@ class ConversationFrameWidget extends StatefulWidget {
     required this.conversationFrame,
   });
 
-  final Function() onComplete;
+  final Function(int) onComplete;
   final ConversationFrame conversationFrame;
 
   @override
@@ -45,7 +45,7 @@ class _ConversationFrameWidgetState extends State<ConversationFrameWidget> {
 class _ConversationFrameContent extends StatelessWidget {
   const _ConversationFrameContent({required this.onComplete});
 
-  final Function() onComplete;
+  final Function(int) onComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -116,12 +116,16 @@ class _ConversationFrameContent extends StatelessWidget {
                                       alignment: Alignment.center,
                                       child: TextButton(
                                         onPressed: () {
-                                          if (choice.nextId != null) {
-                                            provider.advanceConversation(
-                                              choice.nextId!,
+                                          if (choice.nextFrameId != null) {
+                                            onComplete(choice.nextFrameId!);
+                                          } else if (choice
+                                                  .nextConversationUnitId !=
+                                              null) {
+                                            provider.nextConversation(
+                                              choice.nextConversationUnitId!,
                                             );
                                           } else {
-                                            onComplete();
+                                            Navigator.of(context).pop();
                                           }
                                         },
                                         style: TextButton.styleFrom(

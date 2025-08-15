@@ -24,7 +24,7 @@ class ConversationProvider extends ChangeNotifier {
     _gameStage = gameStage;
   }
 
-  void advanceConversation(int nextId) {
+  void nextConversation(int nextId) {
     _currentConversationUnitId = nextId;
     notifyListeners();
   }

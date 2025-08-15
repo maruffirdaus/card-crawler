@@ -2,23 +2,20 @@ import 'package:card_crawler/core/game/frame/base/game_frame.dart';
 import 'package:flutter/material.dart';
 
 class GameSceneProvider extends ChangeNotifier {
-  final List<GameFrame> _frames = List.empty(growable: true);
+  late Map<int, GameFrame> _frames;
 
-  int _currentFrameIndex = 0;
-  int get currentFrameIndex => _currentFrameIndex;
+  int _currentFrameId = 0;
+  int get currentFrameId => _currentFrameId;
 
-  GameFrame get currentFrame => _frames[_currentFrameIndex];
+  GameFrame get currentFrame => _frames[_currentFrameId]!;
 
-  void init({required List<GameFrame> frames}) {
-    _frames.clear();
-    _frames.addAll(frames);
+  void init({required Map<int, GameFrame> frames}) {
+    _frames = frames;
     notifyListeners();
   }
 
-  void nextFrame() {
-    if (currentFrameIndex < _frames.length) {
-      _currentFrameIndex++;
-      notifyListeners();
-    }
+  void nextFrame(int nextId) {
+    _currentFrameId = nextId;
+    notifyListeners();
   }
 }

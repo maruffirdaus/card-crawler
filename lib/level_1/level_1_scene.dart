@@ -16,49 +16,68 @@ class Level1Scene extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GameScene(
-      frames: [
-        ConversationFrame(
+      frames: {
+        0: ConversationFrame(
           conversations: {
             0: ConversationUnit(
               character: Character.bryan,
               text: 'Hello Vito!',
-              choices: [ConversationChoice(text: 'Hi!', nextId: 1)],
+              choices: [
+                ConversationChoice(text: 'Hi!', nextConversationUnitId: 1),
+              ],
             ),
             1: ConversationUnit(
               character: Character.bryan,
               text: 'How do you do!',
               choices: [
-                ConversationChoice(text: 'Fine, thanks!', nextId: 2),
-                ConversationChoice(text: 'Go away!', nextId: 3),
+                ConversationChoice(
+                  text: 'Fine, thanks!',
+                  nextConversationUnitId: 2,
+                ),
+                ConversationChoice(text: 'Go away!', nextConversationUnitId: 3),
               ],
             ),
             2: ConversationUnit(
               character: Character.bryan,
               text: 'Good',
-              choices: [ConversationChoice(text: 'Yeah', nextId: 4)],
+              choices: [
+                ConversationChoice(text: 'Yeah', nextConversationUnitId: 4),
+              ],
             ),
             3: ConversationUnit(
               character: Character.bryan,
               text: 'Damn you!',
-              choices: [ConversationChoice(text: 'Don\'t care', nextId: 4)],
+              choices: [
+                ConversationChoice(
+                  text: 'Don\'t care',
+                  nextConversationUnitId: 4,
+                ),
+              ],
             ),
             4: ConversationUnit(
               character: Character.vito,
               text: 'I need to go away',
-              choices: [ConversationChoice(text: 'Go')],
+              choices: [
+                ConversationChoice(text: 'Go', nextFrameId: 1),
+                ConversationChoice(
+                  text: 'I want something cold',
+                  nextFrameId: 2,
+                ),
+              ],
             ),
           },
           gameStage: GameStage.s0,
         ),
-        CoreGameFrame(
+        1: CoreGameFrame(
           gameCards: AccessoryGameCard.entries,
           gameStage: GameStage.s0,
+          nextId: 2,
         ),
-        CoreGameFrame(
+        2: CoreGameFrame(
           gameCards: ConsumableGameCard.entries,
           gameStage: GameStage.s1,
         ),
-      ],
+      },
     );
   }
 }
