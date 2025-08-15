@@ -1,4 +1,4 @@
-import 'package:card_crawler/core/game/frame/core_game/types/game_card_effect/consumable_card_effect.dart';
+import 'package:card_crawler/core/game/frame/common/game_card/effect/consumable_card_effect.dart';
 
 import 'game_card.dart';
 

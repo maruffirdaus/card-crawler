@@ -1,5 +1,5 @@
-import '../../../common/game_card/monster_game_card.dart';
-import '../../models/core_game_data.dart';
+import '../monster_game_card.dart';
+import '../../../core_game/models/core_game_data.dart';
 import 'accessory_card_effect.dart';
 import 'game_card_effect.dart';
 

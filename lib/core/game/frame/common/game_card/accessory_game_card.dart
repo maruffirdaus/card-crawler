@@ -1,4 +1,4 @@
-import '../../core_game/types/game_card_effect/accessory_card_effect.dart';
+import 'effect/accessory_card_effect.dart';
 import 'game_card.dart';
 
 class AccessoryGameCard extends GameCard {

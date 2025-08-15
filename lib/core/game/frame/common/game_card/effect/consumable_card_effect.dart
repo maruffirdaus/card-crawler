@@ -1,4 +1,4 @@
-import '../../models/core_game_data.dart';
+import '../../../core_game/models/core_game_data.dart';
 import 'game_card_effect.dart';
 
 class TemporalDew extends OnPicked {

@@ -1,9 +1,9 @@
 import 'dart:math';
 
-import '../../../common/game_card/consumable_game_card.dart';
-import '../../../common/game_card/monster_game_card.dart';
-import '../../../common/game_card/weapon_game_card.dart';
-import '../../models/core_game_data.dart';
+import '../consumable_game_card.dart';
+import '../monster_game_card.dart';
+import '../weapon_game_card.dart';
+import '../../../core_game/models/core_game_data.dart';
 import 'game_card_effect.dart';
 
 abstract class AccessoryCardEffect extends GameCardEffect {

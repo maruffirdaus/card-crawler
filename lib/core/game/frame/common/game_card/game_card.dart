@@ -1,4 +1,4 @@
-import '../../core_game/types/game_card_effect/game_card_effect.dart';
+import 'effect/game_card_effect.dart';
 
 abstract class GameCard {
   GameCard({

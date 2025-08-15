@@ -10,10 +10,10 @@ import '../models/core_game_data.dart';
 import '../types/core_game_action.dart';
 import '../types/core_game_state.dart';
 import '../types/core_game_ui_action.dart';
-import '../types/game_card_effect/accessory_card_effect.dart';
-import '../types/game_card_effect/consumable_card_effect.dart';
-import '../types/game_card_effect/game_card_effect.dart';
-import '../types/game_card_effect/weapon_card_effect.dart';
+import '../../common/game_card/effect/accessory_card_effect.dart';
+import '../../common/game_card/effect/consumable_card_effect.dart';
+import '../../common/game_card/effect/game_card_effect.dart';
+import '../../common/game_card/effect/weapon_card_effect.dart';
 import '../types/game_card_location.dart';
 
 class CoreGameProvider extends ChangeNotifier {
