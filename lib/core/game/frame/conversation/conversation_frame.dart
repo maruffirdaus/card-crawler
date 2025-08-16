@@ -5,6 +5,6 @@ import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart
 class ConversationFrame extends GameFrame {
   ConversationFrame({required this.conversations, required this.gameStage});
 
-  final Map<int, ConversationUnit> conversations;
+  final Map<String, ConversationUnit> conversations;
   final GameStage gameStage;
 }

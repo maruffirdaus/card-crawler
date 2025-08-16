@@ -7,13 +7,13 @@ class Character {
   static String _spritePath(String fileName) =>
       'assets/character_sprites/$fileName';
 
-  static final vito = Character._(
-    name: 'Vito',
+  static final cole = Character._(
+    name: 'Cole',
     sprite: _spritePath('vito.png'),
   );
 
-  static final bryan = Character._(
-    name: 'Bryan',
+  static final lukas = Character._(
+    name: 'Lukas',
     sprite: _spritePath('bryan.png'),
   );
 }
