@@ -19,30 +19,37 @@ class Level3Scene extends StatelessWidget {
         frames: {
           0: ConversationFrame(
             conversations: {
-              0: ConversationUnit(
-                character: Character.bryan,
+              '0': ConversationUnit(
+                character: Character.cole,
                 text: 'Wow this place is huge!',
                 choices: [
-                  ConversationChoice(text: 'next', nextConversationUnitId: 1),
+                  ConversationChoice(text: 'next', nextConversationUnitId: '1'),
                 ],
               ),
-              1: ConversationUnit(
-                character: Character.vito,
+              '1': ConversationUnit(
+                character: Character.lukas,
                 text: 'Yeah, agreed. I didn\'t expect that *wizard* was talking the truth about a castle in the desert',
                 choices: [
-                  ConversationChoice(text: 'next', nextConversationUnitId: 2),
+                  ConversationChoice(text: 'next', nextConversationUnitId: '2'),
                 ],
               ),
-              2: ConversationUnit(
-                character: Character.bryan,
+              '2': ConversationUnit(
+                character: Character.cole,
                 text: 'That sure is the case, anyway I\'m really tired with all that fighting from before, lets rest up a bit',
                 choices: [
-                  ConversationChoice(text: 'next', nextConversationUnitId: 3),
+                  ConversationChoice(text: 'next', nextConversationUnitId: '3'),
                 ],
               ),
-              3: ConversationUnit(
-                character: Character.vito,
+              '3': ConversationUnit(
+                character: Character.lukas,
                 text: 'Yeah, lets go to that corner',
+                choices: [
+                  ConversationChoice(text: 'next', nextConversationUnitId: '4'),
+                ],
+              ),
+              '4': ConversationUnit(
+                character: Character.lukas, //n
+                text: 'Both of you decided to rest at the corner.',
                 choices: [
                   ConversationChoice(text: 'next', nextFrameId: 1),
                 ],
@@ -52,18 +59,32 @@ class Level3Scene extends StatelessWidget {
           ),
           1: ConversationFrame(
             conversations: {
-              0: ConversationUnit(
-                character: Character.bryan,
-                text: 'Resting really is the best after all that.',
+              '0': ConversationUnit(
+                character: Character.lukas, //n
+                text: 'Suddenly, the air inside the castle became very cold',
                 choices: [
-                  ConversationChoice(text: 'next', nextConversationUnitId: 1),
+                  ConversationChoice(text: 'next', nextConversationUnitId: '1'),
                 ],
               ),
-              1: ConversationUnit(
-                character: Character.bryan,
+              '1': ConversationUnit(
+                character: Character.lukas,
+                text: 'Resting really is the best after all that. But do you feel this air?',
+                choices: [
+                  ConversationChoice(text: 'next', nextConversationUnitId: '2'),
+                ],
+              ),
+              '2': ConversationUnit(
+                character: Character.lukas,
                 text: 'Wow this place is huge!',
                 choices: [
-                  ConversationChoice(text: 'next', nextConversationUnitId: 1),
+                  ConversationChoice(text: 'next', nextConversationUnitId: '3'),
+                ],
+              ),
+              '3': ConversationUnit(
+                character: Character.lukas,
+                text: 'Wow this place is huge!',
+                choices: [
+                  ConversationChoice(text: 'next', nextConversationUnitId: '2'),
                 ],
               ),
             },
