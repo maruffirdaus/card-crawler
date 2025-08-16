@@ -3,10 +3,10 @@ import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart
 import 'package:flutter/material.dart';
 
 class ConversationProvider extends ChangeNotifier {
-  late Map<int, ConversationUnit> _conversations;
+  late Map<String, ConversationUnit> _conversations;
 
-  late int _currentConversationUnitId;
-  int get currentConversationUnitId => _currentConversationUnitId;
+  late String _currentConversationUnitId;
+  String get currentConversationUnitId => _currentConversationUnitId;
 
   ConversationUnit get currentConversationUnit =>
       _conversations[_currentConversationUnitId]!;
@@ -16,7 +16,7 @@ class ConversationProvider extends ChangeNotifier {
   GameStage get gameStage => _gameStage;
 
   void init({
-    required Map<int, ConversationUnit> conversations,
+    required Map<String, ConversationUnit> conversations,
     required GameStage gameStage,
   }) {
     _conversations = conversations;
@@ -24,7 +24,7 @@ class ConversationProvider extends ChangeNotifier {
     _gameStage = gameStage;
   }
 
-  void nextConversation(int nextId) {
+  void nextConversation(String nextId) {
     _currentConversationUnitId = nextId;
     notifyListeners();
   }

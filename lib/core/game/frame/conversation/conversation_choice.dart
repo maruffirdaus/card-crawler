@@ -7,5 +7,5 @@ class ConversationChoice {
 
   String text;
   int? nextFrameId;
-  int? nextConversationUnitId;
+  String? nextConversationUnitId;
 }
