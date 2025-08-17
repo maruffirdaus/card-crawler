@@ -1,11 +1,7 @@
 class ConversationChoice {
-  ConversationChoice({
-    required this.text,
-    this.nextFrameId,
-    this.nextConversationUnitId,
-  });
+  ConversationChoice({required this.text, this.nextUnitId, this.nextFrameId});
 
   String text;
-  int? nextFrameId;
-  String? nextConversationUnitId;
+  String? nextUnitId;
+  String? nextFrameId;
 }

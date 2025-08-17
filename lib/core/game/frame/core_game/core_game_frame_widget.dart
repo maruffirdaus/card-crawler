@@ -27,7 +27,7 @@ class CoreGameFrameWidget extends StatefulWidget {
     required this.coreGameFrame,
   });
 
-  final Function(int) onComplete;
+  final Function(String) onComplete;
   final CoreGameFrame coreGameFrame;
 
   @override
@@ -64,7 +64,12 @@ class _CoreGameFrameWidgetState extends State<CoreGameFrameWidget> {
               ? widget.onComplete(widget.coreGameFrame.nextId!)
               : Navigator.of(context).pop();
         },
-        coreGameFrame: widget.coreGameFrame,
+        onRestart: () {
+          _provider.init(
+            gameCards: widget.coreGameFrame.gameCards,
+            gameStage: widget.coreGameFrame.gameStage,
+          );
+        },
       ),
     );
   }
@@ -73,11 +78,11 @@ class _CoreGameFrameWidgetState extends State<CoreGameFrameWidget> {
 class _CoreGameFrameContent extends StatelessWidget {
   const _CoreGameFrameContent({
     required this.onComplete,
-    required this.coreGameFrame,
+    required this.onRestart,
   });
 
   final Function() onComplete;
-  final CoreGameFrame coreGameFrame;
+  final Function() onRestart;
 
   @override
   Widget build(BuildContext context) {
@@ -109,10 +114,7 @@ class _CoreGameFrameContent extends StatelessWidget {
                 {
                   (provider.state as Finished).isWin
                       ? onComplete()
-                      : provider.init(
-                          gameCards: coreGameFrame.gameCards,
-                          gameStage: coreGameFrame.gameStage,
-                        );
+                      : onRestart();
                 }
               default:
                 provider.uiAction(DismissPopup());
@@ -395,10 +397,7 @@ class _CoreGameFrameContent extends StatelessWidget {
                   onDismiss: () {
                     (provider.state as Finished).isWin
                         ? onComplete()
-                        : provider.init(
-                            gameCards: coreGameFrame.gameCards,
-                            gameStage: coreGameFrame.gameStage,
-                          );
+                        : onRestart();
                   },
                   isWin: (provider.state as Finished).isWin,
                 ),
@@ -407,13 +406,8 @@ class _CoreGameFrameContent extends StatelessWidget {
                   onDismiss: () {
                     provider.uiAction(DismissPopup());
                   },
-                  onRestart: () {
-                    provider.init(
-                      gameCards: coreGameFrame.gameCards,
-                      gameStage: coreGameFrame.gameStage,
-                    );
-                  },
-                  onSave: () {},
+                  onRestart: onRestart,
+                  onSave: null,
                   onExit: () {
                     Navigator.pop(context);
                   },

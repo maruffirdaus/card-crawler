@@ -15,5 +15,5 @@ class CoreGameFrame extends GameFrame {
   final CoreGameData? data;
   final List<GameCard> gameCards;
   final GameStage gameStage;
-  final int? nextId;
+  final String? nextId;
 }

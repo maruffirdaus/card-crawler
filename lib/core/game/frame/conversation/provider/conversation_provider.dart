@@ -1,18 +1,25 @@
 import 'package:card_crawler/core/game/frame/common/game_stage/game_stage.dart';
+import 'package:card_crawler/core/game/frame/conversation/character/character.dart';
+import 'package:card_crawler/core/game/frame/conversation/conversation_choice.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart';
 import 'package:flutter/material.dart';
 
 class ConversationProvider extends ChangeNotifier {
   late Map<String, ConversationUnit> _conversations;
 
-  late String _currentConversationUnitId;
-  String get currentConversationUnitId => _currentConversationUnitId;
+  late String _currentId;
 
-  ConversationUnit get currentConversationUnit =>
-      _conversations[_currentConversationUnitId]!;
+  int _currentTextIndex = 0;
+
+  Character? get currentCharacter => _conversations[_currentId]!.character;
+
+  String get currentText =>
+      _conversations[_currentId]!.texts[_currentTextIndex];
+
+  List<ConversationChoice> get currentChoices =>
+      _conversations[_currentId]!.choices;
 
   late GameStage _gameStage;
-
   GameStage get gameStage => _gameStage;
 
   void init({
@@ -20,12 +27,22 @@ class ConversationProvider extends ChangeNotifier {
     required GameStage gameStage,
   }) {
     _conversations = conversations;
-    _currentConversationUnitId = conversations.keys.first;
+    _currentId = conversations.keys.first;
+    _currentTextIndex = 0;
     _gameStage = gameStage;
   }
 
-  void nextConversation(String nextId) {
-    _currentConversationUnitId = nextId;
+  bool isConversationFinished() =>
+      _currentTextIndex + 1 == _conversations[_currentId]!.texts.length;
+
+  void nextTextIndex() {
+    _currentTextIndex++;
+    notifyListeners();
+  }
+
+  void nextUnit(String nextId) {
+    _currentId = nextId;
+    _currentTextIndex = 0;
     notifyListeners();
   }
 }

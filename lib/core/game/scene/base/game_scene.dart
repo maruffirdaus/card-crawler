@@ -11,7 +11,7 @@ import '../../frame/core_game/core_game_frame.dart';
 class GameScene extends StatefulWidget {
   const GameScene({super.key, required this.frames});
 
-  final Map<int, GameFrame> frames;
+  final Map<String, GameFrame> frames;
 
   @override
   State<GameScene> createState() => _GameSceneState();
@@ -45,7 +45,7 @@ class _GameSceneState extends State<GameScene> {
 class GameSceneContent extends StatelessWidget {
   const GameSceneContent({super.key, required this.frames});
 
-  final Map<int, GameFrame> frames;
+  final Map<String, GameFrame> frames;
 
   @override
   Widget build(BuildContext context) {

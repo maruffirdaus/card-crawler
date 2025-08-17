@@ -12,7 +12,7 @@ class ConversationFrameWidget extends StatefulWidget {
     required this.conversationFrame,
   });
 
-  final Function(int) onComplete;
+  final Function(String) onComplete;
   final ConversationFrame conversationFrame;
 
   @override
@@ -45,7 +45,7 @@ class _ConversationFrameWidgetState extends State<ConversationFrameWidget> {
 class _ConversationFrameContent extends StatelessWidget {
   const _ConversationFrameContent({required this.onComplete});
 
-  final Function(int) onComplete;
+  final Function(String) onComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -85,44 +85,43 @@ class _ConversationFrameContent extends StatelessWidget {
                       ),
                       child: Row(
                         children: [
-                          Image.asset(
-                            provider.currentConversationUnit.character.sprite,
-                            width: 144.0,
-                            height: 144,
-                          ),
-                          SizedBox(width: 16.0),
+                          if (provider.currentCharacter != null)
+                            Image.asset(
+                              provider.currentCharacter!.sprite,
+                              width: 144.0,
+                              height: 144,
+                            ),
+                          if (provider.currentCharacter != null)
+                            SizedBox(width: 16.0),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                if (provider.currentCharacter != null)
+                                  Text(
+                                    provider.currentCharacter!.name,
+                                    style: TextStyle(fontSize: 16.0 * uiScale),
+                                  ),
                                 Text(
-                                  provider
-                                      .currentConversationUnit
-                                      .character
-                                      .name,
-                                  style: TextStyle(fontSize: 16.0 * uiScale),
-                                ),
-                                Text(
-                                  provider.currentConversationUnit.text,
+                                  provider.currentText,
                                   style: TextStyle(
                                     color: Colors.black54,
                                     fontSize: 16.0 * uiScale,
                                   ),
                                 ),
                                 SizedBox(height: 8.0),
-                                ...provider.currentConversationUnit.choices.map(
-                                  (choice) {
+                                if (provider.isConversationFinished())
+                                  ...provider.currentChoices.map((choice) {
                                     return Align(
                                       alignment: Alignment.center,
                                       child: TextButton(
                                         onPressed: () {
                                           if (choice.nextFrameId != null) {
                                             onComplete(choice.nextFrameId!);
-                                          } else if (choice
-                                                  .nextConversationUnitId !=
+                                          } else if (choice.nextUnitId !=
                                               null) {
-                                            provider.nextConversation(
-                                              choice.nextConversationUnitId!,
+                                            provider.nextUnit(
+                                              choice.nextUnitId!,
                                             );
                                           } else {
                                             Navigator.of(context).pop();
@@ -140,8 +139,24 @@ class _ConversationFrameContent extends StatelessWidget {
                                         ),
                                       ),
                                     );
-                                  },
-                                ),
+                                  }),
+                                if (!provider.isConversationFinished())
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: TextButton(
+                                      onPressed: provider.nextTextIndex,
+                                      style: TextButton.styleFrom(
+                                        foregroundColor: Colors.black,
+                                        overlayColor: Colors.black,
+                                      ),
+                                      child: Text(
+                                        'Next',
+                                        style: TextStyle(
+                                          fontSize: 16.0 * uiScale,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                               ],
                             ),
                           ),

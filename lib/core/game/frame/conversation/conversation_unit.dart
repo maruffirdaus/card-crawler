@@ -4,12 +4,12 @@ import 'conversation_choice.dart';
 
 class ConversationUnit {
   ConversationUnit({
-    required this.character,
-    required this.text,
+    this.character,
+    required this.texts,
     required this.choices,
   });
 
-  Character character;
-  String text;
+  Character? character;
+  List<String> texts;
   List<ConversationChoice> choices;
 }
