@@ -76,21 +76,54 @@ class _ConversationFrameContent extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     width: 840.0,
-                    height: 160.0,
+                    height: 224.0,
                     child: Padding(
                       padding: EdgeInsets.only(
                         left: 16.0,
                         top: 16.0,
                         right: 16.0,
+                        bottom: 16.0,
                       ),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (provider.currentCharacter != null)
-                            Image.asset(
-                              provider.currentCharacter!.sprite,
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8.0),
+                                border: Border.all(color: Colors.black),
+                              ),
                               width: 144.0,
-                              height: 144.0,
+                              child: Column(
+                                children: [
+                                  Image.asset(
+                                    provider.currentCharacter!.sprite,
+                                    width: 144.0,
+                                    height: 144.0,
+                                  ),
+                                  Divider(
+                                    height: 1.0,
+                                    thickness: 1.0,
+                                    color: Colors.black,
+                                  ),
+                                  Expanded(
+                                    child: Align(
+                                      alignment: Alignment.center,
+                                      child: Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 8.0,
+                                        ),
+                                        child: Text(
+                                          provider.currentCharacter!.name,
+                                          style: TextStyle(fontSize: 18.0),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           if (provider.currentCharacter != null)
                             SizedBox(width: 16.0),
@@ -99,21 +132,32 @@ class _ConversationFrameContent extends StatelessWidget {
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                if (provider.currentCharacter != null)
-                                  Text(
-                                    provider.currentCharacter!.name,
-                                    style: TextStyle(fontSize: 16.0 * uiScale),
-                                  ),
+                                SizedBox(height: 4.0),
+                                Divider(
+                                  height: 1.0,
+                                  thickness: 1.0,
+                                  color: Colors.black26,
+                                ),
                                 Expanded(
-                                  child: Text(
-                                    provider.currentText,
-                                    style: TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 16.0 * uiScale,
+                                  child: SingleChildScrollView(
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: 4.0,
+                                    ),
+                                    child: Text(
+                                      provider.currentText,
+                                      style: TextStyle(
+                                        color: Colors.black54,
+                                        fontSize: 16.0,
+                                      ),
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: 8.0),
+                                Divider(
+                                  height: 1.0,
+                                  thickness: 1.0,
+                                  color: Colors.black26,
+                                ),
+                                SizedBox(height: 4.0),
                                 if (provider.isConversationFinished())
                                   ...provider.currentChoices.map((choice) {
                                     return Align(
@@ -140,9 +184,8 @@ class _ConversationFrameContent extends StatelessWidget {
                                         ),
                                         child: Text(
                                           choice.text,
-                                          style: TextStyle(
-                                            fontSize: 16.0 * uiScale,
-                                          ),
+                                          style: TextStyle(fontSize: 16.0),
+                                          textAlign: TextAlign.end,
                                         ),
                                       ),
                                     );
@@ -158,13 +201,11 @@ class _ConversationFrameContent extends StatelessWidget {
                                       ),
                                       child: Text(
                                         'Next',
-                                        style: TextStyle(
-                                          fontSize: 16.0 * uiScale,
-                                        ),
+                                        style: TextStyle(fontSize: 16.0),
+                                        textAlign: TextAlign.end,
                                       ),
                                     ),
                                   ),
-                                SizedBox(height: 16.0),
                               ],
                             ),
                           ),

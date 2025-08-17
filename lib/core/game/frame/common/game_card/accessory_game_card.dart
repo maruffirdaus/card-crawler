@@ -9,7 +9,7 @@ class AccessoryGameCard extends GameCard {
     required super.sprite,
   }) : super(
          icon: 'assets/card_icons/accessory_32.png',
-         iconSmall: 'assets/icons/accessory_16.png',
+         iconSmall: 'assets/card_icons/accessory_16.png',
        );
 
   static String _spritePath(String fileName) =>

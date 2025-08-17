@@ -10,7 +10,7 @@ class WeaponGameCard extends GameCard {
     required super.sprite,
   }) : super(
          icon: 'assets/card_icons/weapon_32.png',
-         iconSmall: 'assets/icons/weapon_16.png',
+         iconSmall: 'assets/card_icons/weapon_16.png',
        );
 
   static String _spritePath(String fileName) =>
