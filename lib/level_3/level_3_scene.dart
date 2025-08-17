@@ -67,7 +67,7 @@ class Level3Scene extends StatelessWidget {
                 ],
               ),
               '1': ConversationUnit(
-                character: Character.lukas,
+                character: Character.cole,
                 text: 'Resting really is the best after all that. But do you feel this air?',
                 choices: [
                   ConversationChoice(text: 'next', nextConversationUnitId: '2'),
@@ -75,16 +75,60 @@ class Level3Scene extends StatelessWidget {
               ),
               '2': ConversationUnit(
                 character: Character.lukas,
-                text: 'Wow this place is huge!',
+                text: 'Yeah it\'s so cold, i\'m practically shivering',
                 choices: [
-                  ConversationChoice(text: 'next', nextConversationUnitId: '3'),
+                  ConversationChoice(text: 'I\'ll light a fire in a second.', nextConversationUnitId: '3.1'),
+                  ConversationChoice(text: 'I don\'t think its that bad.', nextConversationUnitId: '3.2'),
                 ],
               ),
-              '3': ConversationUnit(
-                character: Character.lukas,
-                text: 'Wow this place is huge!',
+              '3.1': ConversationUnit(
+                character: Character.lukas, //n //normal
+                text: 'You feel the air getting warmer.',
                 choices: [
-                  ConversationChoice(text: 'next', nextConversationUnitId: '2'),
+                  ConversationChoice(text: 'next', nextConversationUnitId: '4'),
+                ],
+              ),
+              '3.2': ConversationUnit(
+                character: Character.lukas, //n //nerf sheer cold kalo fight
+                text: 'The cold makes you even more uncomfortable.',
+                choices: [
+                  ConversationChoice(text: 'next', nextConversationUnitId: '4'),
+                ],
+              ),
+              '4': ConversationUnit(
+                character: Character.lukas,
+                text: 'So, tell me {MC}, why are you looking for the ring?',
+                choices: [
+                  ConversationChoice(text: 'Honestly, I just want my wife and my son back. There\'s something i haven\'t told them yet.', nextConversationUnitId: '5.1'),
+                  ConversationChoice(text: 'I\'m not comfortable talking about that...')
+                ],
+              ),
+              '5.1': ConversationUnit(
+                character: Character.lukas,
+                text: 'Secrets have a way of catching up with us. Maybe this is your chance to finally let it out.',
+                choices: [
+                  ConversationChoice(text: 'How about you?', nextConversationUnitId: '6.1'),
+                ],
+              ),
+              '5.2': ConversationUnit(
+                character: Character.lukas,
+                text: 'Boring...',
+                choices: [
+                  ConversationChoice(text: 'How about you?', nextConversationUnitId: '6.2'),
+                ],
+              ),
+              '6.1': ConversationUnit(
+                character: Character.lukas,
+                text: 'Boring...',
+                choices: [
+                  ConversationChoice(text: 'How about you?', nextConversationUnitId: '6.2'),
+                ],
+              ),
+              '6.2': ConversationUnit(
+                character: Character.lukas,
+                text: 'Boring...',
+                choices: [
+                  ConversationChoice(text: 'How about you?', nextConversationUnitId: '6.2'),
                 ],
               ),
             },

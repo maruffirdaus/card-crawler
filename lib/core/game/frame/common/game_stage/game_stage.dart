@@ -6,7 +6,11 @@ class GameStage {
   static String _backgroundPath(String fileName) =>
       'assets/backgrounds/$fileName';
 
-  static final s0 = GameStage._(background: _backgroundPath('b0.png'));
+  static final forest = GameStage._(background: _backgroundPath('Forest.png'));
 
-  static final s1 = GameStage._(background: _backgroundPath('b1.png'));
+  static final snowyMountainForest = GameStage._(background: _backgroundPath('SnowyMountainForest.png'));
+
+  static final desert = GameStage._(background: _backgroundPath('Desert.png'));
+
+  static final castle = GameStage._(background: _backgroundPath('Castle.png'));
 }

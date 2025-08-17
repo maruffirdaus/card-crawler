@@ -91,11 +91,11 @@ class Level1Scene extends StatelessWidget {
               ],
             ),
           },
-          gameStage: GameStage.s1,
+          gameStage: GameStage.snowyMountainForest,
         ),
         1: CoreGameFrame(
           gameCards: AccessoryGameCard.entries,
-          gameStage: GameStage.s1,
+          gameStage: GameStage.snowyMountainForest,
           nextId: 2,
         ),
         2: ConversationFrame(
@@ -272,11 +272,11 @@ class Level1Scene extends StatelessWidget {
               ],
             ),
           },
-          gameStage: GameStage.s1,
+          gameStage: GameStage.snowyMountainForest,
         ),
         3: CoreGameFrame(
           gameCards: ConsumableGameCard.entries,
-          gameStage: GameStage.s1,
+          gameStage: GameStage.snowyMountainForest,
         ),
       },
     );
