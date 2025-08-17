@@ -9,11 +9,18 @@ class Character {
 
   static final cole = Character._(
     name: 'Cole',
-    sprite: _spritePath('vito.png'),
+    sprite: _spritePath('cole.png'),
   );
 
   static final lukas = Character._(
     name: 'Lukas',
-    sprite: _spritePath('bryan.png'),
+    sprite: _spritePath('lukas.png'),
   );
+
+  static final witch = Character._(
+    name: 'Witch',
+    sprite: _spritePath('witch.png'),
+  );
+
+  static final c0 = Character._(name: 'c0', sprite: _spritePath('c0.png'));
 }

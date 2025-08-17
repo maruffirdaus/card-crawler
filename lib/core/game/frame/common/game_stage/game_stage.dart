@@ -8,7 +8,9 @@ class GameStage {
 
   static final forest = GameStage._(background: _backgroundPath('Forest.png'));
 
-  static final snowyMountainForest = GameStage._(background: _backgroundPath('SnowyMountainForest.png'));
+  static final snowyMountainForest = GameStage._(
+    background: _backgroundPath('SnowyMountainForest.png'),
+  );
 
   static final desert = GameStage._(background: _backgroundPath('Desert.png'));
 
