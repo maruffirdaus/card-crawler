@@ -84,17 +84,19 @@ class _ConversationFrameContent extends StatelessWidget {
                         right: 16.0,
                       ),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (provider.currentCharacter != null)
                             Image.asset(
                               provider.currentCharacter!.sprite,
                               width: 144.0,
-                              height: 144,
+                              height: 144.0,
                             ),
                           if (provider.currentCharacter != null)
                             SizedBox(width: 16.0),
                           Expanded(
                             child: Column(
+                              mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 if (provider.currentCharacter != null)
@@ -102,20 +104,25 @@ class _ConversationFrameContent extends StatelessWidget {
                                     provider.currentCharacter!.name,
                                     style: TextStyle(fontSize: 16.0 * uiScale),
                                   ),
-                                Text(
-                                  provider.currentText,
-                                  style: TextStyle(
-                                    color: Colors.black54,
-                                    fontSize: 16.0 * uiScale,
+                                Expanded(
+                                  child: Text(
+                                    provider.currentText,
+                                    style: TextStyle(
+                                      color: Colors.black54,
+                                      fontSize: 16.0 * uiScale,
+                                    ),
                                   ),
                                 ),
                                 SizedBox(height: 8.0),
                                 if (provider.isConversationFinished())
                                   ...provider.currentChoices.map((choice) {
                                     return Align(
-                                      alignment: Alignment.center,
+                                      alignment: Alignment.bottomRight,
                                       child: TextButton(
                                         onPressed: () {
+                                          if (choice.onSelected != null) {
+                                            choice.onSelected!();
+                                          }
                                           if (choice.nextFrameId != null) {
                                             onComplete(choice.nextFrameId!);
                                           } else if (choice.nextUnitId !=
@@ -142,7 +149,7 @@ class _ConversationFrameContent extends StatelessWidget {
                                   }),
                                 if (!provider.isConversationFinished())
                                   Align(
-                                    alignment: Alignment.center,
+                                    alignment: Alignment.bottomRight,
                                     child: TextButton(
                                       onPressed: provider.nextTextIndex,
                                       style: TextButton.styleFrom(
@@ -157,6 +164,7 @@ class _ConversationFrameContent extends StatelessWidget {
                                       ),
                                     ),
                                   ),
+                                SizedBox(height: 16.0),
                               ],
                             ),
                           ),
