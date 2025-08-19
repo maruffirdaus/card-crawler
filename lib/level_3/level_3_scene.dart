@@ -1,7 +1,9 @@
+import 'package:card_crawler/core/game/frame/common/game_card/consumable_game_card.dart';
 import 'package:card_crawler/core/game/frame/common/game_stage/game_stage.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_choice.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_frame.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart';
+import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
 import 'package:card_crawler/core/game/scene/base/game_scene.dart';
 import 'package:flutter/material.dart';
 
@@ -41,17 +43,15 @@ class Level3Scene extends StatelessWidget {
               choices: [ConversationChoice(text: 'next', nextUnitId: '4')],
             ),
             '4': ConversationUnit(
-              character: Character.lukas, //n
               texts: ['Both of you decided to rest at the corner.'],
               choices: [ConversationChoice(text: 'next', nextFrameId: '1')],
             ),
           },
-          gameStage: GameStage.snowyMountainForest,
+          gameStage: GameStage.castle,
         ),
         '1': ConversationFrame(
           conversations: {
             '0': ConversationUnit(
-              character: Character.lukas, //n
               texts: ['Suddenly, the air inside the castle became very cold'],
               choices: [ConversationChoice(text: 'next', nextUnitId: '1')],
             ),
@@ -77,12 +77,12 @@ class Level3Scene extends StatelessWidget {
               ],
             ),
             '3.1': ConversationUnit(
-              character: Character.lukas, //n //normal
+              //n //normal
               texts: ['You feel the air getting warmer.'],
               choices: [ConversationChoice(text: 'next', nextUnitId: '4')],
             ),
             '3.2': ConversationUnit(
-              character: Character.lukas, //n //nerf sheer cold kalo fight
+              //n //nerf sheer cold kalo fight
               texts: ['The cold makes you even more uncomfortable.'],
               choices: [ConversationChoice(text: 'next', nextUnitId: '4')],
             ),
@@ -106,33 +106,77 @@ class Level3Scene extends StatelessWidget {
                 'Secrets have a way of catching up with us. Maybe this is your chance to finally let it out.',
               ],
               choices: [
-                ConversationChoice(text: 'How about you?', nextUnitId: '6.1'),
+                ConversationChoice(text: 'How about you?', nextUnitId: '5.1.1'),
               ],
             ),
             '5.2': ConversationUnit(
               character: Character.lukas,
               texts: ['Boring...'],
               choices: [
-                ConversationChoice(text: 'How about you?', nextUnitId: '6.2'),
+                ConversationChoice(text: 'How about you?', nextUnitId: '5.2.1'),
               ],
             ),
-            '6.1': ConversationUnit(
+            '5.1.1': ConversationUnit(
               character: Character.lukas,
-              texts: ['Boring...'],
+              texts: ['Since you\'ve already told me your secret, allow me to share mine.','My wife is seriously ill right now. I\'ve tried many medications, but none of them have worked.','They said it\'s a very rare disease, and they haven\'t found a cure yet.'],
               choices: [
-                ConversationChoice(text: 'How about you?', nextUnitId: '6.2'),
+                ConversationChoice(text: 'Next', nextUnitId: '6'),
               ],
             ),
-            '6.2': ConversationUnit(
+            '5.2.1': ConversationUnit(
               character: Character.lukas,
-              texts: ['Boring...'],
+              texts: ['Since someone is very secretive...','I will tell you...', 'Actually my wife is seriously ill, so I want to cure her'],
               choices: [
-                ConversationChoice(text: 'How about you?', nextUnitId: '6.2'),
+                ConversationChoice(text: 'Next', nextUnitId: '6'),
+              ],
+            ),
+            '6': ConversationUnit(
+              character: Character.cole,
+              texts: ['Sorry to hear about your wife\'s situation'],
+              choices: [
+                ConversationChoice(text: 'Next', nextUnitId: '7'),
+              ],
+            ),
+            '7': ConversationUnit(
+              texts: ['krk.. krk.. krk..'],
+              choices: [
+                ConversationChoice(text: 'Next', nextUnitId: '8'),
+              ],
+            ),
+            '8': ConversationUnit(
+              character: Character.lukas,
+              texts: ['What\'s that sound?'],
+              choices: [
+                ConversationChoice(text: 'One thing\'s for sure that\'s not a good sign.', nextFrameId: '2'),
               ],
             ),
           },
-          gameStage: GameStage.snowyMountainForest,
+          gameStage: GameStage.castle,
         ),
+        '2': CoreGameFrame(
+          gameCards: ConsumableGameCard.entries,
+          gameStage: GameStage.castle,
+          nextId: '3',
+        ),
+        '3': ConversationFrame(
+          conversations: {
+            '0': ConversationUnit(
+              character: Character.cole,
+              texts: ['That was  a close call.'],
+              choices: [
+                ConversationChoice(text: 'Next', nextUnitId: '1'),
+              ],
+            ),
+            '1': ConversationUnit(
+              character: Character.lukas,
+              texts: ['Indeed. What is the deal with these monsters assaulting us?'],
+              choices: [
+                ConversationChoice(text: 'One thing\'s for sure that\'s not a good sign.', nextUnitId: '1'),
+              ],
+            ),
+          },
+          gameStage: GameStage.castle,
+        )
       },
     );
   }
