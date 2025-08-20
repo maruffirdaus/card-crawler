@@ -2,7 +2,7 @@ import 'package:card_crawler/core/foundation/extensions/build_context_extensions
 import 'package:card_crawler/core/game/frame/core_game/widgets/popup/popup_scrim.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common/game_card/game_card.dart';
+import '../../../common/game_card/base/game_card.dart';
 import '../game_card_widget.dart';
 
 class CardEffectTriggeredPopup extends StatelessWidget {

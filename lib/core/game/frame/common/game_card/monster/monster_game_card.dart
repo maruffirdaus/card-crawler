@@ -1,6 +1,6 @@
-import 'package:card_crawler/core/game/frame/common/game_card/effect/monster_card_effect.dart';
+import 'package:card_crawler/core/game/frame/common/game_card/monster/monster_card_effect.dart';
 
-import 'game_card.dart';
+import '../base/game_card.dart';
 
 class MonsterGameCard extends GameCard {
   MonsterGameCard._({
@@ -19,182 +19,182 @@ class MonsterGameCard extends GameCard {
   static final m0 = MonsterGameCard._(
     id: 23,
     value: 2,
-    effect: Sticky(),
+    effect: MonsterCardEffect.sticky,
     sprite: _spritePath('m0.png'),
   );
 
   static final m1 = MonsterGameCard._(
     id: 24,
     value: 2,
-    effect: Sticky(),
+    effect: MonsterCardEffect.sticky,
     sprite: _spritePath('m1.png'),
   );
 
   static final m2 = MonsterGameCard._(
     id: 25,
     value: 3,
-    effect: Ally(),
+    effect: MonsterCardEffect.ally,
     sprite: _spritePath('m2.png'),
   );
 
   static final m3 = MonsterGameCard._(
     id: 26,
     value: 3,
-    effect: Ally(),
+    effect: MonsterCardEffect.ally,
     sprite: _spritePath('m3.png'),
   );
 
   static final m4 = MonsterGameCard._(
     id: 27,
     value: 4,
-    effect: Corrosive(),
+    effect: MonsterCardEffect.corrosive,
     sprite: _spritePath('m4.png'),
   );
 
   static final m5 = MonsterGameCard._(
     id: 28,
     value: 4,
-    effect: Corrosive(),
+    effect: MonsterCardEffect.corrosive,
     sprite: _spritePath('m5.png'),
   );
 
   static final m6 = MonsterGameCard._(
     id: 29,
     value: 5,
-    effect: Scaling(),
+    effect: MonsterCardEffect.scaling,
     sprite: _spritePath('m6.png'),
   );
 
   static final m7 = MonsterGameCard._(
     id: 30,
     value: 5,
-    effect: Scaling(),
+    effect: MonsterCardEffect.scaling,
     sprite: _spritePath('m7.png'),
   );
 
   static final m8 = MonsterGameCard._(
     id: 31,
     value: 6,
-    effect: Aftermath(),
+    effect: MonsterCardEffect.aftermath,
     sprite: _spritePath('m8.png'),
   );
 
   static final m9 = MonsterGameCard._(
     id: 32,
     value: 6,
-    effect: Aftermath(),
+    effect: MonsterCardEffect.aftermath,
     sprite: _spritePath('m9.png'),
   );
 
   static final m10 = MonsterGameCard._(
     id: 33,
     value: 7,
-    effect: Vengeful(),
+    effect: MonsterCardEffect.vengeful,
     sprite: _spritePath('m10.png'),
   );
 
   static final m11 = MonsterGameCard._(
     id: 34,
     value: 7,
-    effect: Vengeful(),
+    effect: MonsterCardEffect.vengeful,
     sprite: _spritePath('m11.png'),
   );
 
   static final m12 = MonsterGameCard._(
     id: 35,
     value: 8,
-    effect: Mimic(),
+    effect: MonsterCardEffect.mimic,
     sprite: _spritePath('m12.png'),
   );
 
   static final m13 = MonsterGameCard._(
     id: 36,
     value: 8,
-    effect: Mimic(),
+    effect: MonsterCardEffect.mimic,
     sprite: _spritePath('m13.png'),
   );
 
   static final m14 = MonsterGameCard._(
     id: 37,
     value: 9,
-    effect: Poisonous(),
+    effect: MonsterCardEffect.poisonous,
     sprite: _spritePath('m14.png'),
   );
 
   static final m15 = MonsterGameCard._(
     id: 38,
     value: 9,
-    effect: Poisonous(),
+    effect: MonsterCardEffect.poisonous,
     sprite: _spritePath('m15.png'),
   );
 
   static final m16 = MonsterGameCard._(
     id: 39,
     value: 10,
-    effect: Opportunist(),
+    effect: MonsterCardEffect.opportunist,
     sprite: _spritePath('m16.png'),
   );
 
   static final m17 = MonsterGameCard._(
     id: 40,
     value: 10,
-    effect: Opportunist(),
+    effect: MonsterCardEffect.opportunist,
     sprite: _spritePath('m17.png'),
   );
 
   static final m18 = MonsterGameCard._(
     id: 41,
     value: 11,
-    effect: Wrecker(),
+    effect: MonsterCardEffect.wrecker,
     sprite: _spritePath('m18.png'),
   );
 
   static final m19 = MonsterGameCard._(
     id: 42,
     value: 11,
-    effect: Wrecker(),
+    effect: MonsterCardEffect.wrecker,
     sprite: _spritePath('m19.png'),
   );
 
   static final m20 = MonsterGameCard._(
     id: 43,
     value: 12,
-    effect: Spiky(),
+    effect: MonsterCardEffect.spiky,
     sprite: _spritePath('m20.png'),
   );
 
   static final m21 = MonsterGameCard._(
     id: 44,
     value: 12,
-    effect: Spiky(),
+    effect: MonsterCardEffect.spiky,
     sprite: _spritePath('m21.png'),
   );
 
   static final m22 = MonsterGameCard._(
     id: 45,
     value: 13,
-    effect: AntiHeal(),
+    effect: MonsterCardEffect.antiHeal,
     sprite: _spritePath('m22.png'),
   );
 
   static final m23 = MonsterGameCard._(
     id: 46,
     value: 13,
-    effect: AntiHeal(),
+    effect: MonsterCardEffect.antiHeal,
     sprite: _spritePath('m23.png'),
   );
 
   static final m24 = MonsterGameCard._(
     id: 47,
     value: 14,
-    effect: NoEscape(),
+    effect: MonsterCardEffect.noEscape,
     sprite: _spritePath('m24.png'),
   );
 
   static final m25 = MonsterGameCard._(
     id: 48,
     value: 14,
-    effect: NoEscape(),
+    effect: MonsterCardEffect.noEscape,
     sprite: _spritePath('m25.png'),
   );
 

@@ -1,5 +1,5 @@
-import 'effect/accessory_card_effect.dart';
-import 'game_card.dart';
+import 'accessory_card_effect.dart';
+import '../base/game_card.dart';
 
 class AccessoryGameCard extends GameCard {
   AccessoryGameCard._({
@@ -18,49 +18,49 @@ class AccessoryGameCard extends GameCard {
   static final a0 = AccessoryGameCard._(
     id: 9,
     value: 0,
-    effect: SpectreBoots(),
+    effect: AccessoryCardEffect.spectreBoots,
     sprite: _spritePath('a0.png'),
   );
 
   static final a1 = AccessoryGameCard._(
     id: 10,
     value: 0,
-    effect: PowerBreastplate(),
+    effect: AccessoryCardEffect.powerBreastplate,
     sprite: _spritePath('a1.png'),
   );
 
   static final a2 = AccessoryGameCard._(
     id: 11,
     value: 0,
-    effect: CommanderHelmet(),
+    effect: AccessoryCardEffect.commanderHelmet,
     sprite: _spritePath('a2.png'),
   );
 
   static final a3 = AccessoryGameCard._(
     id: 12,
     value: 0,
-    effect: RingOfMending(),
+    effect: AccessoryCardEffect.ringOfMending,
     sprite: _spritePath('a3.png'),
   );
 
   static final a4 = AccessoryGameCard._(
     id: 13,
     value: 0,
-    effect: HealingAmulet(),
+    effect: AccessoryCardEffect.healingAmulet,
     sprite: _spritePath('a4.png'),
   );
 
   static final a5 = AccessoryGameCard._(
     id: 14,
     value: 0,
-    effect: HeroCape(),
+    effect: AccessoryCardEffect.heroCape,
     sprite: _spritePath('a5.png'),
   );
 
   static final a6 = AccessoryGameCard._(
     id: 15,
     value: 0,
-    effect: EmperorCrown(),
+    effect: AccessoryCardEffect.emperorCrown,
     sprite: _spritePath('a6.png'),
   );
 

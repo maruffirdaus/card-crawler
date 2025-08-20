@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'constants/game_card_aspect_ratio.dart';
-import '../common/game_card/game_card.dart';
+import '../common/game_card/base/game_card.dart';
 
 class CoreGameFrameWidget extends StatefulWidget {
   const CoreGameFrameWidget({

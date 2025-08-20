@@ -1,4 +1,4 @@
-import '../../common/game_card/game_card.dart';
+import '../../common/game_card/base/game_card.dart';
 
 class CoreGameData {
   CoreGameData({

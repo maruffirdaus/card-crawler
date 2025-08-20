@@ -6,8 +6,8 @@ import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
 import 'package:card_crawler/core/game/scene/base/game_scene.dart';
 import 'package:flutter/material.dart';
 
-import '../core/game/frame/common/game_card/accessory_game_card.dart';
-import '../core/game/frame/common/game_card/consumable_game_card.dart';
+import '../core/game/frame/common/game_card/accessory/accessory_game_card.dart';
+import '../core/game/frame/common/game_card/consumable/consumable_game_card.dart';
 import '../core/game/frame/conversation/character/character.dart';
 
 class Level1Scene extends StatelessWidget {
