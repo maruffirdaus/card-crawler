@@ -1,7 +1,7 @@
 import '../monster_game_card.dart';
 import '../../../core_game/models/core_game_data.dart';
 import 'accessory_card_effect.dart';
-import 'game_card_effect.dart';
+import '../../combat_effect/combat_effect.dart';
 
 class NoEscape extends OnField {
   NoEscape()

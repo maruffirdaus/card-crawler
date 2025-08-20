@@ -4,9 +4,9 @@ import '../consumable_game_card.dart';
 import '../monster_game_card.dart';
 import '../weapon_game_card.dart';
 import '../../../core_game/models/core_game_data.dart';
-import 'game_card_effect.dart';
+import '../../combat_effect/combat_effect.dart';
 
-abstract class AccessoryCardEffect extends GameCardEffect {
+abstract class AccessoryCardEffect extends CombatEffect {
   AccessoryCardEffect(super.name, super.desc);
 }
 

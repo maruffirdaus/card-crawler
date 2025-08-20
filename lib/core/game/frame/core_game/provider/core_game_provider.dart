@@ -12,7 +12,7 @@ import '../types/core_game_state.dart';
 import '../types/core_game_ui_action.dart';
 import '../../common/game_card/effect/accessory_card_effect.dart';
 import '../../common/game_card/effect/consumable_card_effect.dart';
-import '../../common/game_card/effect/game_card_effect.dart';
+import '../../common/combat_effect/combat_effect.dart';
 import '../../common/game_card/effect/weapon_card_effect.dart';
 import '../types/game_card_location.dart';
 

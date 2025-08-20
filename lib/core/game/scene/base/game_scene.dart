@@ -54,13 +54,20 @@ class GameSceneContent extends StatelessWidget {
         if (provider.currentFrame is CoreGameFrame) {
           return CoreGameFrameWidget(
             key: ValueKey(provider.currentFrameId),
-            onComplete: provider.nextFrame,
+            onComplete: (nextFrameId) {
+              provider.nextFrame(nextId: nextFrameId);
+            },
             coreGameFrame: provider.currentFrame as CoreGameFrame,
           );
         } else if (provider.currentFrame is ConversationFrame) {
           return ConversationFrameWidget(
             key: ValueKey(provider.currentFrameId),
-            onComplete: provider.nextFrame,
+            onComplete: (nextFrameId, nextCombatEffects) {
+              provider.nextFrame(
+                nextId: nextFrameId,
+                nextCombatEffects: nextCombatEffects,
+              );
+            },
             conversationFrame: provider.currentFrame as ConversationFrame,
           );
         } else {

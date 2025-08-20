@@ -1,5 +1,5 @@
 import '../../../core_game/models/core_game_data.dart';
-import 'game_card_effect.dart';
+import '../../combat_effect/combat_effect.dart';
 
 class HolyHammer extends OnUse {
   HolyHammer() : super('Holy Hammer', 'Fighting an enemy will recover 1 HP');
