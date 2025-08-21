@@ -16,214 +16,246 @@ class MonsterGameCard extends GameCard {
   static String _spritePath(String fileName) =>
       'assets/card_sprites/monster/$fileName';
 
-  static final m0 = MonsterGameCard._(
-    id: 23,
-    value: 2,
-    effect: MonsterCardEffect.sticky,
-    sprite: _spritePath('m0.png'),
-  );
-
-  static final m1 = MonsterGameCard._(
-    id: 24,
-    value: 2,
-    effect: MonsterCardEffect.sticky,
-    sprite: _spritePath('m1.png'),
-  );
-
-  static final m2 = MonsterGameCard._(
-    id: 25,
-    value: 3,
-    effect: MonsterCardEffect.ally,
-    sprite: _spritePath('m2.png'),
-  );
-
-  static final m3 = MonsterGameCard._(
-    id: 26,
-    value: 3,
-    effect: MonsterCardEffect.ally,
-    sprite: _spritePath('m3.png'),
-  );
-
-  static final m4 = MonsterGameCard._(
-    id: 27,
-    value: 4,
-    effect: MonsterCardEffect.corrosive,
-    sprite: _spritePath('m4.png'),
-  );
-
-  static final m5 = MonsterGameCard._(
-    id: 28,
-    value: 4,
-    effect: MonsterCardEffect.corrosive,
-    sprite: _spritePath('m5.png'),
-  );
-
-  static final m6 = MonsterGameCard._(
-    id: 29,
-    value: 5,
-    effect: MonsterCardEffect.scaling,
-    sprite: _spritePath('m6.png'),
-  );
-
-  static final m7 = MonsterGameCard._(
-    id: 30,
-    value: 5,
-    effect: MonsterCardEffect.scaling,
-    sprite: _spritePath('m7.png'),
-  );
-
-  static final m8 = MonsterGameCard._(
-    id: 31,
-    value: 6,
+  static final aghoy = MonsterGameCard._(
+    id: 0,
+    value: 15,
     effect: MonsterCardEffect.aftermath,
-    sprite: _spritePath('m8.png'),
+    sprite: _spritePath('aghoy.png'),
   );
 
-  static final m9 = MonsterGameCard._(
-    id: 32,
-    value: 6,
+  static final amaranhig = MonsterGameCard._(
+    id: 0,
+    value: 15,
     effect: MonsterCardEffect.aftermath,
-    sprite: _spritePath('m9.png'),
+    sprite: _spritePath('amaranhig.png'),
   );
 
-  static final m10 = MonsterGameCard._(
-    id: 33,
-    value: 7,
-    effect: MonsterCardEffect.vengeful,
-    sprite: _spritePath('m10.png'),
+  static final amomongo = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('amomongo.png'),
   );
 
-  static final m11 = MonsterGameCard._(
-    id: 34,
-    value: 7,
-    effect: MonsterCardEffect.vengeful,
-    sprite: _spritePath('m11.png'),
+  static final boar = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('boar.png'),
   );
 
-  static final m12 = MonsterGameCard._(
-    id: 35,
-    value: 8,
-    effect: MonsterCardEffect.mimic,
-    sprite: _spritePath('m12.png'),
+  static final boar2 = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('boar_2.png'),
   );
 
-  static final m13 = MonsterGameCard._(
-    id: 36,
-    value: 8,
-    effect: MonsterCardEffect.mimic,
-    sprite: _spritePath('m13.png'),
+  static final bungisngis = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('bungisngis.png'),
   );
 
-  static final m14 = MonsterGameCard._(
-    id: 37,
-    value: 9,
-    effect: MonsterCardEffect.poisonous,
-    sprite: _spritePath('m14.png'),
+  static final busaw = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('busaw.png'),
   );
 
-  static final m15 = MonsterGameCard._(
-    id: 38,
-    value: 9,
-    effect: MonsterCardEffect.poisonous,
-    sprite: _spritePath('m15.png'),
+  static final buwaya = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('buwaya.png'),
   );
 
-  static final m16 = MonsterGameCard._(
-    id: 39,
-    value: 10,
-    effect: MonsterCardEffect.opportunist,
-    sprite: _spritePath('m16.png'),
+  static final chicken = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('chicken.png'),
   );
 
-  static final m17 = MonsterGameCard._(
-    id: 40,
-    value: 10,
-    effect: MonsterCardEffect.opportunist,
-    sprite: _spritePath('m17.png'),
+  static final dwendeBlue = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('dwende_blue.png'),
   );
 
-  static final m18 = MonsterGameCard._(
-    id: 41,
-    value: 11,
-    effect: MonsterCardEffect.wrecker,
-    sprite: _spritePath('m18.png'),
+  static final dwendeOrange = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('dwende_orange.png'),
   );
 
-  static final m19 = MonsterGameCard._(
-    id: 42,
-    value: 11,
-    effect: MonsterCardEffect.wrecker,
-    sprite: _spritePath('m19.png'),
+  static final dwendeRed = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('dwende_red.png'),
   );
 
-  static final m20 = MonsterGameCard._(
-    id: 43,
-    value: 12,
-    effect: MonsterCardEffect.spiky,
-    sprite: _spritePath('m20.png'),
+  static final dwendeYellow = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('dwende_yellow.png'),
   );
 
-  static final m21 = MonsterGameCard._(
-    id: 44,
-    value: 12,
-    effect: MonsterCardEffect.spiky,
-    sprite: _spritePath('m21.png'),
+  static final ekEk = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('ek_ek.png'),
   );
 
-  static final m22 = MonsterGameCard._(
-    id: 45,
-    value: 13,
-    effect: MonsterCardEffect.antiHeal,
-    sprite: _spritePath('m22.png'),
+  static final evilDwende = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('evil_dwende.png'),
   );
 
-  static final m23 = MonsterGameCard._(
-    id: 46,
-    value: 13,
-    effect: MonsterCardEffect.antiHeal,
-    sprite: _spritePath('m23.png'),
+  static final kapre = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('kapre.png'),
   );
 
-  static final m24 = MonsterGameCard._(
-    id: 47,
-    value: 14,
-    effect: MonsterCardEffect.noEscape,
-    sprite: _spritePath('m24.png'),
+  static final kolyog = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('kolyog.png'),
   );
 
-  static final m25 = MonsterGameCard._(
-    id: 48,
-    value: 14,
-    effect: MonsterCardEffect.noEscape,
-    sprite: _spritePath('m25.png'),
+  static final malakat = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('malakat.png'),
+  );
+
+  static final manananggal = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('manananggal.png'),
+  );
+
+  static final nunoSaPunso = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('nuno_sa_punso.png'),
+  );
+
+  static final rooster = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('rooster.png'),
+  );
+
+  static final santelmo = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('santelmo.png'),
+  );
+
+  static final sigbin = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('sigbin.png'),
+  );
+
+  static final sirena = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('sirena.png'),
+  );
+
+  static final syokoy = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('syokoy.png'),
+  );
+
+  static final taongTuod = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('taong_tuod.png'),
+  );
+
+  static final tiburones = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('tiburones.png'),
+  );
+
+  static final tikbalang = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('tikbalang.png'),
+  );
+
+  static final tiyanak = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('tiyanak.png'),
+  );
+
+  static final witch = MonsterGameCard._(
+    id: 0,
+    value: 15,
+    effect: MonsterCardEffect.aftermath,
+    sprite: _spritePath('witch.png'),
   );
 
   static final entries = [
-    m0,
-    m1,
-    m2,
-    m3,
-    m4,
-    m5,
-    m6,
-    m7,
-    m8,
-    m9,
-    m10,
-    m11,
-    m12,
-    m13,
-    m14,
-    m15,
-    m16,
-    m17,
-    m18,
-    m19,
-    m20,
-    m21,
-    m22,
-    m23,
-    m24,
-    m25,
+    aghoy,
+    amaranhig,
+    amomongo,
+    boar,
+    boar2,
+    bungisngis,
+    busaw,
+    buwaya,
+    chicken,
+    dwendeBlue,
+    dwendeOrange,
+    dwendeRed,
+    dwendeYellow,
+    ekEk,
+    evilDwende,
+    kapre,
+    kolyog,
+    malakat,
+    manananggal,
+    nunoSaPunso,
+    rooster,
+    santelmo,
+    sigbin,
+    sirena,
+    syokoy,
+    taongTuod,
+    tiburones,
+    tikbalang,
+    tiyanak,
+    witch
   ];
 }

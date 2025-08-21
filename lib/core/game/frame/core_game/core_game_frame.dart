@@ -10,21 +10,21 @@ class CoreGameFrame extends GameFrame {
     this.data,
     required this.gameCards,
     required this.gameStage,
-    List<CombatEffect>? CombatEffects,
+    List<CombatEffect>? combatEffects,
     this.nextId,
   }) {
-    if (CombatEffects != null) {
-      this.CombatEffects.addAll(CombatEffects);
+    if (combatEffects != null) {
+      this.combatEffects.addAll(combatEffects);
     }
   }
 
   final CoreGameData? data;
   final List<GameCard> gameCards;
   final GameStage gameStage;
-  final List<CombatEffect> CombatEffects = List.empty(growable: true);
+  final List<CombatEffect> combatEffects = List.empty(growable: true);
   final String? nextId;
 
-  void addAllCombatEffects(List<CombatEffect> CombatEffects) {
-    this.CombatEffects.addAll(CombatEffects);
+  void addAllCombatEffects(List<CombatEffect> combatEffects) {
+    this.combatEffects.addAll(combatEffects);
   }
 }
