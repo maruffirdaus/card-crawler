@@ -2,7 +2,7 @@ import 'package:card_crawler/core/game/frame/core_game/models/core_game_data.dar
 import 'package:card_crawler/core/game/frame/base/game_frame.dart';
 
 import '../common/combat_effect/combat_effect.dart';
-import '../common/game_card/base/game_card.dart';
+import 'game_card/base/game_card.dart';
 import '../common/game_stage/game_stage.dart';
 
 class CoreGameFrame extends GameFrame {

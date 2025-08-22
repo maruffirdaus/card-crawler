@@ -1,4 +1,4 @@
-import '../../common/game_card/base/game_card.dart';
+import '../game_card/base/game_card.dart';
 
 sealed class CoreGameAction {}
 
@@ -9,8 +9,8 @@ class SelectCardFromDungeonField extends CoreGameAction {
   final int index;
 }
 
-class ReplaceAccessoryCard extends CoreGameAction {
-  ReplaceAccessoryCard({required this.card, required this.index});
+class ReplaceEquipmentCard extends CoreGameAction {
+  ReplaceEquipmentCard({required this.card, required this.index});
 
   final GameCard card;
   final int index;

@@ -3,7 +3,7 @@ import 'package:card_crawler/core/game/frame/core_game/widgets/popup/popup_scrim
 import 'package:flutter/material.dart';
 
 import '../../constants/game_card_aspect_ratio.dart';
-import '../../../common/game_card/base/game_card.dart';
+import '../../game_card/base/game_card.dart';
 import '../../types/game_card_location.dart';
 import '../game_card_widget.dart';
 

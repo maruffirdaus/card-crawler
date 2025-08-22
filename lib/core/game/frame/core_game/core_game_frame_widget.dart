@@ -18,7 +18,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'constants/game_card_aspect_ratio.dart';
-import '../common/game_card/base/game_card.dart';
+import 'game_card/base/game_card.dart';
 
 class CoreGameFrameWidget extends StatefulWidget {
   const CoreGameFrameWidget({
@@ -273,7 +273,7 @@ class _CoreGameFrameContent extends StatelessWidget {
                           children: List.generate(3, (index) {
                             final GameCard? card =
                                 index < provider.accessoryCards.length &&
-                                    provider.state is! ReplacingAccessoryCard
+                                    provider.state is! ReplacingEquipmentCard
                                 ? provider.accessoryCards[index]
                                 : null;
                             final bool isEffectDescriptionVisible =
@@ -338,8 +338,8 @@ class _CoreGameFrameContent extends StatelessWidget {
                   ),
                 ],
               ),
-              if (provider.state is ReplacingAccessoryCard)
-                ReplaceAccessoryCardPopup(
+              if (provider.state is ReplacingEquipmentCard)
+                ReplaceEquipmentCardPopup(
                   accessoryCards: provider.accessoryCards,
                   cardWidth: cardWidth,
                   onCardTap: (index) {
@@ -349,7 +349,7 @@ class _CoreGameFrameContent extends StatelessWidget {
 
                     if (isEffectDescriptionVisible) {
                       provider.action(
-                        ReplaceAccessoryCard(
+                        ReplaceEquipmentCard(
                           card: provider.accessoryCards[index],
                           index: index,
                         ),

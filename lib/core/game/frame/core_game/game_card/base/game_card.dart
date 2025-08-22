@@ -1,4 +1,4 @@
-import '../../combat_effect/combat_effect.dart';
+import '../../../common/combat_effect/combat_effect.dart';
 
 abstract class GameCard {
   GameCard({

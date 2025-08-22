@@ -1,11 +1,11 @@
-import '../../common/game_card/base/game_card.dart';
+import '../game_card/base/game_card.dart';
 
 class CoreGameData {
   CoreGameData({
     List<GameCard>? deck,
     List<GameCard?>? dungeonFieldCards,
     this.weaponCard,
-    List<GameCard>? accessoryCards,
+    List<GameCard>? equipmentCards,
     List<GameCard>? graveyardCards,
     this.pickedCard,
     this.level = 1,
@@ -15,7 +15,7 @@ class CoreGameData {
     this.buff = 0,
     this.tempBuff = 0,
     this.multiplier = 1,
-    this.accessoryBuff = 0,
+    this.equipmentBuff = 0,
     this.cursedAxeCounter = 0,
     this.cursedAxeDurability = 0,
     this.emperorCounter = 0,
@@ -25,13 +25,13 @@ class CoreGameData {
     this.deck = deck ?? List.empty(growable: true);
     this.dungeonFieldCards = dungeonFieldCards ?? List.filled(4, null);
     this.graveyardCards = graveyardCards ?? List.empty(growable: true);
-    this.accessoryCards = accessoryCards ?? List.empty(growable: true);
+    this.equipmentCards = equipmentCards ?? List.empty(growable: true);
   }
 
   List<GameCard> deck = List.empty(growable: true);
   List<GameCard?> dungeonFieldCards = List.filled(4, null);
   GameCard? weaponCard;
-  List<GameCard> accessoryCards = List.empty(growable: true);
+  List<GameCard> equipmentCards = List.empty(growable: true);
   List<GameCard> graveyardCards = List.empty(growable: true);
   GameCard? pickedCard;
   int level;
@@ -41,7 +41,7 @@ class CoreGameData {
   int buff;
   int tempBuff;
   int multiplier;
-  int accessoryBuff;
+  int equipmentBuff;
   int cursedAxeCounter;
   int cursedAxeDurability;
   int emperorCounter;

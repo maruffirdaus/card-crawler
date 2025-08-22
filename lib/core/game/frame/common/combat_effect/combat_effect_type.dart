@@ -1,1 +1,1 @@
-enum CombatEffectType { onField, onPicked, onUse, onKill, accessoryCard }
+enum CombatEffectType { onField, onPicked, onUse, onKill, equipmentCard }

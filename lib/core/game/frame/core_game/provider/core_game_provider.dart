@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '../../common/combat_effect/combat_effect_type.dart';
-import '../../common/game_card/accessory/accessory_game_card.dart';
-import '../../common/game_card/consumable/consumable_game_card.dart';
-import '../../common/game_card/base/game_card.dart';
-import '../../common/game_card/monster/monster_game_card.dart';
-import '../../common/game_card/weapon/weapon_game_card.dart';
+import '../game_card/consumable/consumable_game_card.dart';
+import '../game_card/base/game_card.dart';
+import '../game_card/equipment/equipment_card_effect.dart';
+import '../game_card/equipment/equipment_game_card.dart';
+import '../game_card/monster/monster_game_card.dart';
+import '../game_card/weapon/weapon_game_card.dart';
 import '../../common/game_stage/game_stage.dart';
 import '../models/core_game_data.dart';
 import '../types/core_game_action.dart';
 import '../types/core_game_state.dart';
 import '../types/core_game_ui_action.dart';
-import '../../common/game_card/accessory/accessory_card_effect.dart';
-import '../../common/game_card/consumable/consumable_card_effect.dart';
-import '../../common/game_card/weapon/weapon_card_effect.dart';
+import '../game_card/consumable/consumable_card_effect.dart';
+import '../game_card/weapon/weapon_card_effect.dart';
 import '../types/game_card_location.dart';
 
 class CoreGameProvider extends ChangeNotifier {
@@ -26,7 +26,7 @@ class CoreGameProvider extends ChangeNotifier {
   List<GameCard> get deck => _data.deck;
   List<GameCard?> get dungeonFieldCards => _data.dungeonFieldCards;
   GameCard? get weaponCard => _data.weaponCard;
-  List<GameCard> get accessoryCards => _data.accessoryCards;
+  List<GameCard> get accessoryCards => _data.equipmentCards;
   List<GameCard> get graveyardCards => _data.graveyardCards;
   int get round => _data.round;
   int get health => _data.health;
@@ -72,8 +72,8 @@ class CoreGameProvider extends ChangeNotifier {
   void action(CoreGameAction action) {
     _resetCardWidget();
 
-    for (var card in _data.accessoryCards) {
-      if (card.effect == AccessoryCardEffect.spectreBoots) {
+    for (var card in _data.equipmentCards) {
+      if (card.effect == EquipmentCardEffect.spectreBoots) {
         _data.canFlee = true;
       }
     }
@@ -84,8 +84,8 @@ class CoreGameProvider extends ChangeNotifier {
           _data.pickedCard = card;
           _data.removeCardFromDungeonField(index);
 
-          for (var acc in _data.accessoryCards) {
-            if (acc.effect is AccessoryCardEffect) {
+          for (var acc in _data.equipmentCards) {
+            if (acc.effect is EquipmentCardEffect) {
               acc.effect.trigger(_data);
             }
           }
@@ -159,12 +159,12 @@ class CoreGameProvider extends ChangeNotifier {
                   _data.weaponCard?.effect.trigger(_data);
                 }
               }
-            case AccessoryGameCard():
+            case EquipmentGameCard():
               {
-                if (_data.accessoryCards.length < 3) {
-                  _data.accessoryCards.add(card);
+                if (_data.equipmentCards.length < 3) {
+                  _data.equipmentCards.add(card);
                 } else {
-                  _queueState(ReplacingAccessoryCard());
+                  _queueState(ReplacingEquipmentCard());
                 }
               }
           }
@@ -191,10 +191,10 @@ class CoreGameProvider extends ChangeNotifier {
             _data.hasHealed = false;
           }
         }
-      case ReplaceAccessoryCard(card: var card, index: var index):
+      case ReplaceEquipmentCard(card: var card, index: var index):
         {
           _data.graveyardCards.add(card);
-          _data.accessoryCards[index] = _data.pickedCard!;
+          _data.equipmentCards[index] = _data.pickedCard!;
           _queueState(Playing());
         }
       case Flee():

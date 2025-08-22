@@ -1,6 +1,6 @@
 import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect_type.dart';
 
-import '../../combat_effect/combat_effect.dart';
+import '../../../common/combat_effect/combat_effect.dart';
 
 class WeaponCardEffect extends CombatEffect {
   WeaponCardEffect({

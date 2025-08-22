@@ -1,5 +1,5 @@
-import '../../combat_effect/combat_effect.dart';
-import '../../combat_effect/combat_effect_type.dart';
+import '../../../common/combat_effect/combat_effect.dart';
+import '../../../common/combat_effect/combat_effect_type.dart';
 
 class ConsumableCardEffect extends CombatEffect {
   ConsumableCardEffect({
@@ -72,7 +72,7 @@ class ConsumableCardEffect extends CombatEffect {
     id: 'volatile-elixir',
     name: 'Volatile Elixir',
     description:
-        'Remove every card from the dungeon field, your weapon, and your accessory',
+        'Remove every card from the dungeon field, your weapon, and your equipment',
     type: CombatEffectType.onPicked,
     trigger: (data) {
       for (int i = 0; i < data.dungeonFieldCards.length; i++) {
@@ -86,8 +86,8 @@ class ConsumableCardEffect extends CombatEffect {
         data.durability = 0;
         data.weaponCard = null;
       }
-      data.graveyardCards.addAll(data.accessoryCards);
-      data.accessoryCards.clear();
+      data.graveyardCards.addAll(data.equipmentCards);
+      data.equipmentCards.clear();
     },
   );
 

@@ -1,7 +1,7 @@
 import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect_type.dart';
 
-import '../../combat_effect/combat_effect.dart';
-import '../accessory/accessory_card_effect.dart';
+import '../../../common/combat_effect/combat_effect.dart';
+import '../equipment/equipment_card_effect.dart';
 import 'monster_game_card.dart';
 
 class MonsterCardEffect extends CombatEffect {
@@ -80,8 +80,8 @@ class MonsterCardEffect extends CombatEffect {
       if (data.weaponCard != null) data.graveyardCards.add(data.weaponCard!);
       data.weaponCard = newWeaponCard;
       data.durability = 20;
-      for (var card in data.accessoryCards) {
-        if (card.effect == AccessoryCardEffect.heroCape) {
+      for (var card in data.equipmentCards) {
+        if (card.effect == EquipmentCardEffect.heroCape) {
           data.weaponCard?.value += 3;
         }
       }

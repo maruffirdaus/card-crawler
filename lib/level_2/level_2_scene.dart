@@ -6,9 +6,8 @@ import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
 import 'package:card_crawler/core/game/scene/base/game_scene.dart';
 import 'package:flutter/material.dart';
 
-import '../core/game/frame/common/game_card/accessory/accessory_game_card.dart';
-import '../core/game/frame/common/game_card/consumable/consumable_game_card.dart';
 import '../core/game/frame/conversation/character/character.dart';
+import '../core/game/frame/core_game/game_card/equipment/equipment_game_card.dart';
 
 class Level2Scene extends StatefulWidget {
   const Level2Scene({super.key});
@@ -112,7 +111,7 @@ class _Level2SceneState extends State<Level2Scene> {
           gameStage: GameStage.desert,
         ),
         '1': CoreGameFrame(
-          gameCards: AccessoryGameCard.entries,
+          gameCards: EquipmentGameCard.entries,
           gameStage: GameStage.desert,
           nextId: '2',
         ),
@@ -176,7 +175,7 @@ class _Level2SceneState extends State<Level2Scene> {
           gameStage: GameStage.desert,
         ),
         '3': CoreGameFrame(
-          gameCards: AccessoryGameCard.entries,
+          gameCards: EquipmentGameCard.entries,
           gameStage: GameStage.desert,
           nextId: '4',
         ),
@@ -226,7 +225,7 @@ class _Level2SceneState extends State<Level2Scene> {
         '6': ConversationFrame(
           conversations: {
             '0': ConversationUnit(
-              texts: ['\"Father, let\'s play together\"!'],
+              texts: ['"Father, let\'s play together"!'],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '1')],
             ),
             '1': ConversationUnit(
@@ -236,8 +235,8 @@ class _Level2SceneState extends State<Level2Scene> {
             ),
             '2': ConversationUnit(
               texts: [
-                '\"Can\'t we play now..?\"',
-                '\"You say we can\'t play after dark...\"',
+                '"Can\'t we play now..?"',
+                '"You say we can\'t play after dark..."',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '3')],
             ),

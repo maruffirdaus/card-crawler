@@ -1,4 +1,4 @@
-import 'package:card_crawler/core/game/frame/common/game_card/monster/monster_card_effect.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/monster/monster_card_effect.dart';
 
 import '../base/game_card.dart';
 
@@ -256,6 +256,6 @@ class MonsterGameCard extends GameCard {
     tiburones,
     tikbalang,
     tiyanak,
-    witch
+    witch,
   ];
 }

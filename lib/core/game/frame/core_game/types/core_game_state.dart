@@ -1,10 +1,10 @@
-import '../../common/game_card/base/game_card.dart';
+import '../game_card/base/game_card.dart';
 
 sealed class CoreGameState {}
 
 class Playing extends CoreGameState {}
 
-class ReplacingAccessoryCard extends CoreGameState {}
+class ReplacingEquipmentCard extends CoreGameState {}
 
 class CardEffectTriggered extends CoreGameState {
   CardEffectTriggered({required this.card});

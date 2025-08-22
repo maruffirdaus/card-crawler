@@ -99,5 +99,8 @@ flutter:
     - assets/card_sprites/weapon/
     - assets/card_sprites/monster/
     - assets/card_sprites/consumable/
-    - assets/card_sprites/accessory/
+    - assets/card_sprites/equipment/
+    - assets/card_sprites/boss_action/
+    - assets/card_sprites/player_action/
+    - assets/card_sprites/player_equipment/
     - assets/character_sprites/
