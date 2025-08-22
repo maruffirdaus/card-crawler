@@ -59,7 +59,7 @@ class CoreGameProvider extends ChangeNotifier {
 
     for (var card in _data.dungeonFieldCards) {
       if (card != null && card.effect.type == CombatEffectType.onField) {
-        card.effect.trigger(_data);
+        card.effect.triggerOnCoreGame!(_data);
         _queueState(CardEffectTriggered(card: card));
       }
     }
@@ -86,12 +86,12 @@ class CoreGameProvider extends ChangeNotifier {
 
           for (var acc in _data.equipmentCards) {
             if (acc.effect is EquipmentCardEffect) {
-              acc.effect.trigger(_data);
+              acc.effect.triggerOnCoreGame!(_data);
             }
           }
 
           if (card.effect.type == CombatEffectType.onPicked) {
-            card.effect.trigger(_data);
+            card.effect.triggerOnCoreGame!(_data);
             _queueState(CardEffectTriggered(card: card));
           }
 
@@ -122,7 +122,7 @@ class CoreGameProvider extends ChangeNotifier {
 
                 if (_data.durability > card.value) {
                   if (_data.weaponCard?.effect.type == CombatEffectType.onUse) {
-                    _data.weaponCard?.effect.trigger(_data);
+                    _data.weaponCard?.effect.triggerOnCoreGame!(_data);
                     _queueState(CardEffectTriggered(card: _data.weaponCard!));
                   }
 
@@ -143,7 +143,7 @@ class CoreGameProvider extends ChangeNotifier {
                 _data.weaponCard?.value -= _data.tempBuff;
 
                 if (card.effect.type == CombatEffectType.onKill) {
-                  card.effect.trigger(_data);
+                  card.effect.triggerOnCoreGame!(_data);
                   _queueState(CardEffectTriggered(card: card));
                 }
                 if (_data.weaponCard?.effect == WeaponCardEffect.cursedAxe) {
@@ -156,7 +156,7 @@ class CoreGameProvider extends ChangeNotifier {
                 }
 
                 if (_data.weaponCard?.effect == WeaponCardEffect.artemisBow) {
-                  _data.weaponCard?.effect.trigger(_data);
+                  _data.weaponCard?.effect.triggerOnCoreGame!(_data);
                 }
               }
             case EquipmentGameCard():
@@ -212,7 +212,7 @@ class CoreGameProvider extends ChangeNotifier {
 
     for (var card in _data.dungeonFieldCards) {
       if (card != null && card.effect.type == CombatEffectType.onField) {
-        card.effect.trigger(_data);
+        card.effect.triggerOnCoreGame!(_data);
         _queueState(CardEffectTriggered(card: card));
       }
     }

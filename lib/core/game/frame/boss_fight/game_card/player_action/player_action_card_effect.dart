@@ -1,5 +1,6 @@
 import '../../../common/combat_effect/combat_effect.dart';
 import '../../../common/combat_effect/combat_effect_type.dart';
+import '../../models/boss_fight_data.dart';
 
 class PlayerActionCardEffect extends CombatEffect {
   PlayerActionCardEffect({
@@ -7,8 +8,10 @@ class PlayerActionCardEffect extends CombatEffect {
     required super.name,
     required super.description,
     required super.type,
-    required super.trigger,
-  });
+    required Function(BossFightData) trigger,
+  }) {
+    super.triggerOnBossFight = trigger;
+  }
 
   static final example = PlayerActionCardEffect(
     id: 'example',

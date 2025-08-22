@@ -1,6 +1,7 @@
 import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect_type.dart';
 
 import '../../../common/combat_effect/combat_effect.dart';
+import '../../models/core_game_data.dart';
 import '../equipment/equipment_card_effect.dart';
 import 'monster_game_card.dart';
 
@@ -10,8 +11,10 @@ class MonsterCardEffect extends CombatEffect {
     required super.name,
     required super.description,
     required super.type,
-    required super.trigger,
-  });
+    required Function(CoreGameData) trigger,
+  }) {
+    super.triggerOnCoreGame = trigger;
+  }
 
   static final noEscape = MonsterCardEffect(
     id: 'no-escape',

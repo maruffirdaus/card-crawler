@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect_type.dart';
 
 import '../../../common/combat_effect/combat_effect.dart';
+import '../../models/core_game_data.dart';
 import '../consumable/consumable_game_card.dart';
 import '../monster/monster_game_card.dart';
 import '../weapon/weapon_game_card.dart';
@@ -13,8 +14,10 @@ class EquipmentCardEffect extends CombatEffect {
     required super.name,
     required super.description,
     required super.type,
-    required super.trigger,
-  });
+    required Function(CoreGameData) trigger,
+  }) {
+    super.triggerOnCoreGame = trigger;
+  }
 
   static final powerBreastplate = EquipmentCardEffect(
     id: 'power-breastplate',

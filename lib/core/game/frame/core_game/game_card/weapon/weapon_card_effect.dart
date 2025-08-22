@@ -1,6 +1,7 @@
 import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect_type.dart';
 
 import '../../../common/combat_effect/combat_effect.dart';
+import '../../models/core_game_data.dart';
 
 class WeaponCardEffect extends CombatEffect {
   WeaponCardEffect({
@@ -8,8 +9,10 @@ class WeaponCardEffect extends CombatEffect {
     required super.name,
     required super.description,
     required super.type,
-    required super.trigger,
-  });
+    required Function(CoreGameData) trigger,
+  }) {
+    super.triggerOnCoreGame = trigger;
+  }
 
   static final holyHammer = WeaponCardEffect(
     id: 'holy-hammer',
