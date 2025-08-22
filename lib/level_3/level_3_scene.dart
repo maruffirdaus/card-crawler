@@ -22,30 +22,30 @@ class Level3Scene extends StatelessWidget {
             '0': ConversationUnit(
               character: Character.cole,
               texts: ['Wow this place is huge!'],
-              choices: [ConversationChoice(text: 'next', nextUnitId: '1')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '1')],
             ),
             '1': ConversationUnit(
               character: Character.lukas,
               texts: [
                 'Yeah, agreed. I didn\'t expect that *wizard* was talking the truth about a castle in the desert',
               ],
-              choices: [ConversationChoice(text: 'next', nextUnitId: '2')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '2')],
             ),
             '2': ConversationUnit(
               character: Character.cole,
               texts: [
                 'That sure is the case, anyway I\'m really tired with all that fighting from before, lets rest up a bit',
               ],
-              choices: [ConversationChoice(text: 'next', nextUnitId: '3')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '3')],
             ),
             '3': ConversationUnit(
               character: Character.lukas,
               texts: ['Yeah, lets go to that corner'],
-              choices: [ConversationChoice(text: 'next', nextUnitId: '4')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '4')],
             ),
             '4': ConversationUnit(
               texts: ['Both of you decided to rest at the corner.'],
-              choices: [ConversationChoice(text: 'next', nextFrameId: '1')],
+              choices: [ConversationChoice(text: 'Next', nextFrameId: '1')],
             ),
           },
           gameStage: GameStage.castle,
@@ -54,14 +54,14 @@ class Level3Scene extends StatelessWidget {
           conversations: {
             '0': ConversationUnit(
               texts: ['Suddenly, the air inside the castle became very cold'],
-              choices: [ConversationChoice(text: 'next', nextUnitId: '1')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '1')],
             ),
             '1': ConversationUnit(
               character: Character.cole,
               texts: [
                 'Resting really is the best after all that. But do you feel this air?',
               ],
-              choices: [ConversationChoice(text: 'next', nextUnitId: '2')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '2')],
             ),
             '2': ConversationUnit(
               character: Character.lukas,
@@ -80,12 +80,12 @@ class Level3Scene extends StatelessWidget {
             '3.1': ConversationUnit(
               //n //normal
               texts: ['You feel the air getting warmer.'],
-              choices: [ConversationChoice(text: 'next', nextUnitId: '4')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '4')],
             ),
             '3.2': ConversationUnit(
               //n //nerf sheer cold kalo fight
               texts: ['The cold makes you even more uncomfortable.'],
-              choices: [ConversationChoice(text: 'next', nextUnitId: '4')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '4')],
             ),
             '4': ConversationUnit(
               character: Character.lukas,
@@ -530,7 +530,7 @@ class Level3Scene extends StatelessWidget {
                 'Darkness swallows you whole' //ending
               ],
               choices: [
-                ConversationChoice(text: 'End', nextUnitId: '9'),
+                ConversationChoice(text: 'End'),
               ],
             ),
           },
@@ -596,7 +596,7 @@ class Level3Scene extends StatelessWidget {
                 'The ancient fortress gives its final roar as it crumbles, burying both of you beneath the ruins.'
               ],
               choices: [
-                ConversationChoice(text: 'Next', nextUnitId: '6'),
+                ConversationChoice(text: 'End'),
               ],
             ),
           },
@@ -710,7 +710,7 @@ class Level3Scene extends StatelessWidget {
                 'Together, the two step forward, leaving the castle behind.',
               ],
               choices: [
-                ConversationChoice(text: 'Next', nextUnitId: '12'),
+                ConversationChoice(text: 'End'),
               ],
             ),
           },
