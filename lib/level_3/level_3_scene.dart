@@ -89,7 +89,7 @@ class Level3Scene extends StatelessWidget {
             ),
             '4': ConversationUnit(
               character: Character.lukas,
-              texts: ['So, tell me {MC}, why are you looking for the ring?'],
+              texts: ['So, tell me cole, why are you looking for the ring?'],
               choices: [
                 ConversationChoice(
                   text:
@@ -97,7 +97,7 @@ class Level3Scene extends StatelessWidget {
                   nextUnitId: '5.1',
                 ),
                 ConversationChoice(
-                  text: 'I\'m not comfortable talking about that...',
+                  text: 'I\'m not comfortable talking about that...',nextUnitId: '5.2'
                 ),
               ],
             ),
@@ -153,7 +153,7 @@ class Level3Scene extends StatelessWidget {
                 'I just want my wife and my son back. There\'s something i haven\'t told them yet.'
               ],
               choices: [
-                ConversationChoice(text: 'Next', nextUnitId: '5.2.2'),
+                ConversationChoice(text: 'Next', nextUnitId: '5.2.3'),
               ],
             ),
             '5.2.3': ConversationUnit(
@@ -204,7 +204,7 @@ class Level3Scene extends StatelessWidget {
             ),
             '2': ConversationUnit(
               character: Character.cole,
-              texts: ['One thing\'s for sure that\'s not a good sign.'],
+              texts: ['I think this hallway will lead to something.'],
               choices: [
                 ConversationChoice(text: 'Next', nextUnitId: '3'),
               ],
@@ -213,7 +213,7 @@ class Level3Scene extends StatelessWidget {
               character: Character.lukas,
               texts: ['That means we have to rush to the end of this castle.'],
               choices: [
-                ConversationChoice(text: 'Agreed.', nextUnitId: '3'),
+                ConversationChoice(text: 'Agreed.', nextUnitId: '4'),
               ],
             ),
             '4': ConversationUnit(
@@ -242,7 +242,7 @@ class Level3Scene extends StatelessWidget {
               character: Character.lukas,
               texts: ['Cole, Are you alright?'],
               choices: [
-                ConversationChoice(text: 'Next', nextUnitId: '5.1.2'),
+                ConversationChoice(text: 'Next', nextUnitId: '5.1.3'),
               ],
             ),
             '5.1.3': ConversationUnit(
@@ -298,7 +298,7 @@ class Level3Scene extends StatelessWidget {
             '2': ConversationUnit(
               texts: ['You run as fast as you can towards the door.'],
               choices: [
-                ConversationChoice(text: 'Lukas, Run as fast as you can!', nextFrameId: '3'),
+                ConversationChoice(text: 'Next', nextUnitId: '3'),
               ],
             ),
             '3': ConversationUnit(
@@ -389,7 +389,7 @@ class Level3Scene extends StatelessWidget {
               character: Character.cole,
               texts: ['But, what about my wish?'],
               choices: [
-                ConversationChoice(text: 'Next', nextUnitId: '4'),
+                ConversationChoice(text: 'Next', nextUnitId: '5'),
               ],
             ),
             '5': ConversationUnit(
@@ -470,7 +470,7 @@ class Level3Scene extends StatelessWidget {
               character: Character.cole,
               texts: ['…I had no choice.'],
               choices: [
-                ConversationChoice(text: 'Next', nextUnitId: '2'),
+                ConversationChoice(text: 'Next', nextUnitId: '3'),
               ],
             ),
             '3': ConversationUnit(
@@ -530,7 +530,7 @@ class Level3Scene extends StatelessWidget {
                 'Darkness swallows you whole' //ending
               ],
               choices: [
-                ConversationChoice(text: 'End', nextUnitId: '8'),
+                ConversationChoice(text: 'End', nextUnitId: '9'),
               ],
             ),
           },

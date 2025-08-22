@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'level_1/level_1_scene.dart';
+import 'level_2/level_2_scene.dart';
+import 'level_3/level_3_scene.dart';
 
 class CardCrawlerApp extends StatelessWidget {
   const CardCrawlerApp({super.key});
@@ -26,7 +28,7 @@ class CardCrawlerApp extends StatelessWidget {
           floatingLabelStyle: TextStyle(color: Colors.black),
         ),
       ),
-      home: Scaffold(body: Level1Scene()),
+      home: Scaffold(body: Level3Scene()),
     );
   }
 }
