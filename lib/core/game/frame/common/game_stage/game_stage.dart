@@ -15,4 +15,10 @@ class GameStage {
   static final desert = GameStage._(background: _backgroundPath('Desert.png'));
 
   static final castle = GameStage._(background: _backgroundPath('Castle.png'));
+
+  static final cliff = GameStage._(background: _backgroundPath('Cliff.png'));
+
+  static final black = GameStage._(
+    background: _backgroundPath('BlackBackground.png'),
+  );
 }

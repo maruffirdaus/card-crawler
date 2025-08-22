@@ -23,6 +23,6 @@ class CombatEffect {
     type: CombatEffectType.onUse,
     trigger: (data) {
       //do something
-    }
+    },
   );
 }
