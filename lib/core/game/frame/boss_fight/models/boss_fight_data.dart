@@ -5,6 +5,7 @@ class BossFightData {
     List<GameCard>? deck,
     List<GameCard>? bossActions,
     List<GameCard?>? fieldCards,
+    List<GameCard>? equipmentCards,
     this.playerPickedCard,
     this.bossPickedCard,
     this.playerHealth = 40,
@@ -15,6 +16,7 @@ class BossFightData {
     this.metallica = 0,
     this.singularity = 0,
     this.eldritchContract = 0,
+    this.pandorasBox = 3,
     this.playerAttackMultiplier = 1,
     this.playerDefenseMultiplier = 1,
     this.playerHealingMultiplier = 1,
@@ -40,11 +42,13 @@ class BossFightData {
     this.deck = deck ?? List.empty(growable: true);
     this.bossActions = bossActions ?? List.empty(growable: true);
     this.fieldCards = fieldCards ?? List.filled(4, null);
+    this.equipmentCards = equipmentCards ?? List.empty(growable: true);
   }
 
   List<GameCard> deck = List.empty(growable: true);
   List<GameCard> bossActions = List.empty(growable: true);
   List<GameCard?> fieldCards = List.filled(4, null);
+  List<GameCard> equipmentCards = List.empty(growable: true);
   GameCard? playerPickedCard;
   GameCard? bossPickedCard;
   int playerHealth;
@@ -57,6 +61,7 @@ class BossFightData {
   int metallica;
   int singularity;
   int eldritchContract;
+  int pandorasBox;
   double playerAttackMultiplier;
   double playerDefenseMultiplier;
   double playerHealingMultiplier;
