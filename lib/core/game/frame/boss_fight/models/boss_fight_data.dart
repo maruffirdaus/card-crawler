@@ -1,11 +1,11 @@
-import '../game_card/base/boss_fight_game_card.dart';
+import '../../core_game/game_card/base/game_card.dart';
 
 class BossFightData {
   BossFightData({
-    List<BossFightGameCard>? deck,
-    List<BossFightGameCard>? bossActions,
-    List<BossFightGameCard?>? fieldCards,
-    List<BossFightGameCard>? equipmentCards,
+    List<GameCard>? deck,
+    List<GameCard>? bossActions,
+    List<GameCard?>? fieldCards,
+    List<GameCard>? equipmentCards,
     this.playerPickedCard,
     this.bossPickedCard,
     this.playerHealth = 40,
@@ -45,12 +45,12 @@ class BossFightData {
     this.equipmentCards = equipmentCards ?? List.empty(growable: true);
   }
 
-  List<BossFightGameCard> deck = List.empty(growable: true);
-  List<BossFightGameCard> bossActions = List.empty(growable: true);
-  List<BossFightGameCard?> fieldCards = List.filled(4, null);
-  List<BossFightGameCard> equipmentCards = List.empty(growable: true);
-  BossFightGameCard? playerPickedCard;
-  BossFightGameCard? bossPickedCard;
+  List<GameCard> deck = List.empty(growable: true);
+  List<GameCard> bossActions = List.empty(growable: true);
+  List<GameCard?> fieldCards = List.filled(4, null);
+  List<GameCard> equipmentCards = List.empty(growable: true);
+  GameCard? playerPickedCard;
+  GameCard? bossPickedCard;
   int playerHealth;
   int playerMaxHealth;
   int bossHealth;
@@ -82,11 +82,11 @@ class BossFightData {
   bool gorillaRally;
   bool gorillaTactic;
 
-  int playerDamageCalculator(int damage) {
+  int playerDamageCalculator(int damage){
     return ((damage * playerAttackMultiplier * bossDefenseMultiplier).toInt());
   }
 
-  int bossDamageCalculator(int damage) {
+  int bossDamageCalculator(int damage){
     return ((damage * bossAttackMultiplier * playerDefenseMultiplier).toInt());
   }
 
@@ -99,17 +99,11 @@ class BossFightData {
   }
 
   void increasePlayerHealth(int heal) {
-    playerHealth =
-        (playerHealth + (heal * playerHealingMultiplier).toInt() > 40)
-        ? 40
-        : playerHealth + (heal * playerHealingMultiplier).toInt();
+    playerHealth = (playerHealth + (heal * playerHealingMultiplier).toInt() > 40) ? 40 : playerHealth + (heal * playerHealingMultiplier).toInt();
   }
 
   void increaseBossHealth(int heal) {
-    bossHealth =
-        (bossHealth + (heal * bossHealingMultiplier).toInt() > bossMaxHealth)
-        ? bossMaxHealth
-        : bossHealth + (heal * bossHealingMultiplier).toInt();
+    bossHealth = (bossHealth + (heal * bossHealingMultiplier).toInt() > bossMaxHealth) ? bossMaxHealth : bossHealth + (heal * bossHealingMultiplier).toInt();
   }
 
   void refillFieldCards() {
@@ -120,7 +114,7 @@ class BossFightData {
     }
   }
 
-  void refresh() {
+  void refresh(){
     fieldCards.shuffle();
     for (int i = 0; i < fieldCards.length; i++) {
       fieldCards[i] = null;
@@ -128,3 +122,4 @@ class BossFightData {
     refillFieldCards();
   }
 }
+

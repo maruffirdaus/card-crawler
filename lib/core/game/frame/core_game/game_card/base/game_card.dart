@@ -1,4 +1,4 @@
-import 'game_card_effect.dart';
+import '../../../common/combat_effect/combat_effect.dart';
 
 abstract class GameCard {
   GameCard({
@@ -12,7 +12,7 @@ abstract class GameCard {
 
   int id;
   int value;
-  GameCardEffect effect;
+  CombatEffect effect;
   String icon;
   String iconSmall;
   String sprite;

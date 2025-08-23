@@ -1,5 +1,5 @@
 import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card.dart';
-import 'package:card_crawler/core/game/frame/boss_fight/game_card/boss_action/boss_action_game_card_effect.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/boss_action/boss_action_card_effect.dart';
 
 class BossActionGameCard extends BossFightGameCard {
   BossActionGameCard._({
@@ -16,7 +16,7 @@ class BossActionGameCard extends BossFightGameCard {
 
   static final ba0 = BossActionGameCard._(
     id: 'ba0',
-    effect: BossActionGameCardEffect.slam,
+    effect: BossActionCardEffect.slam,
     sprite: _spritePath('c0.png'),
   );
 }

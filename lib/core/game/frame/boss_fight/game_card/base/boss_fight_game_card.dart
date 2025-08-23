@@ -1,4 +1,4 @@
-import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card_effect.dart';
+import '../../../common/combat_effect/combat_effect.dart';
 
 class BossFightGameCard {
   BossFightGameCard({
@@ -10,7 +10,7 @@ class BossFightGameCard {
   });
 
   String id;
-  BossFightGameCardEffect effect;
+  CombatEffect effect;
   String icon;
   String iconSmall;
   String sprite;

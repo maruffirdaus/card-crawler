@@ -1,5 +1,5 @@
 import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card.dart';
-import 'package:card_crawler/core/game/frame/boss_fight/game_card/player_action/player_action_game_card_effect.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/player_action/player_action_card_effect.dart';
 
 class PlayerActionGameCard extends BossFightGameCard {
   PlayerActionGameCard._({
@@ -16,7 +16,7 @@ class PlayerActionGameCard extends BossFightGameCard {
 
   static final knightlyRending = PlayerActionGameCard._(
     id: 'ba0',
-    effect: PlayerActionGameCardEffect.knightlyRending,
+    effect: PlayerActionCardEffect.knightlyRending,
     sprite: _spritePath('c0.png'),
   );
 }

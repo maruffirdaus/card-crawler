@@ -27,7 +27,7 @@ class CoreGameFrameWidget extends StatefulWidget {
     required this.coreGameFrame,
   });
 
-  final Function(String?) onComplete;
+  final Function(String) onComplete;
   final CoreGameFrame coreGameFrame;
 
   @override
@@ -60,7 +60,9 @@ class _CoreGameFrameWidgetState extends State<CoreGameFrameWidget> {
       value: _provider,
       child: _CoreGameFrameContent(
         onComplete: () {
-          widget.onComplete(widget.coreGameFrame.nextId);
+          widget.coreGameFrame.nextId != null
+              ? widget.onComplete(widget.coreGameFrame.nextId!)
+              : Navigator.of(context).pop();
         },
         onRestart: () {
           _provider.init(

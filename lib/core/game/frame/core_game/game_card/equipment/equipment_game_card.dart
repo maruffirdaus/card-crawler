@@ -17,148 +17,148 @@ class EquipmentGameCard extends GameCard {
 
   static final e0 = EquipmentGameCard._(
     id: 0,
-    value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    value: 5,
+    effect: EquipmentCardEffect.powerBreastplate,
     sprite: _spritePath('e0.png'),
   );
 
   static final e1 = EquipmentGameCard._(
     id: 0,
-    value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    value: 4,
+    effect: EquipmentCardEffect.maximilianPlate,
     sprite: _spritePath('e1.png'),
   );
 
   static final e2 = EquipmentGameCard._(
     id: 0,
-    value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    value: 5,
+    effect: EquipmentCardEffect.jackOfPlate,
     sprite: _spritePath('e2.png'),
   );
 
   static final e3 = EquipmentGameCard._(
     id: 0,
-    value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    value: 6,
+    effect: EquipmentCardEffect.kalkanBreastplate,
     sprite: _spritePath('e3.png'),
   );
 
   static final e4 = EquipmentGameCard._(
     id: 0,
-    value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    value: 8,
+    effect: EquipmentCardEffect.armorOfAchilles,
     sprite: _spritePath('e4.png'),
   );
 
   static final e5 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.celestialAegis,
     sprite: _spritePath('e5.png'),
   );
 
   static final e6 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.sunBlessedAegis,
     sprite: _spritePath('e6.png'),
   );
 
   static final e7 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.stormPlateOfTempest,
     sprite: _spritePath('e7.png'),
   );
 
   static final e8 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.gambeson,
     sprite: _spritePath('e8.png'),
   );
 
   static final e9 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.gambelash,
     sprite: _spritePath('e9.png'),
   );
 
   static final e10 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.hussitePlate,
     sprite: _spritePath('e10.png'),
   );
 
   static final e11 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.spiritForgedMail,
     sprite: _spritePath('e11.png'),
   );
 
   static final e12 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.loricaSegmentata,
     sprite: _spritePath('e12.png'),
   );
 
   static final e13 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.stormBreakerCuirass,
     sprite: _spritePath('e13.png'),
   );
 
   static final e14 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.pectoralArmor,
     sprite: _spritePath('e14.png'),
   );
 
   static final e15 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.lamellarArmor,
     sprite: _spritePath('e15.png'),
   );
 
   static final e16 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.oYoroi,
     sprite: _spritePath('e16.png'),
   );
 
   static final e17 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.verdantBreastplate,
     sprite: _spritePath('e17.png'),
   );
 
   static final e18 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.forestWardenArmor,
     sprite: _spritePath('e18.png'),
   );
 
   static final e19 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.easternGuardianPlate,
     sprite: _spritePath('e19.png'),
   );
 
   static final e20 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentGameCardEffect.spectreBoots,
+    effect: EquipmentCardEffect.rubyWyrmbarkBreastplate,
     sprite: _spritePath('e20.png'),
   );
 

@@ -1,27 +1,18 @@
+// import 'package:card_crawler/core/game/frame/common/game_card/consumable_game_card.dart';
 import 'package:card_crawler/core/game/frame/common/game_stage/game_stage.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_choice.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_frame.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart';
 import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
-import 'package:card_crawler/core/game/frame/core_game/game_card/weapon/weapon_game_card.dart';
 import 'package:card_crawler/core/game/scene/base/game_scene.dart';
 import 'package:flutter/material.dart';
-import '../../../core/game/frame/core_game/game_card/equipment/equipment_game_card.dart';
+import '../core/game/frame/core_game/game_card/equipment/equipment_game_card.dart';
 
-import '../../../core/game/frame/conversation/character/character.dart';
+import '../core/game/frame/conversation/character/character.dart';
 
-class Level3Scene extends StatefulWidget {
-  const Level3Scene({super.key, required this.onComplete});
-
-  final Function() onComplete;
-
-  @override
-  State<Level3Scene> createState() => _Level3SceneState();
-}
-
-class _Level3SceneState extends State<Level3Scene> {
+class Level3Scene extends StatelessWidget {
+  const Level3Scene({super.key});
   final bool victory = true; // or false, depending on result
-
   @override
   Widget build(BuildContext context) {
     return GameScene(
@@ -179,7 +170,7 @@ class _Level3SceneState extends State<Level3Scene> {
           gameStage: GameStage.castle,
         ),
         '2': CoreGameFrame(
-          gameCards: WeaponGameCard.entries,
+          gameCards: EquipmentGameCard.entries,
           gameStage: GameStage.castle,
           nextId: '3',
         ),
@@ -631,7 +622,6 @@ class _Level3SceneState extends State<Level3Scene> {
           gameStage: GameStage.castle,
         ),
       },
-      onComplete: widget.onComplete,
     );
   }
 }

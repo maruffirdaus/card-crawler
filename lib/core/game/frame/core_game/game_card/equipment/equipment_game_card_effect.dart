@@ -1,26 +1,30 @@
 import 'dart:math';
 
-import '../../types/game_card_effect_type.dart';
-import '../base/game_card_effect.dart';
+import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect_type.dart';
+
+import '../../../common/combat_effect/combat_effect.dart';
+import '../../models/core_game_data.dart';
 import '../consumable/consumable_game_card.dart';
 import '../monster/monster_game_card.dart';
 import '../weapon/weapon_game_card.dart';
 
-class EquipmentGameCardEffect extends GameCardEffect {
-  EquipmentGameCardEffect({
+class EquipmentCardEffect extends CombatEffect {
+  EquipmentCardEffect({
     required super.id,
     required super.name,
     required super.description,
     required super.type,
-    required super.trigger,
-  });
+    required Function(CoreGameData) trigger,
+  }) {
+    super.triggerOnCoreGame = trigger;
+  }
 
-  static final powerBreastplate = EquipmentGameCardEffect(
+  static final powerBreastplate = EquipmentCardEffect(
     id: 'power-breastplate',
     name: 'Breastplate of Power',
     description:
         'When fighting with this equipment equipped, the enemy\'s strength will be lowered by 3',
-    type: GameCardEffectType.equipmentCard,
+    type: CombatEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is MonsterGameCard) {
         data.pickedCard?.value -= 3;
@@ -31,12 +35,12 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final healingAmulet = EquipmentGameCardEffect(
-    id: 'healing-amulet',
+  static final maximilianPlate = EquipmentCardEffect(
+    id: 'maximilian-plate',
     name: 'Healing Amulet',
     description:
         'When having this equipment equipped, you will heal 1 point of HP every turn, and you can always heal from potions, but all potions heal are halved',
-    type: GameCardEffectType.equipmentCard,
+    type: CombatEffectType.equipmentCard,
     trigger: (data) {
       data.health += 1;
       if (data.pickedCard is ConsumableGameCard) {
@@ -45,12 +49,12 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final ringOfMending = EquipmentGameCardEffect(
-    id: 'ring-of-mending',
-    name: 'Ring Of Mending',
+  static final jackOfPlate = EquipmentCardEffect(
+    id: 'jack-of-plate',
+    name: 'Jack of Plate',
     description:
         'When having this equipment equipped, your weapon\'s durability will recover by 3 every turn',
-    type: GameCardEffectType.equipmentCard,
+    type: CombatEffectType.equipmentCard,
     trigger: (data) {
       if (data.weaponCard != null) {
         data.durability += 3;
@@ -58,12 +62,12 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final heroCape = EquipmentGameCardEffect(
-    id: 'hero-cape',
-    name: 'Hero\'s Cape',
+  static final kalkanBreastplate = EquipmentCardEffect(
+    id: 'kalkan-breastplate',
+    name: 'Kalkan Breastplate',
     description:
         'When you get a new weapon with this equipment equipped, that weapon\'s strength is increased by 3',
-    type: GameCardEffectType.equipmentCard,
+    type: CombatEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is WeaponGameCard) {
         data.pickedCard?.value += 3;
@@ -71,12 +75,12 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final commanderHelmet = EquipmentGameCardEffect(
-    id: 'commander-helmet',
-    name: 'Commander\'s Helmet',
+  static final armorOfAchilles = EquipmentCardEffect(
+    id: 'armor-of-achilles',
+    name: 'Armor of Achilles',
     description:
         'When having this equipment equipped, there\'s a 30% chance of enemy you fight to lose all their strength before the fight',
-    type: GameCardEffectType.equipmentCard,
+    type: CombatEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is MonsterGameCard) {
         var rng = Random();
@@ -87,20 +91,20 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final spectreBoots = EquipmentGameCardEffect(
-    id: 'spectre-boots',
-    name: 'Spectre Boots',
+  static final celestialAegis = EquipmentCardEffect(
+    id: 'celestial-aegis',
+    name: 'Celestial Aegis',
     description: 'When having this equipment equipped, you can always flee',
-    type: GameCardEffectType.equipmentCard,
+    type: CombatEffectType.equipmentCard,
     trigger: (data) {},
   );
 
-  static final emperorCrown = EquipmentGameCardEffect(
-    id: 'emperor-crown',
-    name: 'Emperor\'s Crown',
+  static final sunBlessedAegis = EquipmentCardEffect(
+    id: 'sunblessed-aegis',
+    name: 'Sunblessed Aegis',
     description:
         'When having this equipment equipped, weapon and consumable you pickup will have +5 value, but monster will have +2 value, this equipment will disappear after 5 use',
-    type: GameCardEffectType.equipmentCard,
+    type: CombatEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is WeaponGameCard ||
           data.pickedCard is ConsumableGameCard) {
@@ -119,4 +123,117 @@ class EquipmentGameCardEffect extends GameCardEffect {
       }
     },
   );
+
+  static final stormPlateOfTempest = EquipmentCardEffect(
+    id: 'storm-plate-of-tempest',
+    name: 'Celestial Aegis',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final gambeson = EquipmentCardEffect(
+    id: 'gambeson',
+    name: 'Gambeson',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final gambelash = EquipmentCardEffect(
+    id: 'gambelash',
+    name: 'Gambelash',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final hussitePlate = EquipmentCardEffect(
+    id: 'hussite-plate',
+    name: 'Hussite Plate',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final spiritForgedMail = EquipmentCardEffect(
+    id: 'spirit-forged-mail',
+    name: 'Spirit Forged Mail',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final stormBreakerCuirass = EquipmentCardEffect(
+    id: 'storm-breaker-cuirass',
+    name: 'Storm breaker Cuirass',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final loricaSegmentata = EquipmentCardEffect(
+    id: 'lorica-segmentata',
+    name: 'Lorica Segmentata',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final pectoralArmor = EquipmentCardEffect(
+    id: 'pectoralArmor',
+    name: 'Pectoral Armor',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final lamellarArmor = EquipmentCardEffect(
+    id: 'lamellar-armor',
+    name: 'Lamellar Armor',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final oYoroi = EquipmentCardEffect(
+    id: 'o-yoroi',
+    name: 'O-Yoroi',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final verdantBreastplate = EquipmentCardEffect(
+    id: 'verdant-breastplate',
+    name: 'Verdant Breastplate',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final forestWardenArmor = EquipmentCardEffect(
+    id: 'forest-warden-armor',
+    name: 'Forestwarden Armor',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final easternGuardianPlate = EquipmentCardEffect(
+    id: 'eastern-guardian-plate',
+    name: 'Eastern Guardian Plate',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final rubyWyrmbarkBreastplate = EquipmentCardEffect(
+    id: 'Ruby-Wyrmbark-Breastplate',
+    name: 'Ruby Wyrmbark Breastplate',
+    description: 'When having this equipment equipped, you can always flee',
+    type: CombatEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
 }
