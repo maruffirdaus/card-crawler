@@ -1,11 +1,11 @@
-import '../../core_game/game_card/base/game_card.dart';
+import '../game_card/base/boss_fight_game_card.dart';
 
 class BossFightData {
   BossFightData({
-    List<GameCard>? deck,
-    List<GameCard>? bossActions,
-    List<GameCard?>? fieldCards,
-    List<GameCard>? equipmentCards,
+    List<BossFightGameCard>? deck,
+    List<BossFightGameCard>? bossActions,
+    List<BossFightGameCard?>? fieldCards,
+    List<BossFightGameCard>? equipmentCards,
     this.playerPickedCard,
     this.bossPickedCard,
     this.playerHealth = 40,
@@ -45,12 +45,12 @@ class BossFightData {
     this.equipmentCards = equipmentCards ?? List.empty(growable: true);
   }
 
-  List<GameCard> deck = List.empty(growable: true);
-  List<GameCard> bossActions = List.empty(growable: true);
-  List<GameCard?> fieldCards = List.filled(4, null);
-  List<GameCard> equipmentCards = List.empty(growable: true);
-  GameCard? playerPickedCard;
-  GameCard? bossPickedCard;
+  List<BossFightGameCard> deck = List.empty(growable: true);
+  List<BossFightGameCard> bossActions = List.empty(growable: true);
+  List<BossFightGameCard?> fieldCards = List.filled(4, null);
+  List<BossFightGameCard> equipmentCards = List.empty(growable: true);
+  BossFightGameCard? playerPickedCard;
+  BossFightGameCard? bossPickedCard;
   int playerHealth;
   int playerMaxHealth;
   int bossHealth;

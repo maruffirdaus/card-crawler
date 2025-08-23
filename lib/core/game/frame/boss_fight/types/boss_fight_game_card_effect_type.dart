@@ -1,1 +1,1 @@
-enum BossFightGameCardEffectType { attack, heal, buff }
+enum BossFightGameCardEffectType { attack, heal, buff, equipmentCard }

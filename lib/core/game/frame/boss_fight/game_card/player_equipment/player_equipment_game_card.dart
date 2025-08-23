@@ -16,7 +16,7 @@ class PlayerEquipmentGameCard extends BossFightGameCard {
 
   static final ba0 = PlayerEquipmentGameCard._(
     id: 'ba0',
-    effect: PlayerEquipmentGameCardEffect.example,
+    effect: PlayerEquipmentGameCardEffect.amethystGauntlet,
     sprite: _spritePath('c0.png'),
   );
 }
