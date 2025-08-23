@@ -14,9 +14,9 @@ class PlayerEquipmentGameCard extends BossFightGameCard {
   static String _spritePath(String fileName) =>
       'assets/card_sprites/player_equipment/$fileName';
 
-  static final ba0 = PlayerEquipmentGameCard._(
-    id: 'ba0',
-    effect: PlayerEquipmentCardEffect.example,
+  static final be0 = PlayerEquipmentGameCard._(
+    id: 'be0',
+    effect: PlayerEquipmentCardEffect.lightArmor,
     sprite: _spritePath('c0.png'),
   );
 }

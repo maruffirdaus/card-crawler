@@ -27,7 +27,7 @@ class BossActionCardEffect extends CombatEffect {
   static final secondWind = BossActionCardEffect(
     id: 'g1',
     name: 'SecondWind',
-    description: 'Heals 5 damage.',
+    description: 'Heals 6 damage.',
     type: CombatEffectType.heal,
     trigger: (data) {
       data.increaseBossHealth((3).toInt());
