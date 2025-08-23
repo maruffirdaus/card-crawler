@@ -16,66 +16,174 @@ class WeaponGameCard extends GameCard {
   static String _spritePath(String fileName) =>
       'assets/card_sprites/weapon/$fileName';
 
-  static final w0 = WeaponGameCard._(
+  static final battleAxe = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponCardEffect.blueStaff,
-    sprite: _spritePath('w0.png'),
-  );
-
-  static final w1 = WeaponGameCard._(
-    id: 1,
-    value: 3,
-    effect: WeaponCardEffect.mirrorBolt,
-    sprite: _spritePath('w1.png'),
-  );
-
-  static final w2 = WeaponGameCard._(
-    id: 2,
-    value: 4,
-    effect: WeaponCardEffect.artemisBow,
-    sprite: _spritePath('w2.png'),
-  );
-
-  static final w3 = WeaponGameCard._(
-    id: 3,
-    value: 5,
-    effect: WeaponCardEffect.tenaciousMallet,
-    sprite: _spritePath('w3.png'),
-  );
-
-  static final w4 = WeaponGameCard._(
-    id: 4,
-    value: 15,
-    effect: WeaponCardEffect.cursedAxe,
-    sprite: _spritePath('w4.png'),
-  );
-
-  static final w5 = WeaponGameCard._(
-    id: 5,
-    value: 7,
-    effect: WeaponCardEffect.ichorSickle,
-    sprite: _spritePath('w5.png'),
-  );
-
-  static final w6 = WeaponGameCard._(
-    id: 6,
-    value: 8,
-    effect: WeaponCardEffect.holyHammer,
-    sprite: _spritePath('w6.png'),
-  );
-
-  static final w7 = WeaponGameCard._(
-    id: 7,
-    value: 9,
-    effect: WeaponCardEffect.warAxe,
-    sprite: _spritePath('w7.png'),
-  );
-
-  static final w8 = WeaponGameCard._(
-    id: 8,
-    value: 10,
     effect: WeaponCardEffect.bloodlustBlade,
-    sprite: _spritePath('w8.png'),
+    sprite: _spritePath('battle_axe.png'),
   );
+
+  static final battleHammer = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('battle_hammer.png'),
+  );
+
+  static final butcherKnife = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('butcher_knife.png'),
+  );
+
+  static final greatsword = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('greatsword.png'),
+  );
+
+  static final greatsword2 = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('greatsword_2.png'),
+  );
+
+  static final katana = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('katana.png'),
+  );
+
+  static final katana2 = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('katana_2.png'),
+  );
+
+  static final knife = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('knife.png'),
+  );
+
+  static final mace = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('mace.png'),
+  );
+
+  static final nunchucks = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('nunchucks.png'),
+  );
+
+  static final rapier = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('rapier.png'),
+  );
+
+  static final rapier2 = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('rapier_2.png'),
+  );
+
+  static final scimitar = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('scimitar.png'),
+  );
+
+  static final scimitar2 = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('scimitar_2.png'),
+  );
+
+  static final scythe = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('scythe.png'),
+  );
+
+  static final sickle = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('sickle.png'),
+  );
+
+  static final spear = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('spear.png'),
+  );
+
+  static final staff = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('staff.png'),
+  );
+
+  static final sword = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('sword.png'),
+  );
+
+  static final sword2 = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('sword_2.png'),
+  );
+
+  static final trident = WeaponGameCard._(
+    id: 0,
+    value: 2,
+    effect: WeaponCardEffect.bloodlustBlade,
+    sprite: _spritePath('trident.png'),
+  );
+
+  static final entries = [
+    battleAxe,
+    battleHammer,
+    butcherKnife,
+    greatsword,
+    greatsword2,
+    katana,
+    katana2,
+    knife,
+    mace,
+    nunchucks,
+    rapier,
+    rapier2,
+    scimitar,
+    scimitar2,
+    scythe,
+    sickle,
+    spear,
+    staff,
+    sword,
+    sword2,
+    trident,
+  ];
 }
