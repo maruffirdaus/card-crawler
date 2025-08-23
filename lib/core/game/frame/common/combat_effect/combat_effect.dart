@@ -10,7 +10,7 @@ class CombatEffect {
     required this.description,
     required this.type,
     this.triggerOnCoreGame,
-    this.triggerOnBossFight
+    this.triggerOnBossFight,
   });
 
   String id;
