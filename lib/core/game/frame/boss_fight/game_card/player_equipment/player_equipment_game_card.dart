@@ -1,5 +1,5 @@
 import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card.dart';
-import 'package:card_crawler/core/game/frame/boss_fight/game_card/player_equipment/player_equipment_card_effect.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/player_equipment/player_equipment_game_card_effect.dart';
 
 class PlayerEquipmentGameCard extends BossFightGameCard {
   PlayerEquipmentGameCard._({
@@ -16,7 +16,7 @@ class PlayerEquipmentGameCard extends BossFightGameCard {
 
   static final ba0 = PlayerEquipmentGameCard._(
     id: 'ba0',
-    effect: PlayerEquipmentCardEffect.example,
+    effect: PlayerEquipmentGameCardEffect.example,
     sprite: _spritePath('c0.png'),
   );
 }

@@ -1,5 +1,5 @@
 import 'package:card_crawler/core/game/frame/base/game_frame.dart';
-import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect.dart';
+import 'package:card_crawler/core/game/frame/common/status_effect/status_effect.dart';
 import 'package:flutter/material.dart';
 
 import '../../../frame/core_game/core_game_frame.dart';
@@ -20,10 +20,10 @@ class GameSceneProvider extends ChangeNotifier {
 
   void nextFrame({
     required String nextId,
-    List<CombatEffect>? nextCombatEffects,
+    List<StatusEffect>? nextStatusEffects,
   }) {
-    if (nextCombatEffects != null && _frames[nextId] is CoreGameFrame) {
-      (_frames[nextId] as CoreGameFrame).addAllCombatEffects(nextCombatEffects);
+    if (nextStatusEffects != null && _frames[nextId] is CoreGameFrame) {
+      (_frames[nextId] as CoreGameFrame).addAllCombatEffects(nextStatusEffects);
     }
     _currentFrameId = nextId;
     notifyListeners();

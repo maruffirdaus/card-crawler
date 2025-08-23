@@ -1,25 +1,21 @@
-import 'package:card_crawler/core/game/frame/core_game/models/core_game_data.dart';
+import '../../types/game_card_effect_type.dart';
+import '../base/game_card_effect.dart';
 
-import '../../../common/combat_effect/combat_effect.dart';
-import '../../../common/combat_effect/combat_effect_type.dart';
-
-class ConsumableCardEffect extends CombatEffect {
-  ConsumableCardEffect({
+class ConsumableGameCardEffect extends GameCardEffect {
+  ConsumableGameCardEffect({
     required super.id,
     required super.name,
     required super.description,
     required super.type,
-    required Function(CoreGameData) trigger,
-  }) {
-    super.triggerOnCoreGame = trigger;
-  }
+    required super.trigger,
+  });
 
-  static final temporalDew = ConsumableCardEffect(
+  static final temporalDew = ConsumableGameCardEffect(
     id: 'temporal-dew',
     name: 'Temporal Dew',
     description:
         'Aside from healing, this potion will restore your durability, and allows you to heal and flee again this turn',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       if (data.weaponCard != null) {
         data.durability = 20;
@@ -28,12 +24,12 @@ class ConsumableCardEffect extends CombatEffect {
     },
   );
 
-  static final titansShroom = ConsumableCardEffect(
+  static final titansShroom = ConsumableGameCardEffect(
     id: 'titan-shrooms',
     name: 'Titan\'s Shrooms',
     description:
         'This Mushroom will increase your weapon\'s strength by 3 points',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       if (data.weaponCard != null) {
         data.weaponCard?.value += 3;
@@ -41,11 +37,11 @@ class ConsumableCardEffect extends CombatEffect {
     },
   );
 
-  static final emeticElixir = ConsumableCardEffect(
+  static final emeticElixir = ConsumableGameCardEffect(
     id: 'emetic-elixir',
     name: 'Emetic Elixir',
     description: 'Discard 3 cards from the deck',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       for (int i = 0; i < 3; i++) {
         if (data.deck.isNotEmpty) {
@@ -55,12 +51,12 @@ class ConsumableCardEffect extends CombatEffect {
     },
   );
 
-  static final bolterPotion = ConsumableCardEffect(
+  static final bolterPotion = ConsumableGameCardEffect(
     id: 'bolter-potion',
     name: 'Bolter Potion',
     description:
         'Return the remaining cards on the field to the bottom of the deck',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       data.dungeonFieldCards.shuffle();
       for (int i = 0; i < data.dungeonFieldCards.length; i++) {
@@ -72,12 +68,12 @@ class ConsumableCardEffect extends CombatEffect {
     },
   );
 
-  static final volatileElixir = ConsumableCardEffect(
+  static final volatileElixir = ConsumableGameCardEffect(
     id: 'volatile-elixir',
     name: 'Volatile Elixir',
     description:
         'Remove every card from the dungeon field, your weapon, and your equipment',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       for (int i = 0; i < data.dungeonFieldCards.length; i++) {
         if (data.dungeonFieldCards[i] != null) {
@@ -95,12 +91,12 @@ class ConsumableCardEffect extends CombatEffect {
     },
   );
 
-  static final bloodthornBrew = ConsumableCardEffect(
+  static final bloodthornBrew = ConsumableGameCardEffect(
     id: 'bloodthorn-brew',
     name: 'Bloodthorn Brew',
     description:
         'Drinking this potion won\'t heal you, in exchange you will set your weapon power to 30 and restore it\'s durability',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       if (data.weaponCard != null) {
         data.weaponCard!.value = 30;
@@ -109,12 +105,12 @@ class ConsumableCardEffect extends CombatEffect {
     },
   );
 
-  static final agedBerries = ConsumableCardEffect(
+  static final agedBerries = ConsumableGameCardEffect(
     id: 'aged-berries',
     name: 'Aged Berries',
     description:
         'These Berries will heal you more for every round you\'ve played',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       data.pickedCard!.value += data.round;
     },

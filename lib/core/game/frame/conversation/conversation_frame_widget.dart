@@ -1,5 +1,5 @@
 import 'package:card_crawler/core/foundation/extensions/build_context_extensions.dart';
-import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect.dart';
+import 'package:card_crawler/core/game/frame/common/status_effect/status_effect.dart';
 import 'package:card_crawler/core/game/frame/conversation/provider/conversation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,7 +13,7 @@ class ConversationFrameWidget extends StatefulWidget {
     required this.conversationFrame,
   });
 
-  final Function(String, List<CombatEffect>?) onComplete;
+  final Function(String?, List<StatusEffect>?) onComplete;
   final ConversationFrame conversationFrame;
 
   @override
@@ -46,7 +46,7 @@ class _ConversationFrameWidgetState extends State<ConversationFrameWidget> {
 class _ConversationFrameContent extends StatelessWidget {
   const _ConversationFrameContent({required this.onComplete});
 
-  final Function(String, List<CombatEffect>?) onComplete;
+  final Function(String?, List<StatusEffect>?) onComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -165,18 +165,15 @@ class _ConversationFrameContent extends StatelessWidget {
                                             if (choice.onSelected != null) {
                                               choice.onSelected!();
                                             }
-                                            if (choice.nextFrameId != null) {
-                                              onComplete(
-                                                choice.nextFrameId!,
-                                                choice.nextCombatEffects,
-                                              );
-                                            } else if (choice.nextUnitId !=
-                                                null) {
+                                            if (choice.nextUnitId != null) {
                                               provider.nextUnit(
                                                 choice.nextUnitId!,
                                               );
                                             } else {
-                                              Navigator.of(context).pop();
+                                              onComplete(
+                                                choice.nextFrameId,
+                                                choice.nextStatusEffects,
+                                              );
                                             }
                                           },
                                           style: TextButton.styleFrom(

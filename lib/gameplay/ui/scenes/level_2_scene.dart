@@ -6,11 +6,13 @@ import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
 import 'package:card_crawler/core/game/scene/base/game_scene.dart';
 import 'package:flutter/material.dart';
 
-import '../core/game/frame/conversation/character/character.dart';
-import '../core/game/frame/core_game/game_card/equipment/equipment_game_card.dart';
+import '../../../core/game/frame/conversation/character/character.dart';
+import '../../../core/game/frame/core_game/game_card/equipment/equipment_game_card.dart';
 
 class Level2Scene extends StatefulWidget {
-  const Level2Scene({super.key});
+  const Level2Scene({super.key, required this.onComplete});
+
+  final Function() onComplete;
 
   @override
   State<Level2Scene> createState() => _Level2SceneState();
@@ -329,6 +331,7 @@ class _Level2SceneState extends State<Level2Scene> {
           gameStage: GameStage.desert,
         ),
       },
+      onComplete: widget.onComplete,
     );
   }
 }

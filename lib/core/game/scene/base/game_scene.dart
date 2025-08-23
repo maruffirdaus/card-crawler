@@ -9,9 +9,10 @@ import '../../frame/conversation/conversation_frame_widget.dart';
 import '../../frame/core_game/core_game_frame.dart';
 
 class GameScene extends StatefulWidget {
-  const GameScene({super.key, required this.frames});
+  const GameScene({super.key, required this.frames, required this.onComplete});
 
   final Map<String, GameFrame> frames;
+  final Function() onComplete;
 
   @override
   State<GameScene> createState() => _GameSceneState();
@@ -37,15 +38,23 @@ class _GameSceneState extends State<GameScene> {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<GameSceneProvider>.value(
       value: _provider,
-      child: GameSceneContent(frames: widget.frames),
+      child: GameSceneContent(
+        frames: widget.frames,
+        onComplete: widget.onComplete,
+      ),
     );
   }
 }
 
 class GameSceneContent extends StatelessWidget {
-  const GameSceneContent({super.key, required this.frames});
+  const GameSceneContent({
+    super.key,
+    required this.frames,
+    required this.onComplete,
+  });
 
   final Map<String, GameFrame> frames;
+  final Function() onComplete;
 
   @override
   Widget build(BuildContext context) {
@@ -55,18 +64,26 @@ class GameSceneContent extends StatelessWidget {
           return CoreGameFrameWidget(
             key: ValueKey(provider.currentFrameId),
             onComplete: (nextFrameId) {
-              provider.nextFrame(nextId: nextFrameId);
+              if (nextFrameId != null) {
+                provider.nextFrame(nextId: nextFrameId);
+              } else {
+                onComplete();
+              }
             },
             coreGameFrame: provider.currentFrame as CoreGameFrame,
           );
         } else if (provider.currentFrame is ConversationFrame) {
           return ConversationFrameWidget(
             key: ValueKey(provider.currentFrameId),
-            onComplete: (nextFrameId, nextCombatEffects) {
-              provider.nextFrame(
-                nextId: nextFrameId,
-                nextCombatEffects: nextCombatEffects,
-              );
+            onComplete: (nextFrameId, nextStatusEffects) {
+              if (nextFrameId != null) {
+                provider.nextFrame(
+                  nextId: nextFrameId,
+                  nextStatusEffects: nextStatusEffects,
+                );
+              } else {
+                onComplete();
+              }
             },
             conversationFrame: provider.currentFrame as ConversationFrame,
           );

@@ -1,17 +1,19 @@
-import 'package:card_crawler/core/game/frame/core_game/game_card/monster/monster_game_card.dart';
 import 'package:card_crawler/core/game/frame/common/game_stage/game_stage.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_choice.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_frame.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart';
 import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/weapon/weapon_game_card.dart';
 import 'package:card_crawler/core/game/scene/base/game_scene.dart';
 import 'package:flutter/material.dart';
 
-import '../core/game/frame/core_game/game_card/consumable/consumable_game_card.dart';
-import '../core/game/frame/conversation/character/character.dart';
+import '../../../core/game/frame/core_game/game_card/consumable/consumable_game_card.dart';
+import '../../../core/game/frame/conversation/character/character.dart';
 
 class Level1Scene extends StatefulWidget {
-  const Level1Scene({super.key});
+  const Level1Scene({super.key, required this.onComplete});
+
+  final Function() onComplete;
 
   @override
   State<Level1Scene> createState() => _Level1SceneState();
@@ -19,6 +21,7 @@ class Level1Scene extends StatefulWidget {
 
 class _Level1SceneState extends State<Level1Scene> {
   bool withLukas = false;
+
   @override
   Widget build(BuildContext context) {
     return GameScene(
@@ -57,7 +60,7 @@ class _Level1SceneState extends State<Level1Scene> {
           gameStage: GameStage.snowyMountainForest,
         ),
         '1': CoreGameFrame(
-          gameCards: MonsterGameCard.entries,
+          gameCards: WeaponGameCard.entries,
           gameStage: GameStage.snowyMountainForest,
           nextId: '2',
         ),
@@ -71,7 +74,7 @@ class _Level1SceneState extends State<Level1Scene> {
                 ConversationChoice(
                   text:
                       'Raise your sword, prepare to strike down your next target',
-                  nextUnitId: '1,1',
+                  nextUnitId: '1.1',
                 ),
                 ConversationChoice(
                   text: 'Hold your ground, analyze the threat first',
@@ -79,12 +82,12 @@ class _Level1SceneState extends State<Level1Scene> {
                 ),
               ],
             ),
-            '1,1': ConversationUnit(
+            '1.1': ConversationUnit(
               character: Character.lukas,
               texts: ['Whoa relax i\'m a friend.'],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '2')],
             ),
-            '1,2': ConversationUnit(
+            '1.2': ConversationUnit(
               character: Character.lukas,
               texts: ['Hey are you okay?'],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '2')],
@@ -353,35 +356,35 @@ class _Level1SceneState extends State<Level1Scene> {
               texts: ['..!!', 'Cole..? how long have you been here?'],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '12')],
             ),
-            '13': ConversationUnit(
+            '12': ConversationUnit(
               character: Character.cole,
               texts: ['So you were looking for the ring too.'],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '13')],
+            ),
+            '13': ConversationUnit(
+              character: Character.lukas,
+              texts: ['What?'],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '14')],
             ),
             '14': ConversationUnit(
-              character: Character.lukas,
-              texts: ['What?'],
-              choices: [ConversationChoice(text: 'Next', nextUnitId: '15')],
-            ),
-            '15': ConversationUnit(
               character: Character.cole,
               texts: [
                 'I heard you talking with the witch just now.',
                 'I was here for the same reason.',
               ],
-              choices: [ConversationChoice(text: 'Next', nextUnitId: '16')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '15')],
             ),
-            '16': ConversationUnit(
+            '15': ConversationUnit(
               character: Character.lukas,
               texts: ['...', 'Well, we\'re quite the pair then aren\'t we?'],
               choices: [
                 ConversationChoice(
                   text: 'Next',
-                  nextUnitId: withLukas ? '17.1' : '17.2',
+                  nextUnitId: withLukas ? '16.1' : '16.2',
                 ),
               ],
             ),
-            '17.1': ConversationUnit(
+            '16.1': ConversationUnit(
               character: Character.lukas,
               texts: [
                 'I wouldn\'t have guessed that you were also looking for the ring.',
@@ -391,9 +394,9 @@ class _Level1SceneState extends State<Level1Scene> {
                 'What do you say if we go at it together again? Surely it would be easier with the both of us right?',
                 'I just need to make one wish with the ring, you can keep it after if you want.',
               ],
-              choices: [ConversationChoice(text: 'Next', nextUnitId: '18')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '17')],
             ),
-            '17.2': ConversationUnit(
+            '16.2': ConversationUnit(
               character: Character.lukas,
               texts: [
                 'I wouldn\'t have guessed that you were also looking for the ring.',
@@ -402,34 +405,35 @@ class _Level1SceneState extends State<Level1Scene> {
                 'I just need to make one wish with the ring, you can keep it after if you want, but please...',
                 'I need to find that ring.',
               ],
-              choices: [ConversationChoice(text: 'Next', nextUnitId: '18')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '17')],
             ),
-            '18': ConversationUnit(
+            '17': ConversationUnit(
               character: Character.cole,
               texts: [
                 '...Sure',
                 'It would be a long and tough journey, I would be a fool to reject any help I can get.',
               ],
-              choices: [ConversationChoice(text: 'Next', nextUnitId: '19')],
+              choices: [ConversationChoice(text: 'Next', nextUnitId: '18')],
             ),
-            '19': ConversationUnit(
+            '18': ConversationUnit(
               character: Character.lukas,
               texts: [
                 'Great! let\'s rest for the night, it\'s probably best to continue in the morning.',
               ],
-              choices: [ConversationChoice(text: 'Rest', nextUnitId: '20')],
+              choices: [ConversationChoice(text: 'Rest', nextUnitId: '19')],
             ),
-            '20': ConversationUnit(
+            '19': ConversationUnit(
               texts: [
                 'After resting for the night, the pair would continue on their journey.',
                 'To the Sunstone Desert, where they will face even more dangers than any they have ever faced before...',
               ],
-              choices: [ConversationChoice(text: 'Rest', nextUnitId: '20')],
+              choices: [ConversationChoice(text: 'Rest')],
             ),
           },
           gameStage: GameStage.snowyMountainForest,
         ),
       },
+      onComplete: widget.onComplete,
     );
   }
 }

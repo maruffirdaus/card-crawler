@@ -1,30 +1,26 @@
 import 'dart:math';
 
-import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect_type.dart';
-
-import '../../../common/combat_effect/combat_effect.dart';
-import '../../models/core_game_data.dart';
+import '../../types/game_card_effect_type.dart';
+import '../base/game_card_effect.dart';
 import '../consumable/consumable_game_card.dart';
 import '../monster/monster_game_card.dart';
 import '../weapon/weapon_game_card.dart';
 
-class EquipmentCardEffect extends CombatEffect {
-  EquipmentCardEffect({
+class EquipmentGameCardEffect extends GameCardEffect {
+  EquipmentGameCardEffect({
     required super.id,
     required super.name,
     required super.description,
     required super.type,
-    required Function(CoreGameData) trigger,
-  }) {
-    super.triggerOnCoreGame = trigger;
-  }
+    required super.trigger,
+  });
 
-  static final powerBreastplate = EquipmentCardEffect(
+  static final powerBreastplate = EquipmentGameCardEffect(
     id: 'power-breastplate',
     name: 'Breastplate of Power',
     description:
         'When fighting with this equipment equipped, the enemy\'s strength will be lowered by 3',
-    type: CombatEffectType.equipmentCard,
+    type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is MonsterGameCard) {
         data.pickedCard?.value -= 3;
@@ -35,12 +31,12 @@ class EquipmentCardEffect extends CombatEffect {
     },
   );
 
-  static final healingAmulet = EquipmentCardEffect(
+  static final healingAmulet = EquipmentGameCardEffect(
     id: 'healing-amulet',
     name: 'Healing Amulet',
     description:
         'When having this equipment equipped, you will heal 1 point of HP every turn, and you can always heal from potions, but all potions heal are halved',
-    type: CombatEffectType.equipmentCard,
+    type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       data.health += 1;
       if (data.pickedCard is ConsumableGameCard) {
@@ -49,12 +45,12 @@ class EquipmentCardEffect extends CombatEffect {
     },
   );
 
-  static final ringOfMending = EquipmentCardEffect(
+  static final ringOfMending = EquipmentGameCardEffect(
     id: 'ring-of-mending',
     name: 'Ring Of Mending',
     description:
         'When having this equipment equipped, your weapon\'s durability will recover by 3 every turn',
-    type: CombatEffectType.equipmentCard,
+    type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.weaponCard != null) {
         data.durability += 3;
@@ -62,12 +58,12 @@ class EquipmentCardEffect extends CombatEffect {
     },
   );
 
-  static final heroCape = EquipmentCardEffect(
+  static final heroCape = EquipmentGameCardEffect(
     id: 'hero-cape',
     name: 'Hero\'s Cape',
     description:
         'When you get a new weapon with this equipment equipped, that weapon\'s strength is increased by 3',
-    type: CombatEffectType.equipmentCard,
+    type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is WeaponGameCard) {
         data.pickedCard?.value += 3;
@@ -75,12 +71,12 @@ class EquipmentCardEffect extends CombatEffect {
     },
   );
 
-  static final commanderHelmet = EquipmentCardEffect(
+  static final commanderHelmet = EquipmentGameCardEffect(
     id: 'commander-helmet',
     name: 'Commander\'s Helmet',
     description:
         'When having this equipment equipped, there\'s a 30% chance of enemy you fight to lose all their strength before the fight',
-    type: CombatEffectType.equipmentCard,
+    type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is MonsterGameCard) {
         var rng = Random();
@@ -91,20 +87,20 @@ class EquipmentCardEffect extends CombatEffect {
     },
   );
 
-  static final spectreBoots = EquipmentCardEffect(
+  static final spectreBoots = EquipmentGameCardEffect(
     id: 'spectre-boots',
     name: 'Spectre Boots',
     description: 'When having this equipment equipped, you can always flee',
-    type: CombatEffectType.equipmentCard,
+    type: GameCardEffectType.equipmentCard,
     trigger: (data) {},
   );
 
-  static final emperorCrown = EquipmentCardEffect(
+  static final emperorCrown = EquipmentGameCardEffect(
     id: 'emperor-crown',
     name: 'Emperor\'s Crown',
     description:
         'When having this equipment equipped, weapon and consumable you pickup will have +5 value, but monster will have +2 value, this equipment will disappear after 5 use',
-    type: CombatEffectType.equipmentCard,
+    type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is WeaponGameCard ||
           data.pickedCard is ConsumableGameCard) {

@@ -77,11 +77,11 @@ class BossFightData {
   bool gorillaRally;
   bool gorillaTactic;
 
-  int playerDamageCalculator(int damage){
+  int playerDamageCalculator(int damage) {
     return ((damage * playerAttackMultiplier * bossDefenseMultiplier).toInt());
   }
 
-  int bossDamageCalculator(int damage){
+  int bossDamageCalculator(int damage) {
     return ((damage * bossAttackMultiplier * playerDefenseMultiplier).toInt());
   }
 
@@ -94,11 +94,17 @@ class BossFightData {
   }
 
   void increasePlayerHealth(int heal) {
-    playerHealth = (playerHealth + (heal * playerHealingMultiplier).toInt() > 40) ? 40 : playerHealth + (heal * playerHealingMultiplier).toInt();
+    playerHealth =
+        (playerHealth + (heal * playerHealingMultiplier).toInt() > 40)
+        ? 40
+        : playerHealth + (heal * playerHealingMultiplier).toInt();
   }
 
   void increaseBossHealth(int heal) {
-    bossHealth = (bossHealth + (heal * bossHealingMultiplier).toInt() > bossMaxHealth) ? bossMaxHealth : bossHealth + (heal * bossHealingMultiplier).toInt();
+    bossHealth =
+        (bossHealth + (heal * bossHealingMultiplier).toInt() > bossMaxHealth)
+        ? bossMaxHealth
+        : bossHealth + (heal * bossHealingMultiplier).toInt();
   }
 
   void refillFieldCards() {
@@ -109,7 +115,7 @@ class BossFightData {
     }
   }
 
-  void refresh(){
+  void refresh() {
     fieldCards.shuffle();
     for (int i = 0; i < fieldCards.length; i++) {
       fieldCards[i] = null;
@@ -117,4 +123,3 @@ class BossFightData {
     refillFieldCards();
   }
 }
-

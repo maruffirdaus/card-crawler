@@ -1,5 +1,5 @@
 import '../base/game_card.dart';
-import 'equipment_card_effect.dart';
+import 'equipment_game_card_effect.dart';
 
 class EquipmentGameCard extends GameCard {
   EquipmentGameCard._({
@@ -18,147 +18,147 @@ class EquipmentGameCard extends GameCard {
   static final e0 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e0.png'),
   );
 
   static final e1 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e1.png'),
   );
 
   static final e2 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e2.png'),
   );
 
   static final e3 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e3.png'),
   );
 
   static final e4 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e4.png'),
   );
 
   static final e5 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e5.png'),
   );
 
   static final e6 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e6.png'),
   );
 
   static final e7 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e7.png'),
   );
 
   static final e8 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e8.png'),
   );
 
   static final e9 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e9.png'),
   );
 
   static final e10 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e10.png'),
   );
 
   static final e11 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e11.png'),
   );
 
   static final e12 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e12.png'),
   );
 
   static final e13 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e13.png'),
   );
 
   static final e14 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e14.png'),
   );
 
   static final e15 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e15.png'),
   );
 
   static final e16 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e16.png'),
   );
 
   static final e17 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e17.png'),
   );
 
   static final e18 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e18.png'),
   );
 
   static final e19 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e19.png'),
   );
 
   static final e20 = EquipmentGameCard._(
     id: 0,
     value: 0,
-    effect: EquipmentCardEffect.spectreBoots,
+    effect: EquipmentGameCardEffect.spectreBoots,
     sprite: _spritePath('e20.png'),
   );
 

@@ -1,69 +1,65 @@
-import 'package:card_crawler/core/game/frame/common/combat_effect/combat_effect_type.dart';
-
-import '../../../common/combat_effect/combat_effect.dart';
-import '../../models/core_game_data.dart';
-import '../equipment/equipment_card_effect.dart';
+import '../../types/game_card_effect_type.dart';
+import '../base/game_card_effect.dart';
+import '../equipment/equipment_game_card_effect.dart';
 import 'monster_game_card.dart';
 
-class MonsterCardEffect extends CombatEffect {
-  MonsterCardEffect({
+class MonsterGameCardEffect extends GameCardEffect {
+  MonsterGameCardEffect({
     required super.id,
     required super.name,
     required super.description,
     required super.type,
-    required Function(CoreGameData) trigger,
-  }) {
-    super.triggerOnCoreGame = trigger;
-  }
+    required super.trigger,
+  });
 
-  static final noEscape = MonsterCardEffect(
+  static final noEscape = MonsterGameCardEffect(
     id: 'no-escape',
     name: 'No Escape',
     description:
         'When this card is on the dungeon field, you can\'t flee until next round.',
-    type: CombatEffectType.onField,
+    type: GameCardEffectType.onField,
     trigger: (data) {
       data.canFlee = false;
     },
   );
 
-  static final scaling = MonsterCardEffect(
+  static final scaling = MonsterGameCardEffect(
     id: 'scaling',
     name: 'Scaling',
     description:
         'This card\'s strength will increase by 1 for every round that have been played.',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       data.buff = data.round;
     },
   );
 
-  static final spiky = MonsterCardEffect(
+  static final spiky = MonsterGameCardEffect(
     id: 'spiky',
     name: 'Spiky',
     description: 'Fighting this monster will lose you 3 health.',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       data.reduceHealth(3);
     },
   );
 
-  static final antiHeal = MonsterCardEffect(
+  static final antiHeal = MonsterGameCardEffect(
     id: 'anti-heal',
     name: 'Anti Heal',
     description:
         'After defeating this enemy, healing potion won\'t heal you until the start of next turn.',
-    type: CombatEffectType.onKill,
+    type: GameCardEffectType.onKill,
     trigger: (data) {
       data.hasHealed = true;
     },
   );
 
-  static final corrosive = MonsterCardEffect(
+  static final corrosive = MonsterGameCardEffect(
     id: 'corrosive',
     name: 'Corrosive',
     description: 'Fighting this monster will lose you 3 durability.',
-    type: CombatEffectType.onKill,
+    type: GameCardEffectType.onKill,
     trigger: (data) {
       data.durability -= 3;
       if (data.durability < 0) {
@@ -72,30 +68,30 @@ class MonsterCardEffect extends CombatEffect {
     },
   );
 
-  static final ally = MonsterCardEffect(
+  static final ally = MonsterGameCardEffect(
     id: 'ally',
     name: 'Ally',
     description:
         'After defeating this enemy, this enemy will act as your weapon.',
-    type: CombatEffectType.onKill,
+    type: GameCardEffectType.onKill,
     trigger: (data) {
       var newWeaponCard = data.graveyardCards.removeLast();
       if (data.weaponCard != null) data.graveyardCards.add(data.weaponCard!);
       data.weaponCard = newWeaponCard;
       data.durability = 20;
       for (var card in data.equipmentCards) {
-        if (card.effect == EquipmentCardEffect.heroCape) {
+        if (card.effect == EquipmentGameCardEffect.heroCape) {
           data.weaponCard?.value += 3;
         }
       }
     },
   );
 
-  static final wrecker = MonsterCardEffect(
+  static final wrecker = MonsterGameCardEffect(
     id: 'wrecker',
     name: 'Wrecker',
     description: 'After defeating this enemy, your weapon will break.',
-    type: CombatEffectType.onKill,
+    type: GameCardEffectType.onKill,
     trigger: (data) {
       if (data.weaponCard != null) {
         data.graveyardCards.add(data.weaponCard!);
@@ -105,34 +101,34 @@ class MonsterCardEffect extends CombatEffect {
     },
   );
 
-  static final sticky = MonsterCardEffect(
+  static final sticky = MonsterGameCardEffect(
     id: 'sticky',
     name: 'Sticky',
     description:
         'Fighting this monster will make you unable to flee for the rest of this turn.',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       data.canFlee = false;
     },
   );
 
-  static final poisonous = MonsterCardEffect(
+  static final poisonous = MonsterGameCardEffect(
     id: 'poisonous',
     name: 'Poisonous',
     description:
         'As long as this card is on a dungeon field, you will take 1 damage each turn.',
-    type: CombatEffectType.onField,
+    type: GameCardEffectType.onField,
     trigger: (data) {
       data.reduceHealth(1);
     },
   );
 
-  static final opportunist = MonsterCardEffect(
+  static final opportunist = MonsterGameCardEffect(
     id: 'opportunist',
     name: 'Opportunist',
     description:
         'This monster will be 5 points stronger if you don\'t have a weapon.',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       if (data.weaponCard == null) {
         data.buff = 5;
@@ -140,11 +136,11 @@ class MonsterCardEffect extends CombatEffect {
     },
   );
 
-  static final mimic = MonsterCardEffect(
+  static final mimic = MonsterGameCardEffect(
     id: 'mimic',
     name: 'Mimic',
     description: 'This monster\'s power will mimic the power of your weapon.',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       if (data.pickedCard != null && data.weaponCard != null) {
         data.pickedCard!.value = data.weaponCard!.value;
@@ -152,23 +148,23 @@ class MonsterCardEffect extends CombatEffect {
     },
   );
 
-  static final aftermath = MonsterCardEffect(
+  static final aftermath = MonsterGameCardEffect(
     id: 'aftermath',
     name: 'Aftermath',
     description:
         'After killing this enemy, you will take 0.5x of this monster\'s power as damage.',
-    type: CombatEffectType.onKill,
+    type: GameCardEffectType.onKill,
     trigger: (data) {
       data.reduceHealth((data.pickedCard!.value / 2).toInt());
     },
   );
 
-  static final vengeful = MonsterCardEffect(
+  static final vengeful = MonsterGameCardEffect(
     id: 'vengeful',
     name: 'Vengeful',
     description:
         'This enemy gains half the power of the last monster you killed.',
-    type: CombatEffectType.onPicked,
+    type: GameCardEffectType.onPicked,
     trigger: (data) {
       try {
         var firstMonster = data.graveyardCards.lastWhere(

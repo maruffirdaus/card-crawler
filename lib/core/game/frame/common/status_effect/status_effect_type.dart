@@ -1,0 +1,1 @@
+enum StatusEffectType { idle }

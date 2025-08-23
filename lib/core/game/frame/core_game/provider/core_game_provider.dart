@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../common/combat_effect/combat_effect_type.dart';
 import '../game_card/consumable/consumable_game_card.dart';
 import '../game_card/base/game_card.dart';
-import '../game_card/equipment/equipment_card_effect.dart';
+import '../game_card/equipment/equipment_game_card_effect.dart';
 import '../game_card/equipment/equipment_game_card.dart';
 import '../game_card/monster/monster_game_card.dart';
 import '../game_card/weapon/weapon_game_card.dart';
@@ -12,8 +11,9 @@ import '../models/core_game_data.dart';
 import '../types/core_game_action.dart';
 import '../types/core_game_state.dart';
 import '../types/core_game_ui_action.dart';
-import '../game_card/consumable/consumable_card_effect.dart';
+import '../game_card/consumable/consumable_game_card_effect.dart';
 import '../game_card/weapon/weapon_card_effect.dart';
+import '../types/game_card_effect_type.dart';
 import '../types/game_card_location.dart';
 
 class CoreGameProvider extends ChangeNotifier {
@@ -58,8 +58,8 @@ class CoreGameProvider extends ChangeNotifier {
     _resetCardWidget();
 
     for (var card in _data.dungeonFieldCards) {
-      if (card != null && card.effect.type == CombatEffectType.onField) {
-        card.effect.triggerOnCoreGame!(_data);
+      if (card != null && card.effect.type == GameCardEffectType.onField) {
+        card.effect.trigger(_data);
         _queueState(CardEffectTriggered(card: card));
       }
     }
@@ -73,7 +73,7 @@ class CoreGameProvider extends ChangeNotifier {
     _resetCardWidget();
 
     for (var card in _data.equipmentCards) {
-      if (card.effect == EquipmentCardEffect.spectreBoots) {
+      if (card.effect == EquipmentGameCardEffect.spectreBoots) {
         _data.canFlee = true;
       }
     }
@@ -85,13 +85,13 @@ class CoreGameProvider extends ChangeNotifier {
           _data.removeCardFromDungeonField(index);
 
           for (var acc in _data.equipmentCards) {
-            if (acc.effect is EquipmentCardEffect) {
-              acc.effect.triggerOnCoreGame!(_data);
+            if (acc.effect is EquipmentGameCardEffect) {
+              acc.effect.trigger(_data);
             }
           }
 
-          if (card.effect.type == CombatEffectType.onPicked) {
-            card.effect.triggerOnCoreGame!(_data);
+          if (card.effect.type == GameCardEffectType.onPicked) {
+            card.effect.trigger(_data);
             _queueState(CardEffectTriggered(card: card));
           }
 
@@ -121,8 +121,8 @@ class CoreGameProvider extends ChangeNotifier {
                 _data.tempBuff = 0;
 
                 if (_data.durability > card.value) {
-                  if (_data.weaponCard?.effect.type == CombatEffectType.onUse) {
-                    _data.weaponCard?.effect.triggerOnCoreGame!(_data);
+                  if (_data.weaponCard?.effect.type == GameCardEffectType.onUse) {
+                    _data.weaponCard?.effect.trigger(_data);
                     _queueState(CardEffectTriggered(card: _data.weaponCard!));
                   }
 
@@ -142,11 +142,11 @@ class CoreGameProvider extends ChangeNotifier {
 
                 _data.weaponCard?.value -= _data.tempBuff;
 
-                if (card.effect.type == CombatEffectType.onKill) {
-                  card.effect.triggerOnCoreGame!(_data);
+                if (card.effect.type == GameCardEffectType.onKill) {
+                  card.effect.trigger(_data);
                   _queueState(CardEffectTriggered(card: card));
                 }
-                if (_data.weaponCard?.effect == WeaponCardEffect.cursedAxe) {
+                if (_data.weaponCard?.effect == WeaponGameCardEffect.cursedAxe) {
                   _data.cursedAxeCounter++;
                   if (_data.cursedAxeCounter % 2 != 0) {
                     _data.durability = 0;
@@ -155,8 +155,8 @@ class CoreGameProvider extends ChangeNotifier {
                   }
                 }
 
-                if (_data.weaponCard?.effect == WeaponCardEffect.artemisBow) {
-                  _data.weaponCard?.effect.triggerOnCoreGame!(_data);
+                if (_data.weaponCard?.effect == WeaponGameCardEffect.artemisBow) {
+                  _data.weaponCard?.effect.trigger(_data);
                 }
               }
             case EquipmentGameCard():
@@ -180,7 +180,7 @@ class CoreGameProvider extends ChangeNotifier {
           _data.buff = 0;
           _data.tempBuff = 0;
 
-          if (_data.pickedCard!.effect == ConsumableCardEffect.temporalDew) {
+          if (_data.pickedCard!.effect == ConsumableGameCardEffect.temporalDew) {
             _data.hasHealed = false;
           }
 
@@ -211,8 +211,8 @@ class CoreGameProvider extends ChangeNotifier {
     }
 
     for (var card in _data.dungeonFieldCards) {
-      if (card != null && card.effect.type == CombatEffectType.onField) {
-        card.effect.triggerOnCoreGame!(_data);
+      if (card != null && card.effect.type == GameCardEffectType.onField) {
+        card.effect.trigger(_data);
         _queueState(CardEffectTriggered(card: card));
       }
     }
