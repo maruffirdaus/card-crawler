@@ -14,9 +14,9 @@ class PlayerActionGameCard extends BossFightGameCard {
   static String _spritePath(String fileName) =>
       'assets/card_sprites/player_action/$fileName';
 
-  static final ba0 = PlayerActionGameCard._(
+  static final knightlyRending = PlayerActionGameCard._(
     id: 'ba0',
-    effect: PlayerActionCardEffect.example,
+    effect: PlayerActionCardEffect.knightlyRending,
     sprite: _spritePath('c0.png'),
   );
 }

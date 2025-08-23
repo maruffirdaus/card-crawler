@@ -20,13 +20,23 @@ class CombatEffect {
   Function(CoreGameData)? triggerOnCoreGame;
   Function(BossFightData)? triggerOnBossFight;
 
-  static final example = CombatEffect(
-    id: 'example',
-    name: 'Example',
-    description: 'Example',
+  static final gorillaBossFight = CombatEffect(
+    id: 'gbf',
+    name: 'Gorilla Boss Fight',
+    description: 'You are fighting the Palemane Gorilla, it will deal 50% more damage when it\'s hp is 10 or lower',
     type: CombatEffectType.onUse,
-    triggerOnCoreGame: (data) {
-      //do something
+    triggerOnBossFight: (data) {
+      if (data.gorillaRally == true && data.bossPickedCard!.effect.type == CombatEffectType.attack){
+        data.bossAttackMultiplier += data.bossAttackMultiplier;
+        data.gorillaRally = false;
+      }
+      if (data.gorillaTactic == true){
+        data.gorillaTactic = false;
+        data.bossBaseDefenseMultiplier = 1;
+      }
+      if (data.bossHealth >= 10){
+        data.bossBaseAttackMultiplier += 0.5;
+      }
     },
   );
 }

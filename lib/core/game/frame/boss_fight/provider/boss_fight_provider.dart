@@ -14,5 +14,11 @@ class BossFightProvider extends ChangeNotifier {
       case Refresh():
         {}
     }
+    if (_data.playerTurnSkip >= 0){
+      _data.playerTurnSkip--;
+    }
+    if (_data.bossTurnSkip >= 0){
+      _data.bossTurnSkip--;
+    }
   }
 }

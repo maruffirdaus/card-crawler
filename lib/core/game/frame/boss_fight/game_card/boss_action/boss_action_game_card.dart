@@ -16,7 +16,7 @@ class BossActionGameCard extends BossFightGameCard {
 
   static final ba0 = BossActionGameCard._(
     id: 'ba0',
-    effect: BossActionCardEffect.example,
+    effect: BossActionCardEffect.slam,
     sprite: _spritePath('c0.png'),
   );
 }
