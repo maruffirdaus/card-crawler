@@ -165,7 +165,7 @@ class EquipmentCardEffect extends CombatEffect {
   );
 
   static final stormBreakerCuirass = EquipmentCardEffect(
-    id: 'storm-breaker-cuirass',
+    id: 'stormbreaker-cuirass',
     name: 'Storm breaker Cuirass',
     description: 'When having this equipment equipped, you can always flee',
     type: CombatEffectType.equipmentCard,
