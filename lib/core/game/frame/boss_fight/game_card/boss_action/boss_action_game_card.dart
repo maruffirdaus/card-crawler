@@ -210,6 +210,15 @@ class BossActionGameCard extends BossFightGameCard {
     sprite: _spritePath('katana_2.png'),
   );
 
+  static final amomongoEnemyEntries = [
+    slam,
+    secondWind,
+    rally,
+    freezingBreath,
+    recklessAttack,
+    intimidationTactic,
+  ];
+
   static final buwayaEnemyEntries = [
     meltingChomp,
     acidBelch,
@@ -218,5 +227,30 @@ class BossActionGameCard extends BossFightGameCard {
     tailSwipe,
     relentlessBites,
     toxicBreath,
+  ];
+
+  static final spiritEnemyEntries = [
+    cursedBells,
+    lifeDrain,
+    phantomAttack,
+    hauntingDreams,
+    poisonousMiasma,
+    bodyPossession,
+    necroticRebirth,
+    ectoplasmSlam,
+  ];
+
+  static final lukasEnemyEntries = [
+    divineSmite,
+    massHealingWard,
+    finishingBlow,
+    angelicRespite,
+    quickAttack,
+    mistyFootwork,
+    enhanceWeapon,
+    soulEater,
+    allOutAttack,
+    cyclone,
+    riposte,
   ];
 }

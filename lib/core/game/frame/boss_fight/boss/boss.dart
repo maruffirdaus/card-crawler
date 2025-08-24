@@ -12,17 +12,17 @@ class Boss {
   );
 
   static final buwayaEnemy = Boss._(
-    health: 45,
+    health: 50,
     sprite: _spritePath('buwaya_enemy.png'),
   );
 
   static final kaperosaEnemy = Boss._(
-    health: 45,
+    health: 55,
     sprite: _spritePath('kaperosa_enemy.png'),
   );
 
   static final lukasEnemy = Boss._(
-    health: 45,
+    health: 60,
     sprite: _spritePath('lukas_enemy.png'),
   );
 }

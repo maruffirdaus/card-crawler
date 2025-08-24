@@ -1,8 +1,15 @@
+import 'package:card_crawler/core/game/frame/boss_fight/boss/boss.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/boss_fight_frame.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/boss_action/boss_action_game_card.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/player_action/player_action_game_card.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/player_equipment/player_equipment_game_card.dart';
 import 'package:card_crawler/core/game/frame/common/game_stage/game_stage.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_choice.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_frame.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart';
 import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/consumable/consumable_game_card.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/monster/monster_game_card.dart';
 import 'package:card_crawler/core/game/frame/core_game/game_card/weapon/weapon_game_card.dart';
 import 'package:card_crawler/core/game/scene/base/ui/game_scene.dart';
 import 'package:flutter/material.dart';
@@ -179,7 +186,12 @@ class _Level3SceneState extends State<Level3Scene> {
           gameStage: GameStage.castle,
         ),
         '2': CoreGameFrame(
-          gameCards: WeaponGameCard.entries,
+          gameCards: [
+            ...WeaponGameCard.entriesCastle,
+            ...EquipmentGameCard.entriesCastle,
+            ...MonsterGameCard.entriesCastle,
+            ...ConsumableGameCard.entriesCastle,
+          ],
           gameStage: GameStage.castle,
           nextId: '3',
         ),
@@ -267,7 +279,12 @@ class _Level3SceneState extends State<Level3Scene> {
           gameStage: GameStage.castle,
         ),
         '4': CoreGameFrame(
-          gameCards: EquipmentGameCard.entriesCastle,
+          gameCards: [
+            ...WeaponGameCard.entriesCastle,
+            ...ConsumableGameCard.entriesCastle,
+            ...MonsterGameCard.entriesCastle,
+            ...EquipmentGameCard.entriesCastle,
+          ],
           gameStage: GameStage.castle,
           nextId: '5',
         ),
@@ -324,9 +341,16 @@ class _Level3SceneState extends State<Level3Scene> {
           },
           gameStage: GameStage.castle,
         ),
-        '6': CoreGameFrame(
+        '6': BossFightFrame(
           //boss stage
-          gameCards: EquipmentGameCard.entriesCastle,
+          boss: Boss.kaperosaEnemy,
+          playerGameCards: [
+            ...PlayerActionGameCard.entries3,
+            ...PlayerEquipmentGameCard.entries3,
+          ],
+          bossGameCards: [
+            ...BossActionGameCard.spiritEnemyEntries,
+          ],
           gameStage: GameStage.castle,
           nextId: '7',
         ), // if win go next, if not retry
@@ -416,9 +440,16 @@ class _Level3SceneState extends State<Level3Scene> {
           },
           gameStage: GameStage.castle,
         ),
-        '8': CoreGameFrame(
+        '8': BossFightFrame(
           // lawan lukas
-          gameCards: EquipmentGameCard.entriesCastle,
+          boss: Boss.lukasEnemy,
+          playerGameCards: [
+            ...PlayerActionGameCard.entries3,
+            ...PlayerEquipmentGameCard.entries3,
+          ],
+          bossGameCards: [
+            ...BossActionGameCard.lukasEnemyEntries,
+          ],
           gameStage: GameStage.castle,
           nextId: victory
               ? '9'

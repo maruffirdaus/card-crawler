@@ -70,7 +70,6 @@ class BossFightProvider extends ChangeNotifier {
     for (var acc in _data.playerEquipmentCards) {
       if (acc.effect.type == BossFightGameCardEffectType.equipmentCard) {
         acc.effect.trigger(_data);
-        _queueState(BossFightGameCardEffectTriggered(card: acc));
       }
     }
     if (!_data.playerSkipped) {
