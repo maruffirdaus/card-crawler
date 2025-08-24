@@ -20,7 +20,7 @@ class WeaponGameCard extends GameCard {
     id: 0,
     value: 5,
     effect: WeaponGameCardEffect.stormSplitter,
-    sprite: _spritePath('storm_splitter.png'),
+    sprite: _spritePath('battle_axe.png'),
   );
 
   static final starForgedHammer = WeaponGameCard._(
