@@ -1,3 +1,8 @@
+import 'package:card_crawler/core/game/frame/core_game/game_card/consumable/consumable_game_card.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/equipment/equipment_game_card.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/monster/monster_game_card.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/weapon/weapon_game_card.dart';
+
 import '../base/game_card_effect_type.dart';
 import '../base/game_card_effect.dart';
 
@@ -114,107 +119,153 @@ class WeaponGameCardEffect extends GameCardEffect {
     id: 'bladed-nunchaku',
     name: 'bladed Nunchaku',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will increase its durability if you choose equipment',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      if(data.pickedCard is EquipmentGameCard){
+        data.durability += 2;
+      }
+    },
   );
 
   static final excalibur = WeaponGameCardEffect(
     id: 'excalibur',
     name: 'Excalibur',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will increase health by 2 after you slay an enemy',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      if(data.pickedCard is MonsterGameCard){
+        data.health += 2;
+      }
+    },
   );
 
   static final espadaLarga = WeaponGameCardEffect(
     id: 'espada-larga',
     name: 'Espada Larga',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'Every turn, this weapon will increase durability',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      data.durability += 1;
+    },
   );
 
   static final shamshir = WeaponGameCardEffect(
     id: 'shamshir',
     name: 'Shamshir',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will give 1 temp buff',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      data.tempBuff = 1;
+    },
   );
 
   static final kris = WeaponGameCardEffect(
     id: 'kris',
     name: 'kris',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will increase health by 2 if u have below 2 health, and increase durability 5 otherwise',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      if(data.health < 10 && data.pickedCard is MonsterGameCard){
+        data.health += 2;
+      }
+      if(data.health >= 10 && data.pickedCard is MonsterGameCard){
+        data.durability += 5;
+      }
+    },
   );
 
   static final deathCrescent = WeaponGameCardEffect(
     id: 'death-crescent',
     name: 'Death’s Crescent',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will add durability by 2 if you take consumables',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      if(data.pickedCard is ConsumableGameCard){
+        data.durability += 2;
+      }
+    },
   );
 
   static final khopesh = WeaponGameCardEffect(
     id: 'khopesh',
     name: 'Khopesh',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will heal for 2 and reduce durability by 1 every turn',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      data.health += 2;
+      data.durability -= 1;
+    },
   );
 
   static final fangOfRiton = WeaponGameCardEffect(
     id: 'fang-of-riton',
     name: 'Fang Of Riton',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will add 3 durability the more you take more equipments',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      if(data.pickedCard is EquipmentGameCard){
+        data.durability += 3;
+      }
+    },
   );
 
   static final shepherdStaff = WeaponGameCardEffect(
     id: 'shepherd-staff',
     name: 'Shepherd Staff',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will add durability by 1 every turn',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      data.durability += 1;
+    },
   );
 
   static final gladius = WeaponGameCardEffect(
     id: 'gladius',
     name: 'Gladius',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will add 5 durability if you have less than 5, but add health by 1 otherwise',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      if(data.durability < 5){
+        data.durability += 3;
+      }
+      if(data.durability >= 5){
+        data.health += 1;
+      }
+    },
   );
 
   static final doomSpire = WeaponGameCardEffect(
     id: 'doom-spire',
     name: 'Doom Spire',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will reduce hp by 1 but add your durability by 3',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      data.health -= 1;
+      data.durability += 3;
+    },
   );
 
   static final poseidonFang = WeaponGameCardEffect(
     id: 'poseidon-fang',
     name: 'Poseidon Fang',
     description:
-        'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will add durability by 2 if you take equipments',
     type: GameCardEffectType.onUse,
-    trigger: (data) {},
+    trigger: (data) {
+      if(data.pickedCard is EquipmentGameCard){
+        data.durability += 2;
+      }
+    },
   );
 }

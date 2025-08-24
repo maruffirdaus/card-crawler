@@ -67,98 +67,98 @@ class WeaponGameCard extends GameCard {
 
   static final stiletto = WeaponGameCard._(
     id: 7,
-    value: 3,
+    value: 5,
     effect: WeaponGameCardEffect.stiletto,
     sprite: _spritePath('knife.png'),
   );
 
   static final morningStar = WeaponGameCard._(
     id: 8,
-    value: 2,
+    value: 5,
     effect: WeaponGameCardEffect.morningStar,
     sprite: _spritePath('mace.png'),
   );
 
   static final bladedNunchaku = WeaponGameCard._(
     id: 9,
-    value: 2,
+    value: 6,
     effect: WeaponGameCardEffect.bladedNunchaku,
     sprite: _spritePath('nunchucks.png'),
   );
 
   static final excalibur = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 4,
     effect: WeaponGameCardEffect.excalibur,
     sprite: _spritePath('rapier.png'),
   );
 
   static final espadaLarga = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 6,
     effect: WeaponGameCardEffect.espadaLarga,
     sprite: _spritePath('rapier_2.png'),
   );
 
   static final shamshir = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 6,
     effect: WeaponGameCardEffect.shamshir,
     sprite: _spritePath('scimitar.png'),
   );
 
   static final kris = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 8,
     effect: WeaponGameCardEffect.kris,
     sprite: _spritePath('scimitar_2.png'),
   );
 
   static final deathCrescent = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 5,
     effect: WeaponGameCardEffect.deathCrescent,
     sprite: _spritePath('scythe.png'),
   );
 
   static final khopesh = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 6,
     effect: WeaponGameCardEffect.khopesh,
     sprite: _spritePath('sickle.png'),
   );
 
   static final fangOfRiton = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 5,
     effect: WeaponGameCardEffect.fangOfRiton,
     sprite: _spritePath('spear.png'),
   );
 
   static final shepherdStaff = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 4,
     effect: WeaponGameCardEffect.shepherdStaff,
     sprite: _spritePath('staff.png'),
   );
 
   static final gladius = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 7,
     effect: WeaponGameCardEffect.gladius,
     sprite: _spritePath('sword.png'),
   );
 
   static final doomSpire = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 6,
     effect: WeaponGameCardEffect.doomSpire,
     sprite: _spritePath('sword_2.png'),
   );
 
   static final poseidonFang = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 5,
     effect: WeaponGameCardEffect.poseidonFang,
     sprite: _spritePath('trident.png'),
   );
