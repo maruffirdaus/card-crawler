@@ -64,6 +64,11 @@ class CoreGameProvider extends ChangeNotifier {
       }
     }
 
+    if (_data.burnCounter > 0) {
+      _data.reduceHealth(1);
+      _data.burnCounter--;
+    }
+
     _triggerPendingState();
 
     notifyListeners();
@@ -73,7 +78,7 @@ class CoreGameProvider extends ChangeNotifier {
     _resetCardWidget();
 
     for (var card in _data.equipmentCards) {
-      if (card.effect == EquipmentGameCardEffect.spectreBoots) {
+      if (card.effect == EquipmentGameCardEffect.celestialAegis) {
         _data.canFlee = true;
       }
     }
@@ -155,7 +160,7 @@ class CoreGameProvider extends ChangeNotifier {
                   }
                 }
 
-                if (_data.weaponCard?.effect == WeaponGameCardEffect.artemisBow) {
+                if (_data.weaponCard?.effect == WeaponGameCardEffect.starForgedHammer) {
                   _data.weaponCard?.effect.trigger(_data);
                 }
               }

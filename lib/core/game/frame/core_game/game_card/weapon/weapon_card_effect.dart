@@ -10,9 +10,9 @@ class WeaponGameCardEffect extends GameCardEffect {
     required super.trigger,
   });
 
-  static final holyHammer = WeaponGameCardEffect(
-    id: 'holy-hammer',
-    name: 'Holy Hammer',
+  static final stormSplitter = WeaponGameCardEffect(
+    id: 'storm-splitter',
+    name: 'Storm Splitter',
     description: 'Fighting an enemy will recover 1 HP',
     type: GameCardEffectType.onUse,
     trigger: (data) {
@@ -20,22 +20,22 @@ class WeaponGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final artemisBow = WeaponGameCardEffect(
-    id: 'artemis-bow',
-    name: 'Artemis\'s Bow',
+  static final starForgedHammer = WeaponGameCardEffect(
+    id: 'starforged-hammer',
+    name: 'Starforged Hammer',
     description:
-        'This weapon\'s durability will always recover to full when used',
+    'This weapon\'s durability will always recover to full when used',
     type: GameCardEffectType.onUse,
     trigger: (data) {
       data.durability = 20;
     },
   );
 
-  static final tenaciousMallet = WeaponGameCardEffect(
-    id: 'tenacious-mallet',
-    name: 'Tenacious Mallet',
+  static final shadowFang = WeaponGameCardEffect(
+    id: 'shadow-fang',
+    name: 'Shadow Fang',
     description:
-        'This weapon will deal more damage the lower it\'s durability is',
+    'This weapon will deal more damage the lower it\'s durability is',
     type: GameCardEffectType.onUse,
     trigger: (data) {
       if (data.durability < 9 && data.durability >= 6) {

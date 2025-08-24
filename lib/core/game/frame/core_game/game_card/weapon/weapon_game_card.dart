@@ -16,24 +16,24 @@ class WeaponGameCard extends GameCard {
   static String _spritePath(String fileName) =>
       'assets/card_sprites/weapon/$fileName';
 
-  static final battleAxe = WeaponGameCard._(
+  static final stormSplitter = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
-    sprite: _spritePath('battle_axe.png'),
+    effect: WeaponGameCardEffect.stormSplitter,
+    sprite: _spritePath('storm_splitter.png'),
   );
 
-  static final battleHammer = WeaponGameCard._(
+  static final starForgedHammer = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.starForgedHammer,
     sprite: _spritePath('battle_hammer.png'),
   );
 
-  static final butcherKnife = WeaponGameCard._(
+  static final shadowFang = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.shadowFang,
     sprite: _spritePath('butcher_knife.png'),
   );
 

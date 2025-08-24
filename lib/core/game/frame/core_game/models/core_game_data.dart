@@ -21,6 +21,7 @@ class CoreGameData {
     this.emperorCounter = 0,
     this.hasHealed = false,
     this.canFlee = true,
+    this.burnCounter = 0,
   }) {
     this.deck = deck ?? List.empty(growable: true);
     this.dungeonFieldCards = dungeonFieldCards ?? List.filled(4, null);
@@ -47,6 +48,7 @@ class CoreGameData {
   int emperorCounter;
   bool hasHealed;
   bool canFlee;
+  int burnCounter;
 
   void removeCardFromDungeonField(int index) {
     dungeonFieldCards[index] = null;
@@ -69,5 +71,9 @@ class CoreGameData {
 
   void reduceHealth(int damage) {
     health = (health <= damage) ? 0 : health - damage;
+  }
+
+  bool hasEquipment(String equipmentId) {
+    return equipmentCards.any((card) => card.id == equipmentId);
   }
 }

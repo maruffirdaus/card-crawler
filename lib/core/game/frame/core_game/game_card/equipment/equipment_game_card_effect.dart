@@ -19,7 +19,7 @@ class EquipmentGameCardEffect extends GameCardEffect {
     id: 'power-breastplate',
     name: 'Breastplate of Power',
     description:
-        'When fighting with this equipment equipped, the enemy\'s strength will be lowered by 3',
+    'When fighting with this equipment equipped, the enemy\'s strength will be lowered by 3',
     type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is MonsterGameCard) {
@@ -31,11 +31,11 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final healingAmulet = EquipmentGameCardEffect(
-    id: 'healing-amulet',
+  static final maximilianPlate = EquipmentGameCardEffect(
+    id: 'maximilian-plate',
     name: 'Healing Amulet',
     description:
-        'When having this equipment equipped, you will heal 1 point of HP every turn, and you can always heal from potions, but all potions heal are halved',
+    'When having this equipment equipped, you will heal 1 point of HP every turn, and you can always heal from potions, but all potions heal are halved',
     type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       data.health += 1;
@@ -45,11 +45,11 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final ringOfMending = EquipmentGameCardEffect(
-    id: 'ring-of-mending',
-    name: 'Ring Of Mending',
+  static final jackOfPlate = EquipmentGameCardEffect(
+    id: 'jack-of-plate',
+    name: 'Jack of Plate',
     description:
-        'When having this equipment equipped, your weapon\'s durability will recover by 3 every turn',
+    'When having this equipment equipped, your weapon\'s durability will recover by 3 every turn',
     type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.weaponCard != null) {
@@ -58,11 +58,11 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final heroCape = EquipmentGameCardEffect(
-    id: 'hero-cape',
-    name: 'Hero\'s Cape',
+  static final kalkanBreastplate = EquipmentGameCardEffect(
+    id: 'kalkan-breastplate',
+    name: 'Kalkan Breastplate',
     description:
-        'When you get a new weapon with this equipment equipped, that weapon\'s strength is increased by 3',
+    'When you get a new weapon with this equipment equipped, that weapon\'s strength is increased by 3',
     type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is WeaponGameCard) {
@@ -71,11 +71,11 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final commanderHelmet = EquipmentGameCardEffect(
-    id: 'commander-helmet',
-    name: 'Commander\'s Helmet',
+  static final armorOfAchilles = EquipmentGameCardEffect(
+    id: 'armor-of-achilles',
+    name: 'Armor of Achilles',
     description:
-        'When having this equipment equipped, there\'s a 30% chance of enemy you fight to lose all their strength before the fight',
+    'When having this equipment equipped, there\'s a 30% chance of enemy you fight to lose all their strength before the fight',
     type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is MonsterGameCard) {
@@ -87,19 +87,19 @@ class EquipmentGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final spectreBoots = EquipmentGameCardEffect(
-    id: 'spectre-boots',
-    name: 'Spectre Boots',
+  static final celestialAegis = EquipmentGameCardEffect(
+    id: 'celestial-aegis',
+    name: 'Celestial Aegis',
     description: 'When having this equipment equipped, you can always flee',
     type: GameCardEffectType.equipmentCard,
     trigger: (data) {},
   );
 
-  static final emperorCrown = EquipmentGameCardEffect(
-    id: 'emperor-crown',
-    name: 'Emperor\'s Crown',
+  static final sunBlessedAegis = EquipmentGameCardEffect(
+    id: 'sunblessed-aegis',
+    name: 'Sunblessed Aegis',
     description:
-        'When having this equipment equipped, weapon and consumable you pickup will have +5 value, but monster will have +2 value, this equipment will disappear after 5 use',
+    'When having this equipment equipped, weapon and consumable you pickup will have +5 value, but monster will have +2 value, this equipment will disappear after 5 use',
     type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is WeaponGameCard ||
@@ -117,6 +117,161 @@ class EquipmentGameCardEffect extends GameCardEffect {
           }
         }
       }
+    },
+  );
+
+  static final stormPlateOfTempest = EquipmentGameCardEffect(
+    id: 'storm-plate-of-tempest',
+    name: 'Celestial Aegis',
+    description: 'When having this equipment equipped, Heal for 2 health every turn',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      data.health += 2;
+    },
+  );
+
+  static final gambeson = EquipmentGameCardEffect(
+    id: 'gambeson',
+    name: 'Gambeson',
+    description: 'When having this equipment equipped, heal for 8 hit points if your current hit points is below 10, otherwise heal 4 hit points',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      if (data.health < 10){
+        data.health += 8;
+      }else{
+        data.health += 4;
+      }
+    },
+  );
+
+  static final gambelash = EquipmentGameCardEffect(
+    id: 'gambelash',
+    name: 'Gambelash',
+    description: 'When having this equipment equipped, reduce weapon durability by 8, but heal 8 health',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      if(data.pickedCard is WeaponGameCard){
+        data.pickedCard?.value -= 8;
+        data.health += 8;
+      }
+    },
+  );
+
+  static final hussitePlate = EquipmentGameCardEffect(
+    id: 'hussite-plate',
+    name: 'Hussite Plate',
+    description: 'When having this equipment equipped, if you take any consumables or weapon, equipment durability will increased by 2',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      if(data.pickedCard is ConsumableGameCard || data.pickedCard is WeaponGameCard){
+        data.durability += 2;
+      }
+    },
+  );
+
+  static final spiritForgedMail = EquipmentGameCardEffect(
+    id: 'spirit-forged-mail',
+    name: 'Spirit Forged Mail',
+    description: 'When having this equipment equipped, you can\'t get poisoned',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) { //cant get poisoned
+    },
+  );
+
+  static final stormBreakerCuirass = EquipmentGameCardEffect(
+    id: 'stormbreaker-cuirass',
+    name: 'Storm breaker Cuirass',
+    description: 'When having this equipment equipped, you can\'t get corrosion',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {}, //cant get corrosion
+  );
+
+  static final loricaSegmentata = EquipmentGameCardEffect(
+    id: 'lorica-segmentata',
+    name: 'Lorica Segmentata',
+    description: 'When having this equipment equipped, you can\'t get burned',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {}, //cant get burned
+  );
+
+  static final pectoralArmor = EquipmentGameCardEffect(
+    id: 'pectoralArmor',
+    name: 'Pectoral Armor',
+    description: 'When having this equipment equipped, if weapon durability is above 5, it will heal for 5 health, otherwise it will increase durability by 3',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      if (data.pickedCard is WeaponGameCard) {
+        final weapon = data.pickedCard as WeaponGameCard;
+        if (weapon.value >= 5) {
+          data.health += 5;
+        } else {
+          data.durability += 5;
+        }
+      }
+    },
+  );
+
+  static final lamellarArmor = EquipmentGameCardEffect(
+    id: 'lamellar-armor',
+    name: 'Lamellar Armor',
+    description: 'When having this equipment equipped, if you take consumables, you will gain 1 more health',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      if(data.pickedCard is ConsumableGameCard){
+        data.health += 1;
+      }
+    },
+  );
+
+  static final oYoroi = EquipmentGameCardEffect(
+    id: 'o-yoroi',
+    name: 'O-Yoroi',
+    description: 'When having this equipment equipped, you reduce health by 2, but increase weapon durability by 10',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      if(data.pickedCard is MonsterGameCard){
+        data.durability += 5;
+        data.health -= 1;
+      }
+    },
+  );
+
+  static final verdantBreastplate = EquipmentGameCardEffect(
+    id: 'verdant-breastplate',
+    name: 'Verdant Breastplate',
+    description: 'When having this equipment equipped, you can always flee',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      data.health += 1;
+    },
+  );
+
+  static final forestWardenArmor = EquipmentGameCardEffect(
+    id: 'forest-warden-armor',
+    name: 'Forestwarden Armor',
+    description: 'When having this equipment equipped, you can always flee',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
+      if (data.health < 5){
+        data.health += 5;
+      }
+    },
+  );
+
+  static final easternGuardianPlate = EquipmentGameCardEffect(
+    id: 'eastern-guardian-plate',
+    name: 'Eastern Guardian Plate',
+    description: 'When having this equipment equipped, the damage you get will be capped to 5 health',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {},
+  );
+
+  static final rubyWyrmbarkBreastplate = EquipmentGameCardEffect(
+    id: 'ruby-wyrmbark-breastplate',
+    name: 'Ruby Wyrmbark Breastplate',
+    description: 'When having this equipment equipped, burn effect heals you for 2 health',
+    type: GameCardEffectType.equipmentCard,
+    trigger: (data) {
     },
   );
 }

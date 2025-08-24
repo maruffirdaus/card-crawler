@@ -80,7 +80,7 @@ class MonsterGameCardEffect extends GameCardEffect {
       data.weaponCard = newWeaponCard;
       data.durability = 20;
       for (var card in data.equipmentCards) {
-        if (card.effect == EquipmentGameCardEffect.heroCape) {
+        if (card.effect == EquipmentGameCardEffect.kalkanBreastplate) {
           data.weaponCard?.value += 3;
         }
       }
@@ -172,6 +172,23 @@ class MonsterGameCardEffect extends GameCardEffect {
         );
         data.buff = (firstMonster.value / 2).toInt();
       } on StateError catch (_, _) {}
+    },
+  );
+
+  static final burn = MonsterGameCardEffect(
+    id: 'burn',
+    name: 'Burn',
+    description:
+    'This enemy will leave burn effect that reduce your hitpoint by 1 for 3 turns',
+    type: GameCardEffectType.onPicked,
+    trigger: (data) {
+      if (data.hasEquipment('lorica-segmentata')) {
+        return; // skip burn
+      }else if(data.hasEquipment('ruby-wyrmbark-breastplate')){
+        data.health += 2;
+      }
+      // Set burn for 3 turns
+      data.burnCounter = 3;
     },
   );
 }
