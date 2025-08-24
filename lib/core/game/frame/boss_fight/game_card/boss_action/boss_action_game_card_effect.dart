@@ -49,7 +49,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     trigger: (data) {
       data.reducePlayerHealth(data.bossDamageCalculator(4));
       data.playerTurnSkip += 2;
-      data.playerSkipped;
+      data.playerSkipped = true;
     },
   );
 
@@ -131,7 +131,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     trigger: (data) {
       data.reducePlayerHealth(data.bossDamageCalculator(5));
       data.playerTurnSkip += 2;
-      data.playerSkipped;
+      data.playerSkipped = true;
     },
   );
 
@@ -199,7 +199,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     type: BossFightGameCardEffectType.buff,
     trigger: (data) {
       data.playerTurnSkip += 3;
-      data.playerSkipped;
+      data.playerSkipped = true;
     },
   );
 
@@ -222,7 +222,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     trigger: (data) {
       data.increaseBossHealth(6);
       data.playerTurnSkip += 2;
-      data.playerSkipped;
+      data.playerSkipped = true;
     },
   );
 
