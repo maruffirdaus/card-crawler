@@ -1,8 +1,15 @@
+import 'package:card_crawler/core/game/frame/boss_fight/boss/boss.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/boss_fight_frame.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/boss_action/boss_action_game_card.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/player_action/player_action_game_card.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/player_equipment/player_equipment_game_card.dart';
 import 'package:card_crawler/core/game/frame/common/game_stage/game_stage.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_choice.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_frame.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart';
 import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/equipment/equipment_game_card.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/monster/monster_game_card.dart';
 import 'package:card_crawler/core/game/frame/core_game/game_card/weapon/weapon_game_card.dart';
 import 'package:card_crawler/core/game/scene/base/ui/game_scene.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +67,12 @@ class _Level1SceneState extends State<Level1Scene> {
           gameStage: GameStage.snowyMountainForest,
         ),
         '1': CoreGameFrame(
-          gameCards: WeaponGameCard.entries,
+          gameCards: [
+            ...WeaponGameCard.entriesSnowy,
+            ...MonsterGameCard.entriesSnowy,
+            ...EquipmentGameCard.entriesSnowy,
+            ...ConsumableGameCard.entriesSnowy,
+          ],
           gameStage: GameStage.snowyMountainForest,
           nextId: '2',
         ),
@@ -223,8 +235,15 @@ class _Level1SceneState extends State<Level1Scene> {
           },
           gameStage: GameStage.snowyMountainForest,
         ),
-        '3': CoreGameFrame(
-          gameCards: ConsumableGameCard.entriesSnowy,
+        '3': BossFightFrame(
+          boss: Boss.amomongoEnemy,
+          playerGameCards: [
+            ...PlayerActionGameCard.entries1,
+            ...PlayerEquipmentGameCard.entries1,
+          ],
+          bossGameCards: [
+            ...BossActionGameCard.amomongoEnemyEntries,
+          ],
           gameStage: GameStage.snowyMountainForest,
           nextId: '4',
         ),

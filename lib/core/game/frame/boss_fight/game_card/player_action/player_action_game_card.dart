@@ -74,6 +74,8 @@ class PlayerActionGameCard extends BossFightGameCard {
     sprite: _spritePath('c5.png'),
   );
 
+  //new cards for boss 2
+
   static final pocketSand = PlayerActionGameCard._(
     id: 'p10',
     effect: PlayerActionGameCardEffect.pocketSand,
@@ -170,7 +172,49 @@ class PlayerActionGameCard extends BossFightGameCard {
     sprite: _spritePath('ba5.png'),
   );
 
-  static final entries = [
+  static final entries1 = [
+    knightlyRending,
+    mistyDodge,
+    fancyFootwork,
+    boneChill,
+    enhanceWeapon,
+    healingPotion,
+    haste,
+    followUp,
+    cyclone,
+    ironskinPotion,
+  ];
+
+  static final entries2 = [
+    knightlyRending,
+    mistyDodge,
+    fancyFootwork,
+    boneChill,
+    enhanceWeapon,
+    healingPotion,
+    haste,
+    followUp,
+    cyclone,
+    ironskinPotion,
+    pocketSand,
+    weaken,
+    allOutAttack,
+    divineSmite,
+    holyPrayers,
+    massHealingWard,
+    everbloom,
+    bloodBlade,
+    darkDetermination,
+    finishingBlow,
+    metallica,
+    singularity,
+    soulEater,
+    eldritchContract,
+    divineInterference,
+    angelicRespite,
+  ];
+
+  static final entries3 = [
     knightlyRending,
     mistyDodge,
     fancyFootwork,
