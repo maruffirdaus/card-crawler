@@ -14,4 +14,14 @@ class BossFightGameCard {
   String icon;
   String iconSmall;
   String sprite;
+
+  BossFightGameCard copy() {
+    return BossFightGameCard(
+      id: id,
+      effect: effect,
+      icon: icon,
+      iconSmall: iconSmall,
+      sprite: sprite,
+    );
+  }
 }

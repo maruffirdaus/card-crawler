@@ -122,7 +122,7 @@ class WeaponGameCardEffect extends GameCardEffect {
         'This weapon will increase its durability if you choose equipment',
     type: GameCardEffectType.onUse,
     trigger: (data) {
-      if(data.pickedCard is EquipmentGameCard){
+      if (data.pickedCard is EquipmentGameCard) {
         data.durability += 2;
       }
     },
@@ -135,7 +135,7 @@ class WeaponGameCardEffect extends GameCardEffect {
         'This weapon will increase health by 2 after you slay an enemy',
     type: GameCardEffectType.onUse,
     trigger: (data) {
-      if(data.pickedCard is MonsterGameCard){
+      if (data.pickedCard is MonsterGameCard) {
         data.health += 2;
       }
     },
@@ -144,8 +144,7 @@ class WeaponGameCardEffect extends GameCardEffect {
   static final espadaLarga = WeaponGameCardEffect(
     id: 'espada-larga',
     name: 'Espada Larga',
-    description:
-        'Every turn, this weapon will increase durability',
+    description: 'Every turn, this weapon will increase durability',
     type: GameCardEffectType.onUse,
     trigger: (data) {
       data.durability += 1;
@@ -155,8 +154,7 @@ class WeaponGameCardEffect extends GameCardEffect {
   static final shamshir = WeaponGameCardEffect(
     id: 'shamshir',
     name: 'Shamshir',
-    description:
-        'This weapon will give 1 temp buff',
+    description: 'This weapon will give 1 temp buff',
     type: GameCardEffectType.onUse,
     trigger: (data) {
       data.tempBuff = 1;
@@ -170,10 +168,10 @@ class WeaponGameCardEffect extends GameCardEffect {
         'This weapon will increase health by 2 if u have below 2 health, and increase durability 5 otherwise',
     type: GameCardEffectType.onUse,
     trigger: (data) {
-      if(data.health < 10 && data.pickedCard is MonsterGameCard){
+      if (data.health < 10 && data.pickedCard is MonsterGameCard) {
         data.health += 2;
       }
-      if(data.health >= 10 && data.pickedCard is MonsterGameCard){
+      if (data.health >= 10 && data.pickedCard is MonsterGameCard) {
         data.durability += 5;
       }
     },
@@ -182,11 +180,10 @@ class WeaponGameCardEffect extends GameCardEffect {
   static final deathCrescent = WeaponGameCardEffect(
     id: 'death-crescent',
     name: 'Death’s Crescent',
-    description:
-        'This weapon will add durability by 2 if you take consumables',
+    description: 'This weapon will add durability by 2 if you take consumables',
     type: GameCardEffectType.onUse,
     trigger: (data) {
-      if(data.pickedCard is ConsumableGameCard){
+      if (data.pickedCard is ConsumableGameCard) {
         data.durability += 2;
       }
     },
@@ -211,7 +208,7 @@ class WeaponGameCardEffect extends GameCardEffect {
         'This weapon will add 3 durability the more you take more equipments',
     type: GameCardEffectType.onUse,
     trigger: (data) {
-      if(data.pickedCard is EquipmentGameCard){
+      if (data.pickedCard is EquipmentGameCard) {
         data.durability += 3;
       }
     },
@@ -220,8 +217,7 @@ class WeaponGameCardEffect extends GameCardEffect {
   static final shepherdStaff = WeaponGameCardEffect(
     id: 'shepherd-staff',
     name: 'Shepherd Staff',
-    description:
-        'This weapon will add durability by 1 every turn',
+    description: 'This weapon will add durability by 1 every turn',
     type: GameCardEffectType.onUse,
     trigger: (data) {
       data.durability += 1;
@@ -235,10 +231,10 @@ class WeaponGameCardEffect extends GameCardEffect {
         'This weapon will add 5 durability if you have less than 5, but add health by 1 otherwise',
     type: GameCardEffectType.onUse,
     trigger: (data) {
-      if(data.durability < 5){
+      if (data.durability < 5) {
         data.durability += 3;
       }
-      if(data.durability >= 5){
+      if (data.durability >= 5) {
         data.health += 1;
       }
     },
@@ -247,8 +243,7 @@ class WeaponGameCardEffect extends GameCardEffect {
   static final doomSpire = WeaponGameCardEffect(
     id: 'doom-spire',
     name: 'Doom Spire',
-    description:
-        'This weapon will reduce hp by 1 but add your durability by 3',
+    description: 'This weapon will reduce hp by 1 but add your durability by 3',
     type: GameCardEffectType.onUse,
     trigger: (data) {
       data.health -= 1;
@@ -259,11 +254,10 @@ class WeaponGameCardEffect extends GameCardEffect {
   static final poseidonFang = WeaponGameCardEffect(
     id: 'poseidon-fang',
     name: 'Poseidon Fang',
-    description:
-        'This weapon will add durability by 2 if you take equipments',
+    description: 'This weapon will add durability by 2 if you take equipments',
     type: GameCardEffectType.onUse,
     trigger: (data) {
-      if(data.pickedCard is EquipmentGameCard){
+      if (data.pickedCard is EquipmentGameCard) {
         data.durability += 2;
       }
     },

@@ -50,8 +50,10 @@ class CoreGameProvider extends ChangeNotifier {
 
     _data =
         data ??
-        (CoreGameData(deck: gameCards.toList()..shuffle())
-          ..refillDungeonFieldCards());
+        (CoreGameData(
+          deck: gameCards.map((gameCard) => gameCard.copy()).toList()
+            ..shuffle(),
+        )..refillDungeonFieldCards());
 
     _gameStage = gameStage;
 

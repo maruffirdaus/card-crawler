@@ -113,7 +113,8 @@ class BossFightData {
 
   void increasePlayerHealth(int heal) {
     playerHealth =
-        (playerHealth + (heal * playerHealingMultiplier).toInt() > playerMaxHealth)
+        (playerHealth + (heal * playerHealingMultiplier).toInt() >
+            playerMaxHealth)
         ? playerMaxHealth
         : playerHealth + (heal * playerHealingMultiplier).toInt();
   }

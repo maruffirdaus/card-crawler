@@ -195,9 +195,7 @@ class _Level2SceneState extends State<Level2Scene> {
             ...PlayerActionGameCard.entries2,
             ...PlayerEquipmentGameCard.entries2,
           ],
-          bossGameCards: [
-            ...BossActionGameCard.buwayaEnemyEntries,
-          ],
+          bossGameCards: [...BossActionGameCard.buwayaEnemyEntries],
           gameStage: GameStage.desert,
           nextId: '4',
         ),

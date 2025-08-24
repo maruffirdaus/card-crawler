@@ -348,9 +348,7 @@ class _Level3SceneState extends State<Level3Scene> {
             ...PlayerActionGameCard.entries3,
             ...PlayerEquipmentGameCard.entries3,
           ],
-          bossGameCards: [
-            ...BossActionGameCard.spiritEnemyEntries,
-          ],
+          bossGameCards: [...BossActionGameCard.spiritEnemyEntries],
           gameStage: GameStage.castle,
           nextId: '7',
         ), // if win go next, if not retry
@@ -447,9 +445,7 @@ class _Level3SceneState extends State<Level3Scene> {
             ...PlayerActionGameCard.entries3,
             ...PlayerEquipmentGameCard.entries3,
           ],
-          bossGameCards: [
-            ...BossActionGameCard.lukasEnemyEntries,
-          ],
+          bossGameCards: [...BossActionGameCard.lukasEnemyEntries],
           gameStage: GameStage.castle,
           nextId: victory
               ? '9'

@@ -241,9 +241,7 @@ class _Level1SceneState extends State<Level1Scene> {
             ...PlayerActionGameCard.entries1,
             ...PlayerEquipmentGameCard.entries1,
           ],
-          bossGameCards: [
-            ...BossActionGameCard.amomongoEnemyEntries,
-          ],
+          bossGameCards: [...BossActionGameCard.amomongoEnemyEntries],
           gameStage: GameStage.snowyMountainForest,
           nextId: '4',
         ),

@@ -53,8 +53,15 @@ class BossFightProvider extends ChangeNotifier {
     _data =
         data ??
         (BossFightData(
-          deck: playerGameCards.toList()..shuffle(),
-          bossActions: bossGameCards.toList()..shuffle(),
+          deck:
+              playerGameCards
+                  .map((gameCard) => gameCard.copy())
+                  .toList()
+                  .toList()
+                ..shuffle(),
+          bossActions:
+              bossGameCards.map((gameCard) => gameCard.copy()).toList().toList()
+                ..shuffle(),
           bossHealth: boss.health,
           bossMaxHealth: boss.health,
         )..refillFieldCards());
