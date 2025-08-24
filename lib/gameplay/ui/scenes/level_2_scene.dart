@@ -113,7 +113,7 @@ class _Level2SceneState extends State<Level2Scene> {
           gameStage: GameStage.desert,
         ),
         '1': CoreGameFrame(
-          gameCards: EquipmentGameCard.entries,
+          gameCards: EquipmentGameCard.entriesDesert,
           gameStage: GameStage.desert,
           nextId: '2',
         ),
@@ -177,7 +177,7 @@ class _Level2SceneState extends State<Level2Scene> {
           gameStage: GameStage.desert,
         ),
         '3': CoreGameFrame(
-          gameCards: EquipmentGameCard.entries,
+          gameCards: EquipmentGameCard.entriesDesert,
           gameStage: GameStage.desert,
           nextId: '4',
         ),

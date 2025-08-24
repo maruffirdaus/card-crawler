@@ -267,7 +267,7 @@ class _Level3SceneState extends State<Level3Scene> {
           gameStage: GameStage.castle,
         ),
         '4': CoreGameFrame(
-          gameCards: EquipmentGameCard.entries,
+          gameCards: EquipmentGameCard.entriesCastle,
           gameStage: GameStage.castle,
           nextId: '5',
         ),
@@ -326,7 +326,7 @@ class _Level3SceneState extends State<Level3Scene> {
         ),
         '6': CoreGameFrame(
           //boss stage
-          gameCards: EquipmentGameCard.entries,
+          gameCards: EquipmentGameCard.entriesCastle,
           gameStage: GameStage.castle,
           nextId: '7',
         ), // if win go next, if not retry
@@ -418,7 +418,7 @@ class _Level3SceneState extends State<Level3Scene> {
         ),
         '8': CoreGameFrame(
           // lawan lukas
-          gameCards: EquipmentGameCard.entries,
+          gameCards: EquipmentGameCard.entriesCastle,
           gameStage: GameStage.castle,
           nextId: victory
               ? '9'
