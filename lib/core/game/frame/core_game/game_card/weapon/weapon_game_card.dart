@@ -164,9 +164,9 @@ class WeaponGameCard extends GameCard {
   );
 
   static final entries = [
-    battleAxe,
-    battleHammer,
-    butcherKnife,
+    stormSplitter,
+    starForgedHammer,
+    shadowFang,
     greatsword,
     greatsword2,
     katana,
