@@ -4,8 +4,10 @@ import 'package:card_crawler/core/game/frame/boss_fight/types/boss_fight_action.
 import 'package:flutter/material.dart';
 
 import '../../common/game_stage/game_stage.dart';
+import '../boss/boss.dart';
 import '../types/boss_fight_game_card_location.dart';
 import '../types/boss_fight_state.dart';
+import '../types/boss_fight_ui_action.dart';
 
 class BossFightProvider extends ChangeNotifier {
   BossFightState _state = Playing();
@@ -21,13 +23,19 @@ class BossFightProvider extends ChangeNotifier {
   late GameStage _gameStage;
   GameStage get gameStage => _gameStage;
 
-  (BossFightGameCardLocation?, int) _cardWithVisibleEffectDescription = (null, -1);
+  (BossFightGameCardLocation?, int) _cardWithVisibleEffectDescription = (
+    null,
+    -1,
+  );
+
   (BossFightGameCardLocation?, int) get cardWithVisibleEffectDescription =>
       _cardWithVisibleEffectDescription;
 
   void init({
     BossFightData? data,
-    required List<BossFightGameCard> gameCards,
+    required Boss boss,
+    required List<BossFightGameCard> playerGameCards,
+    required List<BossFightGameCard> bossGameCards,
     required GameStage gameStage,
   }) {
     _state = Playing();
@@ -35,8 +43,10 @@ class BossFightProvider extends ChangeNotifier {
 
     _data =
         data ??
-            (BossFightData(deck: gameCards.toList()..shuffle())
-              ..refillFieldCards());
+        (BossFightData(
+          deck: playerGameCards.toList()..shuffle(),
+          bossActions: bossGameCards.toList()..shuffle(),
+        )..refillFieldCards());
 
     _gameStage = gameStage;
 
@@ -60,6 +70,26 @@ class BossFightProvider extends ChangeNotifier {
     if (_data.bossTurnSkip >= 0) {
       _data.bossTurnSkip--;
     }
+  }
+
+  void uiAction(BossFightUiAction action) {
+    switch (action) {
+      case TapCard(location: var location, index: var index):
+        {
+          _cardWithVisibleEffectDescription == (location, index)
+              ? _cardWithVisibleEffectDescription = (null, -1)
+              : _cardWithVisibleEffectDescription = (location, index);
+        }
+      case Pause():
+        {
+          _queueState(Paused());
+          _triggerPendingState();
+        }
+      case DismissPopup():
+        _triggerPendingState();
+    }
+
+    notifyListeners();
   }
 
   void _resetCardWidget() {

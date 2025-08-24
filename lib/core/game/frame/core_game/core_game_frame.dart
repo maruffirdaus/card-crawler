@@ -24,7 +24,7 @@ class CoreGameFrame extends GameFrame {
   final List<StatusEffect> statusEffects = List.empty(growable: true);
   final String? nextId;
 
-  void addAllCombatEffects(List<StatusEffect> statusEffects) {
+  void addAllStatusEffects(List<StatusEffect> statusEffects) {
     this.statusEffects.addAll(statusEffects);
   }
 }

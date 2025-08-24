@@ -23,7 +23,7 @@ class GameSceneProvider extends ChangeNotifier {
     List<StatusEffect>? nextStatusEffects,
   }) {
     if (nextStatusEffects != null && _frames[nextId] is CoreGameFrame) {
-      (_frames[nextId] as CoreGameFrame).addAllCombatEffects(nextStatusEffects);
+      (_frames[nextId] as CoreGameFrame).addAllStatusEffects(nextStatusEffects);
     }
     _currentFrameId = nextId;
     notifyListeners();

@@ -164,7 +164,7 @@ class CoreGameProvider extends ChangeNotifier {
                 if (_data.equipmentCards.length < 3) {
                   _data.equipmentCards.add(card);
                 } else {
-                  _queueState(ReplacingEquipmentCard());
+                  _queueState(ReplacingEquipmentGameCard());
                 }
               }
           }

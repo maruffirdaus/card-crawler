@@ -1,24 +1,24 @@
 import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:card_crawler/core/foundation/ui/widgets/popup_scrim.dart';
-import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card.dart';
 import 'package:flutter/material.dart';
 
-import '../../../types/boss_fight_game_card_location.dart';
-import '../boss_fight_game_card_widget.dart';
+import '../../../game_card/base/game_card.dart';
+import '../../../types/game_card_location.dart';
+import '../game_card_widget.dart';
 
-class ReplaceEquipmentCardPopup extends StatelessWidget {
-  const ReplaceEquipmentCardPopup({
+class ReplaceEquipmentGameCardPopup extends StatelessWidget {
+  const ReplaceEquipmentGameCardPopup({
     super.key,
-    required this.playerEquipmentCards,
+    required this.equipmentCards,
     required this.cardWidth,
     required this.onCardTap,
     required this.cardWithVisibleEffectDescription,
   });
 
-  final List<BossFightGameCard> playerEquipmentCards;
+  final List<GameCard> equipmentCards;
   final double cardWidth;
   final Function(int) onCardTap;
-  final (BossFightGameCardLocation?, int) cardWithVisibleEffectDescription;
+  final (GameCardLocation?, int) cardWithVisibleEffectDescription;
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +38,15 @@ class ReplaceEquipmentCardPopup extends StatelessWidget {
           SizedBox(height: 24.0),
           Row(
             mainAxisSize: MainAxisSize.min,
-            children: List.generate(playerEquipmentCards.length, (index) {
+            children: List.generate(equipmentCards.length, (index) {
               final bool isEffectDescriptionVisible =
                   cardWithVisibleEffectDescription ==
-                  (BossFightGameCardLocation.equipments, index);
+                  (GameCardLocation.equipments, index);
 
               return SizedBox(
                 width: cardWidth,
-                child: BossFightGameCardWidget(
-                  card: playerEquipmentCards[index],
+                child: GameCardWidget(
+                  card: equipmentCards[index],
                   onTap: () {
                     onCardTap(index);
                   },

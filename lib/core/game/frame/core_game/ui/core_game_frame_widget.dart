@@ -11,7 +11,7 @@ import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/game_car
 import 'package:card_crawler/core/game/frame/common/ui/widgets/popup/game_finished_popup.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/graveyard_popup.dart';
 import 'package:card_crawler/core/game/frame/common/ui/widgets/popup/pause_menu_popup.dart';
-import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/replace_equipment_card_popup.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/replace_equipment_game_card_popup.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/section/main_section.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/section/side_section.dart';
 import 'package:flutter/material.dart';
@@ -271,7 +271,7 @@ class _CoreGameFrameContent extends StatelessWidget {
                           children: List.generate(3, (index) {
                             final GameCard? card =
                                 index < provider.equipmentCards.length &&
-                                    provider.state is! ReplacingEquipmentCard
+                                    provider.state is! ReplacingEquipmentGameCard
                                 ? provider.equipmentCards[index]
                                 : null;
                             final bool isEffectDescriptionVisible =
@@ -336,8 +336,8 @@ class _CoreGameFrameContent extends StatelessWidget {
                   ),
                 ],
               ),
-              if (provider.state is ReplacingEquipmentCard)
-                ReplaceEquipmentCardPopup(
+              if (provider.state is ReplacingEquipmentGameCard)
+                ReplaceEquipmentGameCardPopup(
                   equipmentCards: provider.equipmentCards,
                   cardWidth: cardWidth,
                   onCardTap: (index) {

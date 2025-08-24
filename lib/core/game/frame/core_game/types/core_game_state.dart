@@ -4,7 +4,7 @@ sealed class CoreGameState {}
 
 class Playing extends CoreGameState {}
 
-class ReplacingEquipmentCard extends CoreGameState {}
+class ReplacingEquipmentGameCard extends CoreGameState {}
 
 class GameCardEffectTriggered extends CoreGameState {
   GameCardEffectTriggered({required this.card});

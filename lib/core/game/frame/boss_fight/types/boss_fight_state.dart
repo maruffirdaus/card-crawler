@@ -4,6 +4,8 @@ sealed class BossFightState {}
 
 class Playing extends BossFightState {}
 
+class ReplacingPlayerEquipmentGameCard extends BossFightState {}
+
 class BossFightGameCardEffectTriggered extends BossFightState {
   BossFightGameCardEffectTriggered({required this.card});
 
