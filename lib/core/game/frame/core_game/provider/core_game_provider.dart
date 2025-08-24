@@ -151,7 +151,7 @@ class CoreGameProvider extends ChangeNotifier {
                   card.effect.trigger(_data);
                   _queueState(GameCardEffectTriggered(card: card));
                 }
-                if (_data.weaponCard?.effect == WeaponGameCardEffect.cursedAxe) {
+                if (_data.weaponCard?.effect == WeaponGameCardEffect.eternalCleaver) {
                   _data.cursedAxeCounter++;
                   if (_data.cursedAxeCounter % 2 != 0) {
                     _data.durability = 0;

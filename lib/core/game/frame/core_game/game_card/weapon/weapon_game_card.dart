@@ -18,148 +18,148 @@ class WeaponGameCard extends GameCard {
 
   static final stormSplitter = WeaponGameCard._(
     id: 0,
-    value: 2,
+    value: 5,
     effect: WeaponGameCardEffect.stormSplitter,
     sprite: _spritePath('storm_splitter.png'),
   );
 
   static final starForgedHammer = WeaponGameCard._(
-    id: 0,
-    value: 2,
+    id: 1,
+    value: 3,
     effect: WeaponGameCardEffect.starForgedHammer,
     sprite: _spritePath('battle_hammer.png'),
   );
 
   static final shadowFang = WeaponGameCard._(
-    id: 0,
-    value: 2,
+    id: 2,
+    value: 7,
     effect: WeaponGameCardEffect.shadowFang,
     sprite: _spritePath('butcher_knife.png'),
   );
 
-  static final greatsword = WeaponGameCard._(
-    id: 0,
-    value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+  static final skullSplitter = WeaponGameCard._(
+    id: 3,
+    value: 6,
+    effect: WeaponGameCardEffect.skullSplitter,
     sprite: _spritePath('greatsword.png'),
   );
 
-  static final greatsword2 = WeaponGameCard._(
-    id: 0,
-    value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+  static final eternalCleaver = WeaponGameCard._(
+    id: 4,
+    value: 5,
+    effect: WeaponGameCardEffect.eternalCleaver,
     sprite: _spritePath('greatsword_2.png'),
   );
 
-  static final katana = WeaponGameCard._(
-    id: 0,
-    value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+  static final yamatsumi = WeaponGameCard._(
+    id: 5,
+    value: 3,
+    effect: WeaponGameCardEffect.yamatsumi,
     sprite: _spritePath('katana.png'),
   );
 
-  static final katana2 = WeaponGameCard._(
-    id: 0,
-    value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+  static final kokuryu = WeaponGameCard._(
+    id: 6,
+    value: 6,
+    effect: WeaponGameCardEffect.kokuryu,
     sprite: _spritePath('katana_2.png'),
   );
 
-  static final knife = WeaponGameCard._(
-    id: 0,
-    value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+  static final stiletto = WeaponGameCard._(
+    id: 7,
+    value: 3,
+    effect: WeaponGameCardEffect.stiletto,
     sprite: _spritePath('knife.png'),
   );
 
-  static final mace = WeaponGameCard._(
-    id: 0,
+  static final morningStar = WeaponGameCard._(
+    id: 8,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.morningStar,
     sprite: _spritePath('mace.png'),
   );
 
-  static final nunchucks = WeaponGameCard._(
-    id: 0,
+  static final bladedNunchaku = WeaponGameCard._(
+    id: 9,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.bladedNunchaku,
     sprite: _spritePath('nunchucks.png'),
   );
 
-  static final rapier = WeaponGameCard._(
+  static final excalibur = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.excalibur,
     sprite: _spritePath('rapier.png'),
   );
 
-  static final rapier2 = WeaponGameCard._(
+  static final espadaLarga = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.espadaLarga,
     sprite: _spritePath('rapier_2.png'),
   );
 
-  static final scimitar = WeaponGameCard._(
+  static final shamshir = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.shamshir,
     sprite: _spritePath('scimitar.png'),
   );
 
-  static final scimitar2 = WeaponGameCard._(
+  static final kris = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.kris,
     sprite: _spritePath('scimitar_2.png'),
   );
 
-  static final scythe = WeaponGameCard._(
+  static final deathCrescent = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.deathCrescent,
     sprite: _spritePath('scythe.png'),
   );
 
-  static final sickle = WeaponGameCard._(
+  static final khopesh = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.khopesh,
     sprite: _spritePath('sickle.png'),
   );
 
-  static final spear = WeaponGameCard._(
+  static final fangOfRiton = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.fangOfRiton,
     sprite: _spritePath('spear.png'),
   );
 
-  static final staff = WeaponGameCard._(
+  static final shepherdStaff = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.shepherdStaff,
     sprite: _spritePath('staff.png'),
   );
 
-  static final sword = WeaponGameCard._(
+  static final gladius = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.gladius,
     sprite: _spritePath('sword.png'),
   );
 
-  static final sword2 = WeaponGameCard._(
+  static final doomSpire = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.doomSpire,
     sprite: _spritePath('sword_2.png'),
   );
 
-  static final trident = WeaponGameCard._(
+  static final poseidonFang = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponGameCardEffect.bloodlustBlade,
+    effect: WeaponGameCardEffect.poseidonFang,
     sprite: _spritePath('trident.png'),
   );
 
@@ -167,23 +167,23 @@ class WeaponGameCard extends GameCard {
     stormSplitter,
     starForgedHammer,
     shadowFang,
-    greatsword,
-    greatsword2,
-    katana,
-    katana2,
-    knife,
-    mace,
-    nunchucks,
-    rapier,
-    rapier2,
-    scimitar,
-    scimitar2,
-    scythe,
-    sickle,
-    spear,
-    staff,
-    sword,
-    sword2,
-    trident,
+    skullSplitter,
+    eternalCleaver,
+    yamatsumi,
+    kokuryu,
+    stiletto,
+    morningStar,
+    bladedNunchaku,
+    excalibur,
+    espadaLarga,
+    shamshir,
+    kris,
+    deathCrescent,
+    khopesh,
+    fangOfRiton,
+    shepherdStaff,
+    gladius,
+    doomSpire,
+    poseidonFang,
   ];
 }

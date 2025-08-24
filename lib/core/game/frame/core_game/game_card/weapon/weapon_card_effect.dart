@@ -46,9 +46,9 @@ class WeaponGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final ichorSickle = WeaponGameCardEffect(
-    id: 'ichor-sickle',
-    name: 'Ichor Sickle',
+  static final skullSplitter = WeaponGameCardEffect(
+    id: 'skull-splitter',
+    name: 'skull-splitter',
     description: 'This weapon will decrease the opponent\'s strength',
     type: GameCardEffectType.onUse,
     trigger: (data) {
@@ -59,18 +59,18 @@ class WeaponGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final cursedAxe = WeaponGameCardEffect(
-    id: 'cursed-axe',
-    name: 'Cursed Axe',
+  static final eternalCleaver = WeaponGameCardEffect(
+    id: 'eternal-cleaver',
+    name: 'Eternal Cleaver',
     description:
         'This weapon\'s durability does not decay, but it needs to recharge after every use',
     type: GameCardEffectType.onUse,
     trigger: (data) {},
   );
 
-  static final bloodlustBlade = WeaponGameCardEffect(
-    id: 'bloodlust-blade',
-    name: 'Bloodlust Blade',
+  static final yamatsumi = WeaponGameCardEffect(
+    id: 'yamatsumi',
+    name: 'Yamatsumi',
     description: 'This weapon will increase in power everytime it\'s used',
     type: GameCardEffectType.onUse,
     trigger: (data) {
@@ -78,9 +78,9 @@ class WeaponGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final blueStaff = WeaponGameCardEffect(
-    id: 'blue-staff',
-    name: 'Blue Staff',
+  static final kokuryu = WeaponGameCardEffect(
+    id: 'kokuryu',
+    name: 'Kokuryu',
     description: 'Every time this weapon is used, discard a card from the deck',
     type: GameCardEffectType.onUse,
     trigger: (data) {
@@ -88,9 +88,9 @@ class WeaponGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final warAxe = WeaponGameCardEffect(
-    id: 'war-axe',
-    name: 'War Axe',
+  static final stiletto = WeaponGameCardEffect(
+    id: 'stiletto',
+    name: 'Stiletto',
     description: 'This weapon gets stronger for every 5 hp lost',
     type: GameCardEffectType.onUse,
     trigger: (data) {
@@ -99,9 +99,9 @@ class WeaponGameCardEffect extends GameCardEffect {
     },
   );
 
-  static final mirrorBolt = WeaponGameCardEffect(
-    id: 'mirror-bolt',
-    name: 'Mirror Bolt',
+  static final morningStar = WeaponGameCardEffect(
+    id: 'morning-star',
+    name: 'Morning Star',
     description:
         'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
@@ -109,4 +109,125 @@ class WeaponGameCardEffect extends GameCardEffect {
       data.weaponCard!.value = data.pickedCard!.value;
     },
   );
+
+  static final bladedNunchaku = WeaponGameCardEffect(
+    id: 'bladed-nunchaku',
+    name: 'bladed Nunchaku',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final excalibur = WeaponGameCardEffect(
+    id: 'excalibur',
+    name: 'Excalibur',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final espadaLarga = WeaponGameCardEffect(
+    id: 'espada-larga',
+    name: 'Espada Larga',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final shamshir = WeaponGameCardEffect(
+    id: 'shamshir',
+    name: 'Shamshir',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final kris = WeaponGameCardEffect(
+    id: 'kris',
+    name: 'kris',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final deathCrescent = WeaponGameCardEffect(
+    id: 'death-crescent',
+    name: 'Death’s Crescent',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final khopesh = WeaponGameCardEffect(
+    id: 'khopesh',
+    name: 'Khopesh',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final fangOfRiton = WeaponGameCardEffect(
+    id: 'fang-of-riton',
+    name: 'Fang Of Riton',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final shepherdStaff = WeaponGameCardEffect(
+    id: 'shepherd-staff',
+    name: 'Shepherd Staff',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final gladius = WeaponGameCardEffect(
+    id: 'gladius',
+    name: 'Gladius',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final doomSpire = WeaponGameCardEffect(
+    id: 'doom-spire',
+    name: 'Doom Spire',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
+  static final poseidonFang = WeaponGameCardEffect(
+    id: 'poseidon-fang',
+    name: 'Poseidon Fang',
+    description:
+    'This weapon will copy the strength of the monster you\'re facing',
+    type: GameCardEffectType.onUse,
+    trigger: (data) {
+    },
+  );
+
 }

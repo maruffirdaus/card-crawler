@@ -223,7 +223,7 @@ class _Level1SceneState extends State<Level1Scene> {
           gameStage: GameStage.snowyMountainForest,
         ),
         '3': CoreGameFrame(
-          gameCards: ConsumableGameCard.entries,
+          gameCards: ConsumableGameCard.entriesSnowy,
           gameStage: GameStage.snowyMountainForest,
           nextId: '4',
         ),
