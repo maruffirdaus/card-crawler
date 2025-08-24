@@ -1,1 +1,1 @@
-enum GameCardLocation { dungeonField, weapon, accessories, graveyard }
+enum GameCardLocation { dungeonField, weapon, equipments, graveyard }

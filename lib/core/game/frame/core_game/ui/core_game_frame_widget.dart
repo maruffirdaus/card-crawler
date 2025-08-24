@@ -8,9 +8,9 @@ import 'package:card_crawler/core/game/frame/core_game/types/game_card_location.
 import 'package:card_crawler/core/game/frame/common/ui/widgets/empty_game_card.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/game_card_widget.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/game_card_effect_triggered_popup.dart';
-import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/game_finished_popup.dart';
+import 'package:card_crawler/core/game/frame/common/ui/widgets/popup/game_finished_popup.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/graveyard_popup.dart';
-import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/pause_menu_popup.dart';
+import 'package:card_crawler/core/game/frame/common/ui/widgets/popup/pause_menu_popup.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/replace_equipment_card_popup.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/section/main_section.dart';
 import 'package:card_crawler/core/game/frame/core_game/ui/widgets/section/side_section.dart';
@@ -270,13 +270,13 @@ class _CoreGameFrameContent extends StatelessWidget {
                         Row(
                           children: List.generate(3, (index) {
                             final GameCard? card =
-                                index < provider.accessoryCards.length &&
+                                index < provider.equipmentCards.length &&
                                     provider.state is! ReplacingEquipmentCard
-                                ? provider.accessoryCards[index]
+                                ? provider.equipmentCards[index]
                                 : null;
                             final bool isEffectDescriptionVisible =
                                 provider.cardWithVisibleEffectDescription ==
-                                (GameCardLocation.accessories, index);
+                                (GameCardLocation.equipments, index);
 
                             return SizedBox(
                               width: cardWidth,
@@ -287,7 +287,7 @@ class _CoreGameFrameContent extends StatelessWidget {
                                         provider.uiAction(
                                           TapCard(
                                             location:
-                                                GameCardLocation.accessories,
+                                                GameCardLocation.equipments,
                                             index: index,
                                           ),
                                         );
@@ -338,24 +338,24 @@ class _CoreGameFrameContent extends StatelessWidget {
               ),
               if (provider.state is ReplacingEquipmentCard)
                 ReplaceEquipmentCardPopup(
-                  accessoryCards: provider.accessoryCards,
+                  equipmentCards: provider.equipmentCards,
                   cardWidth: cardWidth,
                   onCardTap: (index) {
                     final bool isEffectDescriptionVisible =
                         provider.cardWithVisibleEffectDescription ==
-                        (GameCardLocation.accessories, index);
+                        (GameCardLocation.equipments, index);
 
                     if (isEffectDescriptionVisible) {
                       provider.action(
                         ReplaceEquipmentCard(
-                          card: provider.accessoryCards[index],
+                          card: provider.equipmentCards[index],
                           index: index,
                         ),
                       );
                     } else {
                       provider.uiAction(
                         TapCard(
-                          location: GameCardLocation.accessories,
+                          location: GameCardLocation.equipments,
                           index: index,
                         ),
                       );
@@ -364,12 +364,12 @@ class _CoreGameFrameContent extends StatelessWidget {
                   cardWithVisibleEffectDescription:
                       provider.cardWithVisibleEffectDescription,
                 ),
-              if (provider.state is CardEffectTriggered)
+              if (provider.state is GameCardEffectTriggered)
                 GameCardEffectTriggeredPopup(
                   onDismiss: () {
                     provider.uiAction(DismissPopup());
                   },
-                  card: (provider.state as CardEffectTriggered).card,
+                  card: (provider.state as GameCardEffectTriggered).card,
                   cardWidth: cardWidth,
                 ),
               if (provider.state is GraveyardShown)

@@ -1,24 +1,24 @@
 import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:card_crawler/core/foundation/ui/widgets/popup_scrim.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card.dart';
 import 'package:flutter/material.dart';
 
-import '../../../game_card/base/game_card.dart';
-import '../../../types/game_card_location.dart';
-import '../game_card_widget.dart';
+import '../../../types/boss_fight_game_card_location.dart';
+import '../boss_fight_game_card_widget.dart';
 
 class ReplaceEquipmentCardPopup extends StatelessWidget {
   const ReplaceEquipmentCardPopup({
     super.key,
-    required this.equipmentCards,
+    required this.playerEquipmentCards,
     required this.cardWidth,
     required this.onCardTap,
     required this.cardWithVisibleEffectDescription,
   });
 
-  final List<GameCard> equipmentCards;
+  final List<BossFightGameCard> playerEquipmentCards;
   final double cardWidth;
   final Function(int) onCardTap;
-  final (GameCardLocation?, int) cardWithVisibleEffectDescription;
+  final (BossFightGameCardLocation?, int) cardWithVisibleEffectDescription;
 
   @override
   Widget build(BuildContext context) {
@@ -38,15 +38,15 @@ class ReplaceEquipmentCardPopup extends StatelessWidget {
           SizedBox(height: 24.0),
           Row(
             mainAxisSize: MainAxisSize.min,
-            children: List.generate(equipmentCards.length, (index) {
+            children: List.generate(playerEquipmentCards.length, (index) {
               final bool isEffectDescriptionVisible =
                   cardWithVisibleEffectDescription ==
-                  (GameCardLocation.equipments, index);
+                  (BossFightGameCardLocation.equipments, index);
 
               return SizedBox(
                 width: cardWidth,
-                child: GameCardWidget(
-                  card: equipmentCards[index],
+                child: BossFightGameCardWidget(
+                  card: playerEquipmentCards[index],
                   onTap: () {
                     onCardTap(index);
                   },

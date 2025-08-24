@@ -6,8 +6,8 @@ class Playing extends CoreGameState {}
 
 class ReplacingEquipmentCard extends CoreGameState {}
 
-class CardEffectTriggered extends CoreGameState {
-  CardEffectTriggered({required this.card});
+class GameCardEffectTriggered extends CoreGameState {
+  GameCardEffectTriggered({required this.card});
 
   final GameCard card;
 }

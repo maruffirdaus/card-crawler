@@ -26,7 +26,7 @@ class CoreGameProvider extends ChangeNotifier {
   List<GameCard> get deck => _data.deck;
   List<GameCard?> get dungeonFieldCards => _data.dungeonFieldCards;
   GameCard? get weaponCard => _data.weaponCard;
-  List<GameCard> get accessoryCards => _data.equipmentCards;
+  List<GameCard> get equipmentCards => _data.equipmentCards;
   List<GameCard> get graveyardCards => _data.graveyardCards;
   int get round => _data.round;
   int get health => _data.health;
@@ -40,11 +40,11 @@ class CoreGameProvider extends ChangeNotifier {
   (GameCardLocation?, int) get cardWithVisibleEffectDescription =>
       _cardWithVisibleEffectDescription;
 
-  Future<void> init({
+  void init({
     CoreGameData? data,
     required List<GameCard> gameCards,
     required GameStage gameStage,
-  }) async {
+  }) {
     _state = Playing();
     _pendingStates.clear();
 
@@ -60,7 +60,7 @@ class CoreGameProvider extends ChangeNotifier {
     for (var card in _data.dungeonFieldCards) {
       if (card != null && card.effect.type == GameCardEffectType.onField) {
         card.effect.trigger(_data);
-        _queueState(CardEffectTriggered(card: card));
+        _queueState(GameCardEffectTriggered(card: card));
       }
     }
 
@@ -92,7 +92,7 @@ class CoreGameProvider extends ChangeNotifier {
 
           if (card.effect.type == GameCardEffectType.onPicked) {
             card.effect.trigger(_data);
-            _queueState(CardEffectTriggered(card: card));
+            _queueState(GameCardEffectTriggered(card: card));
           }
 
           switch (card) {
@@ -123,7 +123,7 @@ class CoreGameProvider extends ChangeNotifier {
                 if (_data.durability > card.value) {
                   if (_data.weaponCard?.effect.type == GameCardEffectType.onUse) {
                     _data.weaponCard?.effect.trigger(_data);
-                    _queueState(CardEffectTriggered(card: _data.weaponCard!));
+                    _queueState(GameCardEffectTriggered(card: _data.weaponCard!));
                   }
 
                   _data.weaponCard?.value += _data.buff;
@@ -144,7 +144,7 @@ class CoreGameProvider extends ChangeNotifier {
 
                 if (card.effect.type == GameCardEffectType.onKill) {
                   card.effect.trigger(_data);
-                  _queueState(CardEffectTriggered(card: card));
+                  _queueState(GameCardEffectTriggered(card: card));
                 }
                 if (_data.weaponCard?.effect == WeaponGameCardEffect.cursedAxe) {
                   _data.cursedAxeCounter++;
@@ -213,7 +213,7 @@ class CoreGameProvider extends ChangeNotifier {
     for (var card in _data.dungeonFieldCards) {
       if (card != null && card.effect.type == GameCardEffectType.onField) {
         card.effect.trigger(_data);
-        _queueState(CardEffectTriggered(card: card));
+        _queueState(GameCardEffectTriggered(card: card));
       }
     }
 
