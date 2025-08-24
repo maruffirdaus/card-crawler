@@ -63,6 +63,10 @@ class CoreGameProvider extends ChangeNotifier {
         _queueState(CardEffectTriggered(card: card));
       }
     }
+    if (_data.burnCounter > 0) {
+      _data.reduceHealth(1);
+      _data.burnCounter--;
+    }
 
     _triggerPendingState();
 
@@ -155,7 +159,7 @@ class CoreGameProvider extends ChangeNotifier {
                   }
                 }
 
-                if (_data.weaponCard?.effect == WeaponCardEffect.artemisBow) {
+                if (_data.weaponCard?.effect == WeaponCardEffect.starForgedHammer) {
                   _data.weaponCard?.effect.triggerOnCoreGame!(_data);
                 }
               }

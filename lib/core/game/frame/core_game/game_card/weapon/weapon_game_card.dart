@@ -16,49 +16,49 @@ class WeaponGameCard extends GameCard {
   static String _spritePath(String fileName) =>
       'assets/card_sprites/weapon/$fileName';
 
-  static final battleAxe = WeaponGameCard._(
+  static final stormSplitter = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponCardEffect.bloodlustBlade,
-    sprite: _spritePath('battle_axe.png'),
+    effect: WeaponCardEffect.stormSplitter,
+    sprite: _spritePath('storm_splitter.png'),
   );
 
-  static final battleHammer = WeaponGameCard._(
+  static final starForgedHammer = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponCardEffect.bloodlustBlade,
+    effect: WeaponCardEffect.starForgedHammer,
     sprite: _spritePath('battle_hammer.png'),
   );
 
-  static final butcherKnife = WeaponGameCard._(
+  static final w3 = WeaponGameCard._(
     id: 0,
     value: 2,
-    effect: WeaponCardEffect.bloodlustBlade,
+    effect: WeaponCardEffect.shadowFang,
     sprite: _spritePath('butcher_knife.png'),
   );
 
-  static final greatsword = WeaponGameCard._(
+  static final w4 = WeaponGameCard._(
     id: 0,
     value: 2,
     effect: WeaponCardEffect.bloodlustBlade,
     sprite: _spritePath('greatsword.png'),
   );
 
-  static final greatsword2 = WeaponGameCard._(
+  static final w5 = WeaponGameCard._(
     id: 0,
     value: 2,
     effect: WeaponCardEffect.bloodlustBlade,
     sprite: _spritePath('greatsword_2.png'),
   );
 
-  static final katana = WeaponGameCard._(
+  static final w6 = WeaponGameCard._(
     id: 0,
     value: 2,
     effect: WeaponCardEffect.bloodlustBlade,
     sprite: _spritePath('katana.png'),
   );
 
-  static final katana2 = WeaponGameCard._(
+  static final w7 = WeaponGameCard._(
     id: 0,
     value: 2,
     effect: WeaponCardEffect.bloodlustBlade,

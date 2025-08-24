@@ -76,6 +76,9 @@ class MonsterCardEffect extends CombatEffect {
     description: 'Fighting this monster will lose you 3 durability.',
     type: CombatEffectType.onKill,
     trigger: (data) {
+      if (data.hasEquipment('stormbreaker-cuirass')) {
+        return; // skip poison
+      }
       data.durability -= 3;
       if (data.durability < 0) {
         data.durability = 0;
@@ -134,6 +137,9 @@ class MonsterCardEffect extends CombatEffect {
         'As long as this card is on a dungeon field, you will take 1 damage each turn.',
     type: CombatEffectType.onField,
     trigger: (data) {
+      if (data.hasEquipment('spirit-forged-mail')) {
+        return; // skip poison
+      }
       data.reduceHealth(1);
     },
   );
@@ -197,10 +203,13 @@ class MonsterCardEffect extends CombatEffect {
     'This enemy will leave burn effect that reduce your hitpoint by 1 for 3 turns',
     type: CombatEffectType.onPicked,
     trigger: (data) {
-      int count = 3;
-      if (count != 0){
-        data.reduceHealth(1);
+      if (data.hasEquipment('lorica-segmentata')) {
+        return; // skip burn
+      }else if(data.hasEquipment('ruby-wyrmbark-breastplate')){
+        data.health += 2;
       }
+      // Set burn for 3 turns
+      data.burnCounter = 3;
     },
   );
 }

@@ -14,9 +14,9 @@ class WeaponCardEffect extends CombatEffect {
     super.triggerOnCoreGame = trigger;
   }
 
-  static final holyHammer = WeaponCardEffect(
-    id: 'holy-hammer',
-    name: 'Holy Hammer',
+  static final stormSplitter = WeaponCardEffect(
+    id: 'storm-splitter',
+    name: 'Storm Splitter',
     description: 'Fighting an enemy will recover 1 HP',
     type: CombatEffectType.onUse,
     trigger: (data) {
@@ -24,9 +24,9 @@ class WeaponCardEffect extends CombatEffect {
     },
   );
 
-  static final artemisBow = WeaponCardEffect(
-    id: 'artemis-bow',
-    name: 'Artemis\'s Bow',
+  static final starForgedHammer = WeaponCardEffect(
+    id: 'starforged-hammer',
+    name: 'Starforged Hammer',
     description:
         'This weapon\'s durability will always recover to full when used',
     type: CombatEffectType.onUse,
@@ -35,9 +35,9 @@ class WeaponCardEffect extends CombatEffect {
     },
   );
 
-  static final tenaciousMallet = WeaponCardEffect(
-    id: 'tenacious-mallet',
-    name: 'Tenacious Mallet',
+  static final shadowFang = WeaponCardEffect(
+    id: 'shadow-fang',
+    name: 'Shadow Fang',
     description:
         'This weapon will deal more damage the lower it\'s durability is',
     type: CombatEffectType.onUse,
