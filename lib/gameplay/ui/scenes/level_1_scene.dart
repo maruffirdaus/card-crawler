@@ -209,8 +209,9 @@ class _Level1SceneState extends State<Level1Scene> {
               texts: [
                 'Before long, the calm breaks—branches snap ahead, and something stirs in the snow once again.',
                 'From the shadow of the pines, something massive lumbers forward. A beast far larger than the ones before.',
-                'It walks on 8 massive legs, fangs reddened with bloods of its victims, you could see scars of it\'s previous battles, spears logged into its hind.',
-                'Seems like it just finished fighting some hunters.',
+                'A giant ape reveals itself, its skin and fur pale white, body built fully on muscle.',
+                'You could see scars of it\'s previous battles, spears lodged into its hind.',
+                'A Palemane Gorilla, an extremely dangerous beast.',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '14')],
             ),

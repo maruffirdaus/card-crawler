@@ -25,7 +25,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   static final mistyDodge = PlayerActionGameCardEffect(
     id: 'p1',
     name: 'Misty Dodge',
-    description: 'Dodges the opponent next move.',
+    description: 'Dodges the opponent next move, making your opponent skips his next move.',
     type: BossFightGameCardEffectType.buff,
     trigger: (data) {
       data.bossActions.removeLast();
@@ -83,6 +83,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
     type: BossFightGameCardEffectType.buff,
     trigger: (data) {
       data.bossTurnSkip += 2;
+      data.bossSkipped = true;
     },
   );
 
@@ -104,7 +105,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   static final cyclone = PlayerActionGameCardEffect(
     id: 'p8',
     name: 'Cyclone',
-    description: 'Deal 6 damage, refreshes your hand.',
+    description: 'Deal 6 damage, renews your hand.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.reduceBossHealth(data.playerDamageCalculator(6));
@@ -134,6 +135,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
     trigger: (data) {
       data.reduceBossHealth(data.playerDamageCalculator(4));
       data.bossTurnSkip += 1;
+      data.bossSkipped = true;
     },
   );
 
@@ -145,7 +147,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
     type: BossFightGameCardEffectType.buff,
     trigger: (data) {
       data.bossBaseAttackMultiplier -= 0.15;
-      data.bossBaseDefenseMultiplier -= 0.15;
+      data.bossBaseDefenseMultiplier += 0.15;
     },
   );
 
@@ -159,6 +161,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
       data.reduceBossHealth(data.playerDamageCalculator(18));
       data.playerTurnSkip += 2;
       data.playerDefenseMultiplier -= 0.5;
+      data.playerSkipped = true;
     },
   );
 
@@ -195,9 +198,9 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   );
 
   static final everbloom = PlayerActionGameCardEffect(
-    id: 'p15',
+    id: 'p16',
     name: 'Everbloom',
-    description: 'Heal yourself for 4 health across 4 turns.',
+    description: 'Heal yourself for 4 health at the end of the turn across 4 turns.',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.everbloom = 4;
@@ -207,7 +210,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   //new moves for boss 3
 
   static final bloodBlade = PlayerActionGameCardEffect(
-    id: 'p16',
+    id: 'p17',
     name: 'Blood Blade',
     description: 'Deal 13 damage to the enemy, take 6 damage to yourself.',
     type: BossFightGameCardEffectType.attack,
@@ -218,7 +221,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   );
 
   static final darkDetermination = PlayerActionGameCardEffect(
-    id: 'p17',
+    id: 'p18',
     name: 'Dark Determination',
     description:
         'You deal 2x more damage, and take 2x more damage until the rest of this fight.',
@@ -230,7 +233,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   );
 
   static final finishingBlow = PlayerActionGameCardEffect(
-    id: 'p18',
+    id: 'p19',
     name: 'Finishing Blow',
     description:
         'Deal half of the enemy\'s missing health, unaffected by multipliers',
@@ -241,7 +244,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   );
 
   static final metallica = PlayerActionGameCardEffect(
-    id: 'p19',
+    id: 'p20',
     name: 'Metallica',
     description:
         'You become invulnerable to damage for 3 turns, but you take 3 damage each of those turn.',
@@ -252,22 +255,23 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   );
 
   static final singularity = PlayerActionGameCardEffect(
-    id: 'p20',
+    id: 'p21',
     name: 'Singularity',
     description:
         'You can take 4 turns in a row, after those 4 turns your character dies.',
     type: BossFightGameCardEffectType.buff,
     trigger: (data) {
       data.singularityOn = true;
-      data.singularity = 3;
+      data.singularity = 4;
+      data.bossTurnSkip += 4;
+      data.bossSkipped;
     },
   );
 
   static final soulEater = PlayerActionGameCardEffect(
-    id: 'p21',
+    id: 'p22',
     name: 'Soul Eater',
-    description:
-        'Deal 8 damage, heal half of the damage done from this attack.',
+    description: 'Deal 8 damage, heal half of the damage done from this attack.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.reduceBossHealth(data.playerDamageCalculator(8));
@@ -276,19 +280,20 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   );
 
   static final eldritchContract = PlayerActionGameCardEffect(
-    id: 'p22',
+    id: 'p23',
     name: 'Eldritch Contract',
     description:
         'Become invulnerable for 6 turns, after those 6 turns your character dies.',
     type: BossFightGameCardEffectType.buff,
     trigger: (data) {
       data.playerBaseDefenseMultiplier = 0;
-      data.eldritchContract = 7;
+      data.eldritchContract = 6;
+      data.eldritchContractOn = true;
     },
   );
 
   static final divineInterference = PlayerActionGameCardEffect(
-    id: 'p23',
+    id: 'p24',
     name: 'Divine Interference',
     description: 'Set your health and max health to 25.',
     type: BossFightGameCardEffectType.heal,
@@ -298,14 +303,15 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
     },
   );
 
-  static final angelicSlumber = PlayerActionGameCardEffect(
-    id: 'p24',
-    name: 'angelicSlumber',
+  static final angelicRespite = PlayerActionGameCardEffect(
+    id: 'p25',
+    name: 'Angelic Respite',
     description: 'Heals you for 18, but skips your next turn.',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.increasePlayerHealth(18);
       data.playerTurnSkip += 2;
+      data.playerSkipped = true;
     },
   );
 }

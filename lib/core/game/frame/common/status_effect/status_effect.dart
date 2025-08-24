@@ -22,7 +22,7 @@ class StatusEffect {
   Function(BossFightData)? triggerOnBossFight;
 
   static final gorillaBossFight = StatusEffect(
-    id: 'gbf',
+    id: 'bf0',
     name: 'Gorilla Boss Fight',
     description:
         'You are fighting the Palemane Gorilla, it will deal 50% more damage when it\'s hp is 10 or lower',
@@ -39,6 +39,32 @@ class StatusEffect {
       }
       if (data.bossHealth >= 10) {
         data.bossBaseAttackMultiplier += 0.5;
+      }
+    },
+  );
+
+  static final alligatorBossFight = StatusEffect(
+    id: 'bf1',
+    name: 'Alligator Boss Fight',
+    description:
+    'You are fighting the Desert Alligator, it increases it\'s attacks the lower your defense is',
+    type: StatusEffectType.idle,
+    triggerOnBossFight: (data) {
+      if (data.playerDefenseMultiplier > 1){
+        data.bossAttackMultiplier += (data.playerDefenseMultiplier - 1) / 2;
+      }
+    },
+  );
+
+  static final spiritBossFight = StatusEffect(
+    id: 'bf2',
+    name: 'Spirit Boss Fight',
+    description:
+    'You are fighting the Spirit of the Mausoleum, it slowly lowers your healing capability.',
+    type: StatusEffectType.idle,
+    triggerOnBossFight: (data) {
+      if (data.playerHealingMultiplier - 0.1 < 0){
+        data.playerHealingMultiplier -= 0.1;
       }
     },
   );

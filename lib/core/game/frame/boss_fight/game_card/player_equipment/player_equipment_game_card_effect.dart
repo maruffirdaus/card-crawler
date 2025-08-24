@@ -13,7 +13,7 @@ class PlayerEquipmentGameCardEffect extends BossFightGameCardEffect {
   static final lightArmor = PlayerEquipmentGameCardEffect(
       id: 'be0',
       name: 'Light Armor',
-      description: 'Deal extra 2 damage everytime you take an extra action.',
+      description: 'Deal 4 damage whenever you take a 3rd or more action before the boss moves.',
       type: BossFightGameCardEffectType.equipmentCard,
       trigger: (data) {
         if (data.bossTurnSkip > 0){
@@ -66,9 +66,9 @@ class PlayerEquipmentGameCardEffect extends BossFightGameCardEffect {
       }
   );
 
-  static final lastLineOfDefense = PlayerEquipmentGameCardEffect(
+  static final superiorArmor = PlayerEquipmentGameCardEffect(
       id: 'be5',
-      name: 'Last Line Of Defense',
+      name: 'Superior Armor',
       description: 'If your turn is skipped, you take 30% less damage.',
       type: BossFightGameCardEffectType.equipmentCard,
       trigger: (data) {
@@ -109,16 +109,16 @@ class PlayerEquipmentGameCardEffect extends BossFightGameCardEffect {
   static final maddeningShelter = PlayerEquipmentGameCardEffect(
       id: 'be8',
       name: 'Maddening Shelter',
-      description: 'You do 25% more damage, but you take 4 damage everytime you\'re not attacking',
+      description: 'You do 25% more damage, but you take 3 damage everytime you\'re not attacking',
       type: BossFightGameCardEffectType.equipmentCard,
       trigger: (data) {
         data.playerAttackMultiplier += 0.25;
         if (!data.playerSkipped){
           if (data.playerPickedCard!.effect.type != BossFightGameCardEffectType.attack){
-            data.reducePlayerHealth(4);
+            data.reducePlayerHealth(3);
           }
         } else {
-          data.reducePlayerHealth(4);
+          data.reducePlayerHealth(3);
         }
       }
   );
@@ -224,9 +224,9 @@ class PlayerEquipmentGameCardEffect extends BossFightGameCardEffect {
           data.increasePlayerHealth(15);
           data.pandorasBox--;
         } else if (data.pandorasBox == 0){
-          for (int i = 0; i < data.equipmentCards.length; i++) {
-            if (data.equipmentCards[i].effect.id == 'be15') {
-              data.equipmentCards.remove(data.equipmentCards[i]);
+          for (int i = 0; i < data.playerEquipmentCards.length; i++) {
+            if (data.playerEquipmentCards[i].effect.id == 'be15') {
+              data.playerEquipmentCards.remove(data.playerEquipmentCards[i]);
             }
           }
         }
@@ -236,10 +236,13 @@ class PlayerEquipmentGameCardEffect extends BossFightGameCardEffect {
   static final monkeysGloves = PlayerEquipmentGameCardEffect(
       id: 'be16',
       name: 'Monkey\'s Gloves',
-      description: 'You are always allowed to refresh your hand.',
+      description: 'When refreshing your hand, deals 5 damage to the opponent.',
       type: BossFightGameCardEffectType.equipmentCard,
       trigger: (data) {
-        data.canRefresh = true;
+        if (data.monkeyPawOn){
+          data.reduceBossHealth(5);
+          data.monkeyPawOn = false;
+        }
       }
   );
 

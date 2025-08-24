@@ -1,4 +1,5 @@
 import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card_effect_type.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/models/boss_fight_data.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/types/boss_fight_action.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class BossFightProvider extends ChangeNotifier {
 
   BossFightData _data = BossFightData();
   List<BossFightGameCard?> get fieldCards => _data.fieldCards;
-  List<BossFightGameCard> get equipmentCards => _data.equipmentCards;
+  List<BossFightGameCard> get playerEquipmentCards => _data.playerEquipmentCards;
   List<BossFightGameCard> get bossActionCards => _data.bossActions;
 
   late GameStage _gameStage;
@@ -56,21 +57,115 @@ class BossFightProvider extends ChangeNotifier {
   }
 
   void action(BossFightAction action) {
-    switch (action) {
-      case SelectCardFromField(card: var card, index: var index):
-        {}
-      case ReplacePlayerEquipmentCard(card: var card, index: var index):
-        {}
-      case Refresh():
-        {}
+    for (var acc in _data.playerEquipmentCards) {
+      if (acc.effect.type == BossFightGameCardEffectType.equipmentCard) {
+        acc.effect.trigger(_data);
+      }
     }
-    if (_data.playerTurnSkip >= 0) {
+    if (!_data.playerSkipped){
+      switch (action) {
+        case SelectCardFromField(card: var card, index: var index):
+          {
+            _data.playerPickedCard = card;
+            _data.removeCardFromField(index);
+            if (card.effect.type == BossFightGameCardEffectType.equipmentCard){
+              if (_data.playerEquipmentCards.length < 3) {
+                _data.playerEquipmentCards.add(card);
+                card.effect.trigger(_data);
+              } else {
+                _queueState(ReplacingPlayerEquipmentGameCard());
+              }
+            } else {
+              card.effect.trigger(_data);
+              _queueState(BossFightGameCardEffectTriggered(card: card));
+            }
+          }
+        case ReplacePlayerEquipmentCard(card: var card, index: var index):
+          {
+            _data.playerEquipmentCards[index] = _data.playerPickedCard!;
+            _queueState(Playing());
+          }
+        case Refresh():
+          {
+            _data.refresh();
+            _data.monkeyPawOn = true;
+          }
+      }
+    } else {
+      _queueState(Paused());
+    }
+    for (var status in _data.playerEquipmentCards) { // NOT EQUIPMENT, CHANGE TO STATUS
+      if (status.effect.type == BossFightGameCardEffectType.equipmentCard) {
+        status.effect.trigger(_data);
+      }
+    }
+    if (!_data.bossSkipped){
+      _data.bossPickedCard = _data.bossActions.removeLast();
+      _data.bossPickedCard!.effect.trigger(_data);
+    }
+
+    if (_data.poison > 0){
+      _data.reducePlayerHealth(4);
+      _data.poison--;
+    }
+
+    if (_data.playerHealth <= 0){
+      _queueState(Finished(isWin: false));
+    } else if (_data.bossHealth <= 0){
+      _queueState(Finished(isWin: true));
+    }
+
+    _data.playerAttackMultiplier = _data.playerBaseAttackMultiplier;
+    _data.playerDefenseMultiplier = _data.playerBaseDefenseMultiplier;
+    _data.playerHealingMultiplier = _data.playerBaseHealingMultiplier;
+    _data.bossAttackMultiplier = _data.bossBaseAttackMultiplier;
+    _data.bossDefenseMultiplier = _data.bossBaseDefenseMultiplier;
+    _data.bossHealingMultiplier = _data.bossBaseHealingMultiplier;
+
+    if (_data.playerTurnSkip > 0) {
       _data.playerTurnSkip--;
+      if (_data.playerTurnSkip == 0){
+        _data.playerSkipped = false;
+      }
     }
-    if (_data.bossTurnSkip >= 0) {
+
+    if (_data.bossTurnSkip > 0) {
       _data.bossTurnSkip--;
+      if (_data.bossTurnSkip == 0){
+        _data.bossSkipped = false;
+      }
+    }
+
+    if (_data.everbloom > 0) _data.everbloom--;
+
+    if (_data.metallica > 0){
+      _data.metallica--;
+      _data.reducePlayerHealth(3);
+    }
+
+    if (_data.singularityOn){
+      _data.singularity--;
+      if (_data.singularity == 0) _queueState(Finished(isWin: false));
+    }
+
+    if (_data.eldritchContractOn){
+      _data.eldritchContract--;
+      if (_data.eldritchContract == 0) _queueState(Finished(isWin: false));
+    }
+
+    if (_data.cursedCount > 0){
+      _data.cursedCount--;
+      _data.playerAttackMultiplier -= _data.cursedModifier;
+    }
+
+    if (_data.phantom > 0){
+      _data.phantom--;
+      _data.bossDefenseMultiplier = 0;
+      if (_data.phantom == 0) _data.reducePlayerHealth(_data.bossDamageCalculator(5));
     }
   }
+
+
 
   void uiAction(BossFightUiAction action) {
     switch (action) {

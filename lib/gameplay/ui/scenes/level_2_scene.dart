@@ -146,9 +146,7 @@ class _Level2SceneState extends State<Level2Scene> {
             '4': ConversationUnit(
               texts: [
                 'You see a giant smoke of cloud moving at your direction, a typhoon?.',
-                'It\'s moving too fast to be a typhoon, as it gets closer, you can hear pounding sounds in the distance.',
-                'It\'s coming straight at you, as it gets closer you can hear it\'s sound, a great roar pierces your eardrums.',
-                'You finally lay your eyes on the beast, it\'s a giant minotaur.',
+                'It\'s moving too fast to be a typhoon, as it gets closer, you can digging sounds in the distance.',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '5')],
             ),
@@ -159,9 +157,11 @@ class _Level2SceneState extends State<Level2Scene> {
             ),
             '6': ConversationUnit(
               texts: [
-                'As you jump away from the beast, you finally have a clear view of it.',
-                'Curved horns jut from the sides of its head, framing a snarling face where golden eyes burn like embers.',
-                'On massive hand it grips it\'s axe, it\'s big enough to cut you down in a single slash.',
+                'As it surfaces you can hear it\'s sound, a great roar pierces your eardrums.',
+                'You finally have a clear view of it, a giant alligator.',
+                'What is this thing doing in such a place? it\'s green hue seems intensely out of place with the yellow sand all around you.',
+                'Massive teeth the size of your arms, one bite would break bones and rip through muscle.',
+                'The existence of such a thing definitely reeks of magic in the area, you are in the right place.',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '7')],
             ),
@@ -185,7 +185,7 @@ class _Level2SceneState extends State<Level2Scene> {
           conversations: {
             '0': ConversationUnit(
               texts: [
-                'You keep dodging the bull\'s furious attacks, sneaking in slashes and spells in between.',
+                'You keep dodging the gator\'s furious attacks, sneaking in slashes and spells in between.',
                 'This back and forth goes for longer than you hoped, you becoming more tired while the beast does not slow down.',
                 'When the beast faces your companion, you lunge at the beast from behind, planting your sword at it\'s neck, the beast thrashes as it roars from the pain, throwing you to the ground.',
                 'You hit your head as you fall, and before you regain your sense, the beast falls on top of you.',

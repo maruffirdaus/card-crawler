@@ -5,7 +5,7 @@ class BossFightData {
     List<BossFightGameCard>? deck,
     List<BossFightGameCard>? bossActions,
     List<BossFightGameCard?>? fieldCards,
-    List<BossFightGameCard>? equipmentCards,
+    List<BossFightGameCard>? playerEquipmentCards,
     this.playerPickedCard,
     this.bossPickedCard,
     this.playerHealth = 40,
@@ -17,6 +17,9 @@ class BossFightData {
     this.singularity = 0,
     this.eldritchContract = 0,
     this.pandorasBox = 3,
+    this.poison = 0,
+    this.cursedCount = 0,
+    this.phantom = 0,
     this.playerAttackMultiplier = 1,
     this.playerDefenseMultiplier = 1,
     this.playerHealingMultiplier = 1,
@@ -29,26 +32,27 @@ class BossFightData {
     this.bossBaseAttackMultiplier = 1,
     this.bossBaseDefenseMultiplier = 1,
     this.bossBaseHealingMultiplier = 1,
+    this.cursedModifier = 0,
     this.playerTurnSkip = 0,
     this.bossTurnSkip = 0,
-    this.canRefresh = true,
     this.playerSkipped = false,
     this.bossSkipped = false,
     this.singularityOn = false,
     this.eldritchContractOn = false,
+    this.monkeyPawOn = false,
     this.gorillaRally = false,
     this.gorillaTactic = false,
   }) {
     this.deck = deck ?? List.empty(growable: true);
     this.bossActions = bossActions ?? List.empty(growable: true);
     this.fieldCards = fieldCards ?? List.filled(4, null);
-    this.equipmentCards = equipmentCards ?? List.empty(growable: true);
+    this.playerEquipmentCards = playerEquipmentCards ?? List.empty(growable: true);
   }
 
   List<BossFightGameCard> deck = List.empty(growable: true);
   List<BossFightGameCard> bossActions = List.empty(growable: true);
   List<BossFightGameCard?> fieldCards = List.filled(4, null);
-  List<BossFightGameCard> equipmentCards = List.empty(growable: true);
+  List<BossFightGameCard> playerEquipmentCards = List.empty(growable: true);
   BossFightGameCard? playerPickedCard;
   BossFightGameCard? bossPickedCard;
   int playerHealth;
@@ -62,6 +66,9 @@ class BossFightData {
   int singularity;
   int eldritchContract;
   int pandorasBox;
+  int poison;
+  int cursedCount;
+  int phantom;
   double playerAttackMultiplier;
   double playerDefenseMultiplier;
   double playerHealingMultiplier;
@@ -74,13 +81,18 @@ class BossFightData {
   double bossBaseAttackMultiplier;
   double bossBaseDefenseMultiplier;
   double bossBaseHealingMultiplier;
-  bool canRefresh;
+  double cursedModifier;
   bool playerSkipped;
   bool bossSkipped;
   bool singularityOn;
   bool eldritchContractOn;
+  bool monkeyPawOn;
   bool gorillaRally;
   bool gorillaTactic;
+
+  void removeCardFromField(int index) {
+    fieldCards[index] = null;
+  }
 
   int playerDamageCalculator(int damage) {
     return ((damage * playerAttackMultiplier * bossDefenseMultiplier).toInt());

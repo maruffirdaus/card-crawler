@@ -129,7 +129,7 @@ class _BossFightFrameContent extends StatelessWidget {
               ),
               if (provider.state is ReplacingPlayerEquipmentGameCard)
                 ReplacePlayerEquipmentGameCardPopup(
-                  playerEquipmentCards: provider.equipmentCards,
+                  playerEquipmentCards: provider.playerEquipmentCards,
                   cardWidth: cardWidth,
                   onCardTap: (index) {
                     final bool isEffectDescriptionVisible =
@@ -139,7 +139,7 @@ class _BossFightFrameContent extends StatelessWidget {
                     if (isEffectDescriptionVisible) {
                       provider.action(
                         ReplacePlayerEquipmentCard(
-                          card: provider.equipmentCards[index],
+                          card: provider.playerEquipmentCards[index],
                           index: index,
                         ),
                       );
