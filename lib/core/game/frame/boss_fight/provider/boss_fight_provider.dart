@@ -111,7 +111,7 @@ class BossFightProvider extends ChangeNotifier {
           {}
       }
     } else {
-      _queueState(TurnSkipped());
+      //_queueState(TurnSkipped());
     }
     /*for (var status in _data.playerEquipmentCards) { // NOT EQUIPMENT, CHANGE TO STATUS
       if (status.effect.type == BossFightGameCardEffectType.equipmentCard) {
@@ -119,6 +119,23 @@ class BossFightProvider extends ChangeNotifier {
         _queueState(BossFightGameCardEffectTriggered(card: status));
       }
     }*/
+
+    if (_data.playerHealth <= 0) {
+      _queueState(Finished(isWin: false));
+    } else if (_data.bossHealth <= 0) {
+      _queueState(Finished(isWin: true));
+    }
+
+    if (_data.gorillaTactic){
+      _data.gorillaTactic = false;
+      _data.bossBaseDefenseMultiplier = 1;
+    }
+
+    if (_data.gorillaRally){
+      _data.gorillaRally = false;
+      _data.bossAttackMultiplier += _data.bossAttackMultiplier;
+    }
+
     if (!_data.bossSkipped) {
       _data.bossPickedCard = _data.bossActions.removeLast();
       _data.bossActions.insert(0, _data.bossPickedCard!);
@@ -126,6 +143,8 @@ class BossFightProvider extends ChangeNotifier {
       _queueState(
         BossFightGameCardEffectTriggered(card: _data.bossPickedCard!),
       );
+    } else {
+      //_queueState(TurnSkipped());
     }
 
     if (_data.poison > 0) {
@@ -133,10 +152,10 @@ class BossFightProvider extends ChangeNotifier {
       _data.poison--;
     }
 
-    if (_data.playerHealth <= 0) {
-      _queueState(Finished(isWin: false));
-    } else if (_data.bossHealth <= 0) {
+    if (_data.bossHealth <= 0) {
       _queueState(Finished(isWin: true));
+    } else if (_data.playerHealth <= 0) {
+      _queueState(Finished(isWin: false));
     }
 
     _data.playerAttackMultiplier = _data.playerBaseAttackMultiplier;
@@ -146,14 +165,14 @@ class BossFightProvider extends ChangeNotifier {
     _data.bossDefenseMultiplier = _data.bossBaseDefenseMultiplier;
     _data.bossHealingMultiplier = _data.bossBaseHealingMultiplier;
 
-    if (_data.playerTurnSkip > 0) {
+    if (_data.playerSkipped) {
       _data.playerTurnSkip--;
       if (_data.playerTurnSkip == 0) {
         _data.playerSkipped = false;
       }
     }
 
-    if (_data.bossTurnSkip > 0) {
+    if (_data.bossSkipped) {
       _data.bossTurnSkip--;
       if (_data.bossTurnSkip == 0) {
         _data.bossSkipped = false;

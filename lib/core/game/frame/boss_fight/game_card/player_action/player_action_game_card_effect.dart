@@ -266,7 +266,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
       data.singularityOn = true;
       data.singularity = 4;
       data.bossTurnSkip += 4;
-      data.bossSkipped;
+      data.bossSkipped = true;
     },
   );
 
