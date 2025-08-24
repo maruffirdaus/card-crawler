@@ -163,7 +163,7 @@ class WeaponGameCard extends GameCard {
     sprite: _spritePath('trident.png'),
   );
 
-  static final entries = [
+  static final entriesSnowy = [
     stormSplitter,
     starForgedHammer,
     shadowFang,
@@ -171,6 +171,9 @@ class WeaponGameCard extends GameCard {
     eternalCleaver,
     yamatsumi,
     kokuryu,
+  ];
+
+  static final entriesDesert = [
     stiletto,
     morningStar,
     bladedNunchaku,
@@ -178,6 +181,9 @@ class WeaponGameCard extends GameCard {
     espadaLarga,
     shamshir,
     kris,
+  ];
+
+  static final entriesCastle = [
     deathCrescent,
     khopesh,
     fangOfRiton,
