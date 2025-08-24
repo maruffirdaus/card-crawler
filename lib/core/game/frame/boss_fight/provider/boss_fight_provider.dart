@@ -53,15 +53,8 @@ class BossFightProvider extends ChangeNotifier {
     _data =
         data ??
         (BossFightData(
-          deck:
-              playerGameCards
-                  .map((gameCard) => gameCard.copy())
-                  .toList()
-                  .toList()
-                ..shuffle(),
-          bossActions:
-              bossGameCards.map((gameCard) => gameCard.copy()).toList().toList()
-                ..shuffle(),
+          deck: playerGameCards.toList()..shuffle(),
+          bossActions: bossGameCards.toList()..shuffle(),
           bossHealth: boss.health,
           bossMaxHealth: boss.health,
         )..refillFieldCards());
@@ -126,12 +119,12 @@ class BossFightProvider extends ChangeNotifier {
       _queueState(Finished(isWin: true));
     }
 
-    if (_data.gorillaTactic){
+    if (_data.gorillaTactic) {
       _data.gorillaTactic = false;
       _data.bossBaseDefenseMultiplier = 1;
     }
 
-    if (_data.gorillaRally){
+    if (_data.gorillaRally) {
       _data.gorillaRally = false;
       _data.bossAttackMultiplier += _data.bossAttackMultiplier;
     }
