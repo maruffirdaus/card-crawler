@@ -1,12 +1,12 @@
 import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
-import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/popup_scrim.dart';
+import 'package:card_crawler/core/foundation/ui/widgets/popup_scrim.dart';
 import 'package:flutter/material.dart';
 
 import '../../../game_card/base/game_card.dart';
 import '../game_card_widget.dart';
 
-class CardEffectTriggeredPopup extends StatelessWidget {
-  const CardEffectTriggeredPopup({
+class GameCardEffectTriggeredPopup extends StatelessWidget {
+  const GameCardEffectTriggeredPopup({
     super.key,
     required this.onDismiss,
     required this.card,

@@ -1,7 +1,7 @@
 import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants/game_card_aspect_ratio.dart';
+import '../../../common/constants/game_card_aspect_ratio.dart';
 import '../../game_card/base/game_card.dart';
 
 class GameCardWidget extends StatelessWidget {
