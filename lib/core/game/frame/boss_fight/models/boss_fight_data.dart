@@ -46,7 +46,8 @@ class BossFightData {
     this.deck = deck ?? List.empty(growable: true);
     this.bossActions = bossActions ?? List.empty(growable: true);
     this.fieldCards = fieldCards ?? List.filled(4, null);
-    this.playerEquipmentCards = playerEquipmentCards ?? List.empty(growable: true);
+    this.playerEquipmentCards =
+        playerEquipmentCards ?? List.empty(growable: true);
   }
 
   List<BossFightGameCard> deck = List.empty(growable: true);
@@ -122,6 +123,10 @@ class BossFightData {
         (bossHealth + (heal * bossHealingMultiplier).toInt() > bossMaxHealth)
         ? bossMaxHealth
         : bossHealth + (heal * bossHealingMultiplier).toInt();
+  }
+
+  bool isFieldCardsLow() {
+    return fieldCards.where((card) => card != null).length <= 1;
   }
 
   void refillFieldCards() {

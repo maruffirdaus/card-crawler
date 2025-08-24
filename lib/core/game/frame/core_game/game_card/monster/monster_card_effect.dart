@@ -179,12 +179,12 @@ class MonsterGameCardEffect extends GameCardEffect {
     id: 'burn',
     name: 'Burn',
     description:
-    'This enemy will leave burn effect that reduce your hitpoint by 1 for 3 turns',
+        'This enemy will leave burn effect that reduce your hitpoint by 1 for 3 turns',
     type: GameCardEffectType.onPicked,
     trigger: (data) {
       if (data.hasEquipment('lorica-segmentata')) {
         return; // skip burn
-      }else if(data.hasEquipment('ruby-wyrmbark-breastplate')){
+      } else if (data.hasEquipment('ruby-wyrmbark-breastplate')) {
         data.health += 2;
       }
       // Set burn for 3 turns

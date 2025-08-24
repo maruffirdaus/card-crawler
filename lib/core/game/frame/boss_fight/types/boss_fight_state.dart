@@ -12,6 +12,12 @@ class BossFightGameCardEffectTriggered extends BossFightState {
   final BossFightGameCard card;
 }
 
+class TurnSkipped extends BossFightState {}
+
+class PlayerEquipmentsShown extends BossFightState {}
+
+class BossActionsShown extends BossFightState {}
+
 class Finished extends BossFightState {
   Finished({required this.isWin});
 

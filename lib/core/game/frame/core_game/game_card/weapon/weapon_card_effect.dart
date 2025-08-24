@@ -24,7 +24,7 @@ class WeaponGameCardEffect extends GameCardEffect {
     id: 'starforged-hammer',
     name: 'Starforged Hammer',
     description:
-    'This weapon\'s durability will always recover to full when used',
+        'This weapon\'s durability will always recover to full when used',
     type: GameCardEffectType.onUse,
     trigger: (data) {
       data.durability = 20;
@@ -35,7 +35,7 @@ class WeaponGameCardEffect extends GameCardEffect {
     id: 'shadow-fang',
     name: 'Shadow Fang',
     description:
-    'This weapon will deal more damage the lower it\'s durability is',
+        'This weapon will deal more damage the lower it\'s durability is',
     type: GameCardEffectType.onUse,
     trigger: (data) {
       if (data.durability < 9 && data.durability >= 6) {
@@ -114,120 +114,107 @@ class WeaponGameCardEffect extends GameCardEffect {
     id: 'bladed-nunchaku',
     name: 'bladed Nunchaku',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final excalibur = WeaponGameCardEffect(
     id: 'excalibur',
     name: 'Excalibur',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final espadaLarga = WeaponGameCardEffect(
     id: 'espada-larga',
     name: 'Espada Larga',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final shamshir = WeaponGameCardEffect(
     id: 'shamshir',
     name: 'Shamshir',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final kris = WeaponGameCardEffect(
     id: 'kris',
     name: 'kris',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final deathCrescent = WeaponGameCardEffect(
     id: 'death-crescent',
     name: 'Death’s Crescent',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final khopesh = WeaponGameCardEffect(
     id: 'khopesh',
     name: 'Khopesh',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final fangOfRiton = WeaponGameCardEffect(
     id: 'fang-of-riton',
     name: 'Fang Of Riton',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final shepherdStaff = WeaponGameCardEffect(
     id: 'shepherd-staff',
     name: 'Shepherd Staff',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final gladius = WeaponGameCardEffect(
     id: 'gladius',
     name: 'Gladius',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final doomSpire = WeaponGameCardEffect(
     id: 'doom-spire',
     name: 'Doom Spire',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 
   static final poseidonFang = WeaponGameCardEffect(
     id: 'poseidon-fang',
     name: 'Poseidon Fang',
     description:
-    'This weapon will copy the strength of the monster you\'re facing',
+        'This weapon will copy the strength of the monster you\'re facing',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
-
 }

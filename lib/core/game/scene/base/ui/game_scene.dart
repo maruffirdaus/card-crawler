@@ -1,5 +1,7 @@
-import 'package:card_crawler/core/game/frame/core_game/ui/core_game_frame_widget.dart';
 import 'package:card_crawler/core/game/frame/base/game_frame.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/boss_fight_frame.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/ui/boss_fight_frame_widget.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/core_game_frame_widget.dart';
 import 'package:card_crawler/core/game/scene/base/provider/game_scene_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -71,6 +73,18 @@ class GameSceneContent extends StatelessWidget {
               }
             },
             coreGameFrame: provider.currentFrame as CoreGameFrame,
+          );
+        } else if (provider.currentFrame is BossFightFrame) {
+          return BossFightFrameWidget(
+            key: ValueKey(provider.currentFrameId),
+            onComplete: (nextFrameId) {
+              if (nextFrameId != null) {
+                provider.nextFrame(nextId: nextFrameId);
+              } else {
+                onComplete();
+              }
+            },
+            bossFightFrame: provider.currentFrame as BossFightFrame,
           );
         } else if (provider.currentFrame is ConversationFrame) {
           return ConversationFrameWidget(

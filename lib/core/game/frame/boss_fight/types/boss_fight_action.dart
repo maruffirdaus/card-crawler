@@ -16,4 +16,4 @@ class ReplacePlayerEquipmentCard extends BossFightAction {
   final int index;
 }
 
-class Refresh extends BossFightAction {}
+class SkipTurn extends BossFightAction {}

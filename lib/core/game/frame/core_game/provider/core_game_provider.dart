@@ -126,9 +126,12 @@ class CoreGameProvider extends ChangeNotifier {
                 _data.tempBuff = 0;
 
                 if (_data.durability > card.value) {
-                  if (_data.weaponCard?.effect.type == GameCardEffectType.onUse) {
+                  if (_data.weaponCard?.effect.type ==
+                      GameCardEffectType.onUse) {
                     _data.weaponCard?.effect.trigger(_data);
-                    _queueState(GameCardEffectTriggered(card: _data.weaponCard!));
+                    _queueState(
+                      GameCardEffectTriggered(card: _data.weaponCard!),
+                    );
                   }
 
                   _data.weaponCard?.value += _data.buff;
@@ -151,7 +154,8 @@ class CoreGameProvider extends ChangeNotifier {
                   card.effect.trigger(_data);
                   _queueState(GameCardEffectTriggered(card: card));
                 }
-                if (_data.weaponCard?.effect == WeaponGameCardEffect.eternalCleaver) {
+                if (_data.weaponCard?.effect ==
+                    WeaponGameCardEffect.eternalCleaver) {
                   _data.cursedAxeCounter++;
                   if (_data.cursedAxeCounter % 2 != 0) {
                     _data.durability = 0;
@@ -160,7 +164,8 @@ class CoreGameProvider extends ChangeNotifier {
                   }
                 }
 
-                if (_data.weaponCard?.effect == WeaponGameCardEffect.starForgedHammer) {
+                if (_data.weaponCard?.effect ==
+                    WeaponGameCardEffect.starForgedHammer) {
                   _data.weaponCard?.effect.trigger(_data);
                 }
               }
@@ -185,7 +190,8 @@ class CoreGameProvider extends ChangeNotifier {
           _data.buff = 0;
           _data.tempBuff = 0;
 
-          if (_data.pickedCard!.effect == ConsumableGameCardEffect.temporalDew) {
+          if (_data.pickedCard!.effect ==
+              ConsumableGameCardEffect.temporalDew) {
             _data.hasHealed = false;
           }
 

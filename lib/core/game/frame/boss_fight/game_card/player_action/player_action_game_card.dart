@@ -170,5 +170,32 @@ class PlayerActionGameCard extends BossFightGameCard {
     sprite: _spritePath('ba5.png'),
   );
 
-
+  static final entries = [
+    knightlyRending,
+    mistyDodge,
+    fancyFootwork,
+    boneChill,
+    enhanceWeapon,
+    healingPotion,
+    haste,
+    followUp,
+    cyclone,
+    ironskinPotion,
+    pocketSand,
+    weaken,
+    allOutAttack,
+    divineSmite,
+    holyPrayers,
+    massHealingWard,
+    everbloom,
+    bloodBlade,
+    darkDetermination,
+    finishingBlow,
+    metallica,
+    singularity,
+    soulEater,
+    eldritchContract,
+    divineInterference,
+    angelicRespite,
+  ];
 }

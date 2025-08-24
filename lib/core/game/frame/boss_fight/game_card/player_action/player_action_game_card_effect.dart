@@ -25,7 +25,8 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   static final mistyDodge = PlayerActionGameCardEffect(
     id: 'p1',
     name: 'Misty Dodge',
-    description: 'Dodges the opponent next move, making your opponent skips his next move.',
+    description:
+        'Dodges the opponent next move, making your opponent skips his next move.',
     type: BossFightGameCardEffectType.buff,
     trigger: (data) {
       data.bossActions.removeLast();
@@ -200,7 +201,8 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   static final everbloom = PlayerActionGameCardEffect(
     id: 'p16',
     name: 'Everbloom',
-    description: 'Heal yourself for 4 health at the end of the turn across 4 turns.',
+    description:
+        'Heal yourself for 4 health at the end of the turn across 4 turns.',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.everbloom = 4;
@@ -271,7 +273,8 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
   static final soulEater = PlayerActionGameCardEffect(
     id: 'p22',
     name: 'Soul Eater',
-    description: 'Deal 8 damage, heal half of the damage done from this attack.',
+    description:
+        'Deal 8 damage, heal half of the damage done from this attack.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.reduceBossHealth(data.playerDamageCalculator(8));

@@ -47,6 +47,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  rename: ^3.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -95,6 +96,7 @@ flutter:
         - asset: assets/fonts/ConcertOne-Regular.ttf
   assets:
     - assets/backgrounds/
+    - assets/boss_sprites/
     - assets/card_icons/
     - assets/card_sprites/weapon/
     - assets/card_sprites/monster/

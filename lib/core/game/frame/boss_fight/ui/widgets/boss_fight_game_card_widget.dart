@@ -52,107 +52,107 @@ class BossFightGameCardWidget extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             child: isEffectDescriptionVisible
                 ? Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    left: 16.0 * uiScale,
-                    top: 16.0 * uiScale,
-                    right: 16.0 * uiScale,
-                    bottom: 8.0 * uiScale,
-                  ),
-                  child: Text(
-                    'Effect: ${card.effect.name}',
-                    style: TextStyle(fontSize: 14.0 * uiScale),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Divider(
-                  height: 1.0,
-                  thickness: 1.0,
-                  indent: 16.0 * uiScale,
-                  endIndent: 16.0 * uiScale,
-                  color: Colors.black26,
-                ),
-                Expanded(
-                  child: Scrollbar(
-                    controller: scrollController,
-                    thumbVisibility: true,
-                    interactive: true,
-                    child: SingleChildScrollView(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 8.0 * uiScale,
-                        horizontal: 16.0 * uiScale,
-                      ),
-                      controller: scrollController,
-                      child: Text(
-                        card.effect.description,
-                        style: TextStyle(
-                          color: Colors.black54,
-                          fontSize: 12.0 * uiScale,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 16.0 * uiScale,
+                          top: 16.0 * uiScale,
+                          right: 16.0 * uiScale,
+                          bottom: 8.0 * uiScale,
                         ),
-                        textAlign: TextAlign.center,
+                        child: Text(
+                          'Effect: ${card.effect.name}',
+                          style: TextStyle(fontSize: 14.0 * uiScale),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                Divider(
-                  height: 1.0,
-                  thickness: 1.0,
-                  indent: 16.0 * uiScale,
-                  endIndent: 16.0 * uiScale,
-                  color: Colors.black26,
-                ),
-                if (additionalActionDescription != null)
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left: 16.0 * uiScale,
-                      top: 8.0 * uiScale,
-                      right: 16.0 * uiScale,
-                    ),
-                    child: Text(
-                      additionalActionDescription!,
-                      style: TextStyle(fontSize: 12.0 * uiScale),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                SizedBox(height: 16.0 * uiScale),
-              ],
-            )
+                      Divider(
+                        height: 1.0,
+                        thickness: 1.0,
+                        indent: 16.0 * uiScale,
+                        endIndent: 16.0 * uiScale,
+                        color: Colors.black26,
+                      ),
+                      Expanded(
+                        child: Scrollbar(
+                          controller: scrollController,
+                          thumbVisibility: true,
+                          interactive: true,
+                          child: SingleChildScrollView(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 8.0 * uiScale,
+                              horizontal: 16.0 * uiScale,
+                            ),
+                            controller: scrollController,
+                            child: Text(
+                              card.effect.description,
+                              style: TextStyle(
+                                color: Colors.black54,
+                                fontSize: 12.0 * uiScale,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        height: 1.0,
+                        thickness: 1.0,
+                        indent: 16.0 * uiScale,
+                        endIndent: 16.0 * uiScale,
+                        color: Colors.black26,
+                      ),
+                      if (additionalActionDescription != null)
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: 16.0 * uiScale,
+                            top: 8.0 * uiScale,
+                            right: 16.0 * uiScale,
+                          ),
+                          child: Text(
+                            additionalActionDescription!,
+                            style: TextStyle(fontSize: 12.0 * uiScale),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      SizedBox(height: 16.0 * uiScale),
+                    ],
+                  )
                 : Padding(
-              padding: EdgeInsets.all(4.0 * uiScale),
-              child: Stack(
-                children: [
-                  Center(
-                    child: SizedBox(
-                      width: 64.0,
-                      child: Image.asset(card.sprite),
+                    padding: EdgeInsets.all(4.0 * uiScale),
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: SizedBox(
+                            width: 64.0,
+                            child: Image.asset(card.sprite),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: SizedBox(
+                            width: 40.0 * uiScale,
+                            height: 40.0 * uiScale,
+                            child: Image.asset(
+                              isSmallScreen ? card.iconSmall : card.icon,
+                              fit: BoxFit.none,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: SizedBox(
+                            width: 40.0 * uiScale,
+                            height: 40.0 * uiScale,
+                            child: Image.asset(
+                              isSmallScreen ? card.iconSmall : card.icon,
+                              fit: BoxFit.none,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: SizedBox(
-                      width: 40.0 * uiScale,
-                      height: 40.0 * uiScale,
-                      child: Image.asset(
-                        isSmallScreen ? card.iconSmall : card.icon,
-                        fit: BoxFit.none,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: SizedBox(
-                      width: 40.0 * uiScale,
-                      height: 40.0 * uiScale,
-                      child: Image.asset(
-                        isSmallScreen ? card.iconSmall : card.icon,
-                        fit: BoxFit.none,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ),
         ),
       ),

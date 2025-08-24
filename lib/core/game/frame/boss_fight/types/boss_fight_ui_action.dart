@@ -9,6 +9,10 @@ class TapCard extends BossFightUiAction {
   int index;
 }
 
+class ShowPlayerEquipments extends BossFightUiAction {}
+
+class ShowBossActions extends BossFightUiAction {}
+
 class Pause extends BossFightUiAction {}
 
 class DismissPopup extends BossFightUiAction {}

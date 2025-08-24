@@ -29,7 +29,8 @@ class StatusEffect {
     type: StatusEffectType.idle,
     triggerOnBossFight: (data) {
       if (data.gorillaRally == true &&
-          data.bossPickedCard!.effect.type == BossFightGameCardEffectType.attack) {
+          data.bossPickedCard!.effect.type ==
+              BossFightGameCardEffectType.attack) {
         data.bossAttackMultiplier += data.bossAttackMultiplier;
         data.gorillaRally = false;
       }
@@ -47,10 +48,10 @@ class StatusEffect {
     id: 'bf1',
     name: 'Alligator Boss Fight',
     description:
-    'You are fighting the Desert Alligator, it increases it\'s attacks the lower your defense is',
+        'You are fighting the Desert Alligator, it increases it\'s attacks the lower your defense is',
     type: StatusEffectType.idle,
     triggerOnBossFight: (data) {
-      if (data.playerDefenseMultiplier > 1){
+      if (data.playerDefenseMultiplier > 1) {
         data.bossAttackMultiplier += (data.playerDefenseMultiplier - 1) / 2;
       }
     },
@@ -60,10 +61,10 @@ class StatusEffect {
     id: 'bf2',
     name: 'Spirit Boss Fight',
     description:
-    'You are fighting the Spirit of the Mausoleum, it slowly lowers your healing capability.',
+        'You are fighting the Spirit of the Mausoleum, it slowly lowers your healing capability.',
     type: StatusEffectType.idle,
     triggerOnBossFight: (data) {
-      if (data.playerHealingMultiplier - 0.1 < 0){
+      if (data.playerHealingMultiplier - 0.1 < 0) {
         data.playerHealingMultiplier -= 0.1;
       }
     },

@@ -51,7 +51,7 @@ class BossActionGameCard extends BossFightGameCard {
     sprite: _spritePath('ba26.png'),
   );
 
-// Alligator
+  // Alligator
   static final meltingChomp = BossActionGameCard._(
     id: 'g6',
     effect: BossActionGameCardEffect.meltingChomp,
@@ -94,7 +94,7 @@ class BossActionGameCard extends BossFightGameCard {
     sprite: _spritePath('ba8.png'),
   );
 
-// Spirit
+  // Spirit
   static final cursedBells = BossActionGameCard._(
     id: 'g13',
     effect: BossActionGameCardEffect.cursedBells,
@@ -143,7 +143,7 @@ class BossActionGameCard extends BossFightGameCard {
     sprite: _spritePath('ba2.png'),
   );
 
-// Lukas
+  // Lukas
   static final divineSmite = BossActionGameCard._(
     id: 'g21',
     effect: BossActionGameCardEffect.divineSmite,
@@ -210,5 +210,13 @@ class BossActionGameCard extends BossFightGameCard {
     sprite: _spritePath('katana_2.png'),
   );
 
-
+  static final buwayaEnemyEntries = [
+    meltingChomp,
+    acidBelch,
+    metalScale,
+    photosynthesis,
+    tailSwipe,
+    relentlessBites,
+    toxicBreath,
+  ];
 }

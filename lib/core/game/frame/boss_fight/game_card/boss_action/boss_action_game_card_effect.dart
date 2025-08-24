@@ -80,7 +80,8 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final meltingChomp = BossActionGameCardEffect(
     id: 'g6',
     name: 'Melting Chomp',
-    description: 'Deals 8 damage, and reduce the base defense of the player by 10%.',
+    description:
+        'Deals 8 damage, and reduce the base defense of the player by 10%.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.reducePlayerHealth(data.bossDamageCalculator(8));
@@ -91,7 +92,8 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final acidBelch = BossActionGameCardEffect(
     id: 'g7',
     name: 'Acid Belch',
-    description: 'Deals 6 damage, and reduce the base defense of the player by 20%.',
+    description:
+        'Deals 6 damage, and reduce the base defense of the player by 20%.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.reducePlayerHealth(data.bossDamageCalculator(6));
@@ -105,7 +107,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     description: 'Permanently increase the boss\'s defense by 10%.',
     type: BossFightGameCardEffectType.buff,
     trigger: (data) {
-      if (data.bossBaseDefenseMultiplier - 0.2 <= 0.1){
+      if (data.bossBaseDefenseMultiplier - 0.2 <= 0.1) {
         data.bossBaseDefenseMultiplier -= 0.2;
       }
     },
@@ -140,7 +142,9 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       var rng = Random();
-      data.reduceBossHealth(data.playerDamageCalculator(5 + (5 * rng.nextInt(3))));
+      data.reduceBossHealth(
+        data.playerDamageCalculator(5 + (5 * rng.nextInt(3))),
+      );
     },
   );
 
@@ -180,7 +184,8 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final phantomAttack = BossActionGameCardEffect(
     id: 'g15',
     name: 'Phantom Attack',
-    description: 'Vanishes for a turn, being immune to damage, and then deal 5 damage next turn.',
+    description:
+        'Vanishes for a turn, being immune to damage, and then deal 5 damage next turn.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.phantom += 2;
@@ -211,7 +216,8 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final bodyPossession = BossActionGameCardEffect(
     id: 'g18',
     name: 'Body Possession',
-    description: 'The spirit possesses you, healing itself for 6 and stunning you.',
+    description:
+        'The spirit possesses you, healing itself for 6 and stunning you.',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.increaseBossHealth(6);
@@ -223,7 +229,8 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final necroticRebirth = BossActionGameCardEffect(
     id: 'g19',
     name: 'Necrotic Rebirth',
-    description: 'Recovers 8 HP, and removing any debuff on the boss\'s attacks and defense.',
+    description:
+        'Recovers 8 HP, and removing any debuff on the boss\'s attacks and defense.',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.increaseBossHealth(8);
@@ -235,7 +242,8 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final ectoplasmSlam = BossActionGameCardEffect(
     id: 'g20',
     name: 'Ectoplasm Slam',
-    description: 'Dealing 10 damage, and your next 2 attacks will do 10% less damage',
+    description:
+        'Dealing 10 damage, and your next 2 attacks will do 10% less damage',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.cursedCount += 3;
@@ -269,8 +277,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final finishingBlow = BossActionGameCardEffect(
     id: 'g23',
     name: 'Finishing Blow',
-    description:
-    'Deal half of your missing health, unaffected by multipliers',
+    description: 'Deal half of your missing health, unaffected by multipliers',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.reducePlayerHealth((data.playerMaxHealth - data.playerHealth) ~/ 2);
@@ -304,7 +311,8 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final mistyFootwork = BossActionGameCardEffect(
     id: 'g26',
     name: 'Misty Footwork',
-    description: 'Dodges if your next action is an attack, and deal 5 damage next turn.',
+    description:
+        'Dodges if your next action is an attack, and deal 5 damage next turn.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.phantom += 2;
@@ -324,7 +332,8 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final soulEater = BossActionGameCardEffect(
     id: 'g28',
     name: 'Soul Eater',
-    description: 'Deal 8 damage, heal half of the damage done from this attack.',
+    description:
+        'Deal 8 damage, heal half of the damage done from this attack.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.reducePlayerHealth(data.bossDamageCalculator(8));
@@ -358,10 +367,12 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
   static final riposte = BossActionGameCardEffect(
     id: 'g31',
     name: 'Riposte',
-    description: 'Deals 8 damage, if the players last move was an attack deals double damage.',
+    description:
+        'Deals 8 damage, if the players last move was an attack deals double damage.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
-      if (data.playerPickedCard!.effect.type == BossFightGameCardEffectType.attack){
+      if (data.playerPickedCard!.effect.type ==
+          BossFightGameCardEffectType.attack) {
         data.reducePlayerHealth(data.bossDamageCalculator(16));
       } else {
         data.reducePlayerHealth(data.bossDamageCalculator(8));

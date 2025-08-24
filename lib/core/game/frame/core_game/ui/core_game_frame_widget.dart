@@ -271,7 +271,8 @@ class _CoreGameFrameContent extends StatelessWidget {
                           children: List.generate(3, (index) {
                             final GameCard? card =
                                 index < provider.equipmentCards.length &&
-                                    provider.state is! ReplacingEquipmentGameCard
+                                    provider.state
+                                        is! ReplacingEquipmentGameCard
                                 ? provider.equipmentCards[index]
                                 : null;
                             final bool isEffectDescriptionVisible =

@@ -1,13 +1,19 @@
 import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/provider/boss_fight_provider.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/boss_fight_game_card_widget.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/boss_actions_popup.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/boss_fight_game_card_effect_triggered_popup.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/player_equipments_popup.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/replace_player_equipment_game_card_popup.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/turn_skipped_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../common/ui/widgets/empty_game_card.dart';
 import '../../common/ui/widgets/popup/game_finished_popup.dart';
 import '../../common/ui/widgets/popup/pause_menu_popup.dart';
 import '../boss_fight_frame.dart';
+import '../game_card/base/boss_fight_game_card.dart';
 import '../types/boss_fight_action.dart';
 import '../types/boss_fight_game_card_location.dart';
 import '../types/boss_fight_state.dart';
@@ -98,23 +104,25 @@ class _BossFightFrameContent extends StatelessWidget {
     return Consumer<BossFightProvider>(
       builder: (context, provider, child) {
         return PopScope(
-            canPop: false,
-            onPopInvokedWithResult: (didPop, _) {
-              if (didPop) return;
+          canPop: false,
+          onPopInvokedWithResult: (didPop, _) {
+            if (didPop) return;
 
-              switch (provider.state) {
-                case Playing():
-                  provider.uiAction(Pause());
-                case Finished():
-                  {
-                    (provider.state as Finished).isWin
-                        ? onComplete()
-                        : onRestart();
-                  }
-                default:
-                  provider.uiAction(DismissPopup());
-              }
-            },
+            switch (provider.state) {
+              case Playing():
+                provider.uiAction(Pause());
+              case TurnSkipped():
+                provider.action(SkipTurn());
+              case Finished():
+                {
+                  (provider.state as Finished).isWin
+                      ? onComplete()
+                      : onRestart();
+                }
+              default:
+                provider.uiAction(DismissPopup());
+            }
+          },
           child: Stack(
             children: [
               Positioned.fill(
@@ -124,8 +132,156 @@ class _BossFightFrameContent extends StatelessWidget {
                 ),
               ),
               Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [],
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    width: cardWidth,
+                    child: Column(
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Center(
+                            child: FilledButton(
+                              onPressed: () {
+                                provider.uiAction(Pause());
+                              },
+                              style: buttonStyle,
+                              child: Text('PAUSE', style: buttonTextStyle),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.favorite,
+                                    size: componentWidth * 0.75,
+                                    color: Color(0xFFF24822),
+                                  ),
+                                  Text(
+                                    provider.playerHealth.toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24.0 * uiScale,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 24.0 * uiScale),
+                              provider.playerEquipmentCards.isNotEmpty
+                                  ? BossFightGameCardWidget(
+                                      card: provider.playerEquipmentCards.last,
+                                      onTap: () {
+                                        provider.uiAction(
+                                          ShowPlayerEquipments(),
+                                        );
+                                      },
+                                    )
+                                  : EmptyGameCard(),
+                              SizedBox(height: 24.0 * uiScale),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(provider.boss.sprite),
+                      SizedBox(
+                        width: 576.0 * uiScale,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(4, (index) {
+                            final BossFightGameCard? card =
+                                provider.fieldCards[index];
+                            final bool isEffectDescriptionVisible =
+                                provider.cardWithVisibleEffectDescription ==
+                                (BossFightGameCardLocation.field, index);
+
+                            return SizedBox(
+                              width: cardWidth,
+                              child: card != null
+                                  ? BossFightGameCardWidget(
+                                      card: card,
+                                      onTap: () {
+                                        isEffectDescriptionVisible
+                                            ? provider.action(
+                                                SelectCardFromField(
+                                                  card: card,
+                                                  index: index,
+                                                ),
+                                              )
+                                            : provider.uiAction(
+                                                TapCard(
+                                                  location:
+                                                      BossFightGameCardLocation
+                                                          .field,
+                                                  index: index,
+                                                ),
+                                              );
+                                      },
+                                      isEffectDescriptionVisible:
+                                          isEffectDescriptionVisible,
+                                      additionalActionDescription:
+                                          'TAP TO SELECT',
+                                    )
+                                  : EmptyGameCard(),
+                            );
+                          }),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: cardWidth,
+                    child: Column(
+                      children: [
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            children: [
+                              SizedBox(height: 24.0 * uiScale),
+                              provider.bossActionCards.isNotEmpty
+                                  ? BossFightGameCardWidget(
+                                      card: provider.bossActionCards.last,
+                                      onTap: () {
+                                        provider.uiAction(ShowBossActions());
+                                      },
+                                    )
+                                  : EmptyGameCard(),
+                              SizedBox(height: 24.0 * uiScale),
+                              Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Icon(
+                                    Icons.favorite,
+                                    size: componentWidth * 0.75,
+                                    color: Color(0xFFF24822),
+                                  ),
+                                  Text(
+                                    provider.bossHealth.toString(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24.0 * uiScale,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Expanded(flex: 1, child: SizedBox()),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               if (provider.state is ReplacingPlayerEquipmentGameCard)
                 ReplacePlayerEquipmentGameCardPopup(
@@ -134,7 +290,7 @@ class _BossFightFrameContent extends StatelessWidget {
                   onCardTap: (index) {
                     final bool isEffectDescriptionVisible =
                         provider.cardWithVisibleEffectDescription ==
-                            (BossFightGameCardLocation.equipments, index);
+                        (BossFightGameCardLocation.equipments, index);
 
                     if (isEffectDescriptionVisible) {
                       provider.action(
@@ -153,15 +309,58 @@ class _BossFightFrameContent extends StatelessWidget {
                     }
                   },
                   cardWithVisibleEffectDescription:
-                  provider.cardWithVisibleEffectDescription,
+                      provider.cardWithVisibleEffectDescription,
                 ),
               if (provider.state is BossFightGameCardEffectTriggered)
                 BossFightGameCardEffectTriggeredPopup(
                   onDismiss: () {
                     provider.uiAction(DismissPopup());
                   },
-                  card: (provider.state as BossFightGameCardEffectTriggered).card,
+                  card:
+                      (provider.state as BossFightGameCardEffectTriggered).card,
                   cardWidth: cardWidth,
+                ),
+              if (provider.state is TurnSkipped)
+                TurnSkippedPopup(
+                  onDismiss: () {
+                    provider.action(SkipTurn());
+                  },
+                ),
+              if (provider.state is PlayerEquipmentsShown)
+                PlayerEquipmentsPopup(
+                  onDismiss: () {
+                    provider.uiAction(DismissPopup());
+                  },
+                  cards: provider.playerEquipmentCards,
+                  cardWidth: cardWidth,
+                  onCardTap: (index) {
+                    provider.uiAction(
+                      TapCard(
+                        location: BossFightGameCardLocation.equipments,
+                        index: index,
+                      ),
+                    );
+                  },
+                  cardWithVisibleEffectDescription:
+                      provider.cardWithVisibleEffectDescription,
+                ),
+              if (provider.state is BossActionsShown)
+                BossActionsPopup(
+                  onDismiss: () {
+                    provider.uiAction(DismissPopup());
+                  },
+                  cards: provider.bossActionCards.toList(),
+                  cardWidth: cardWidth,
+                  onCardTap: (index) {
+                    provider.uiAction(
+                      TapCard(
+                        location: BossFightGameCardLocation.bossActions,
+                        index: index,
+                      ),
+                    );
+                  },
+                  cardWithVisibleEffectDescription:
+                      provider.cardWithVisibleEffectDescription,
                 ),
               if (provider.state is Finished)
                 GameFinishedPopup(

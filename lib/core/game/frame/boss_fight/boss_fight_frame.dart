@@ -1,3 +1,4 @@
+import 'package:card_crawler/core/game/frame/base/game_frame.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/boss/boss.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/models/boss_fight_data.dart';
@@ -5,10 +6,10 @@ import 'package:card_crawler/core/game/frame/boss_fight/models/boss_fight_data.d
 import '../common/game_stage/game_stage.dart';
 import '../common/status_effect/status_effect.dart';
 
-class BossFightFrame {
+class BossFightFrame extends GameFrame {
   BossFightFrame({
     required this.boss,
-    required this.data,
+    this.data,
     required this.playerGameCards,
     required this.bossGameCards,
     required this.gameStage,
@@ -21,7 +22,7 @@ class BossFightFrame {
   }
 
   final Boss boss;
-  final BossFightData data;
+  final BossFightData? data;
   final List<BossFightGameCard> playerGameCards;
   final List<BossFightGameCard> bossGameCards;
   final GameStage gameStage;

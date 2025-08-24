@@ -122,5 +122,24 @@ class PlayerEquipmentGameCard extends BossFightGameCard {
     sprite: _spritePath('pe16.png'),
   );
 
-
+  static final entries = [
+    lightArmor,
+    amethystGauntlet,
+    knightsBreastplate,
+    emeraldGauntlet,
+    swordsmanArmor,
+    superiorArmor,
+    desertArmor,
+    cursedShield,
+    maddeningShelter,
+    vulnerabilityExposer,
+    unholyAura,
+    vampiricStrength,
+    midasTouch,
+    timelessPiece,
+    icarusWings,
+    pandorasBox,
+    monkeysGloves,
+    conquerersArmor,
+  ];
 }

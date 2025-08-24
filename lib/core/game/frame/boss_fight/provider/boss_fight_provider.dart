@@ -16,10 +16,16 @@ class BossFightProvider extends ChangeNotifier {
 
   final List<BossFightState> _pendingStates = List.empty(growable: true);
 
+  late Boss _boss;
+  Boss get boss => _boss;
+
   BossFightData _data = BossFightData();
   List<BossFightGameCard?> get fieldCards => _data.fieldCards;
-  List<BossFightGameCard> get playerEquipmentCards => _data.playerEquipmentCards;
+  List<BossFightGameCard> get playerEquipmentCards =>
+      _data.playerEquipmentCards;
   List<BossFightGameCard> get bossActionCards => _data.bossActions;
+  int get playerHealth => _data.playerHealth;
+  int get bossHealth => _data.bossHealth;
 
   late GameStage _gameStage;
   GameStage get gameStage => _gameStage;
@@ -42,11 +48,15 @@ class BossFightProvider extends ChangeNotifier {
     _state = Playing();
     _pendingStates.clear();
 
+    _boss = boss;
+
     _data =
         data ??
         (BossFightData(
           deck: playerGameCards.toList()..shuffle(),
           bossActions: bossGameCards.toList()..shuffle(),
+          bossHealth: boss.health,
+          bossMaxHealth: boss.health,
         )..refillFieldCards());
 
     _gameStage = gameStage;
@@ -60,18 +70,21 @@ class BossFightProvider extends ChangeNotifier {
     for (var acc in _data.playerEquipmentCards) {
       if (acc.effect.type == BossFightGameCardEffectType.equipmentCard) {
         acc.effect.trigger(_data);
+        _queueState(BossFightGameCardEffectTriggered(card: acc));
       }
     }
-    if (!_data.playerSkipped){
+    if (!_data.playerSkipped) {
       switch (action) {
         case SelectCardFromField(card: var card, index: var index):
           {
             _data.playerPickedCard = card;
+            _data.deck.insert(0, _data.playerPickedCard!);
             _data.removeCardFromField(index);
-            if (card.effect.type == BossFightGameCardEffectType.equipmentCard){
+            if (card.effect.type == BossFightGameCardEffectType.equipmentCard) {
               if (_data.playerEquipmentCards.length < 3) {
                 _data.playerEquipmentCards.add(card);
                 card.effect.trigger(_data);
+                _queueState(BossFightGameCardEffectTriggered(card: card));
               } else {
                 _queueState(ReplacingPlayerEquipmentGameCard());
               }
@@ -79,39 +92,44 @@ class BossFightProvider extends ChangeNotifier {
               card.effect.trigger(_data);
               _queueState(BossFightGameCardEffectTriggered(card: card));
             }
+            if (_data.isFieldCardsLow()) {
+              _data.refillFieldCards();
+            }
           }
         case ReplacePlayerEquipmentCard(card: var card, index: var index):
           {
-            _data.playerEquipmentCards[index] = _data.playerPickedCard!;
+            _data.playerEquipmentCards[index] = card;
             _queueState(Playing());
           }
-        case Refresh():
-          {
-            _data.refresh();
-            _data.monkeyPawOn = true;
-          }
+        case SkipTurn():
+          {}
       }
     } else {
-      _queueState(Paused());
+      _queueState(TurnSkipped());
     }
-    for (var status in _data.playerEquipmentCards) { // NOT EQUIPMENT, CHANGE TO STATUS
+    /*for (var status in _data.playerEquipmentCards) { // NOT EQUIPMENT, CHANGE TO STATUS
       if (status.effect.type == BossFightGameCardEffectType.equipmentCard) {
         status.effect.trigger(_data);
+        _queueState(BossFightGameCardEffectTriggered(card: status));
       }
-    }
-    if (!_data.bossSkipped){
+    }*/
+    if (!_data.bossSkipped) {
       _data.bossPickedCard = _data.bossActions.removeLast();
+      _data.bossActions.insert(0, _data.bossPickedCard!);
       _data.bossPickedCard!.effect.trigger(_data);
+      _queueState(
+        BossFightGameCardEffectTriggered(card: _data.bossPickedCard!),
+      );
     }
 
-    if (_data.poison > 0){
+    if (_data.poison > 0) {
       _data.reducePlayerHealth(4);
       _data.poison--;
     }
 
-    if (_data.playerHealth <= 0){
+    if (_data.playerHealth <= 0) {
       _queueState(Finished(isWin: false));
-    } else if (_data.bossHealth <= 0){
+    } else if (_data.bossHealth <= 0) {
       _queueState(Finished(isWin: true));
     }
 
@@ -124,48 +142,51 @@ class BossFightProvider extends ChangeNotifier {
 
     if (_data.playerTurnSkip > 0) {
       _data.playerTurnSkip--;
-      if (_data.playerTurnSkip == 0){
+      if (_data.playerTurnSkip == 0) {
         _data.playerSkipped = false;
       }
     }
 
     if (_data.bossTurnSkip > 0) {
       _data.bossTurnSkip--;
-      if (_data.bossTurnSkip == 0){
+      if (_data.bossTurnSkip == 0) {
         _data.bossSkipped = false;
       }
     }
 
     if (_data.everbloom > 0) _data.everbloom--;
 
-    if (_data.metallica > 0){
+    if (_data.metallica > 0) {
       _data.metallica--;
       _data.reducePlayerHealth(3);
     }
 
-    if (_data.singularityOn){
+    if (_data.singularityOn) {
       _data.singularity--;
       if (_data.singularity == 0) _queueState(Finished(isWin: false));
     }
 
-    if (_data.eldritchContractOn){
+    if (_data.eldritchContractOn) {
       _data.eldritchContract--;
       if (_data.eldritchContract == 0) _queueState(Finished(isWin: false));
     }
 
-    if (_data.cursedCount > 0){
+    if (_data.cursedCount > 0) {
       _data.cursedCount--;
       _data.playerAttackMultiplier -= _data.cursedModifier;
     }
 
-    if (_data.phantom > 0){
+    if (_data.phantom > 0) {
       _data.phantom--;
       _data.bossDefenseMultiplier = 0;
-      if (_data.phantom == 0) _data.reducePlayerHealth(_data.bossDamageCalculator(5));
+      if (_data.phantom == 0) {
+        _data.reducePlayerHealth(_data.bossDamageCalculator(5));
+      }
     }
+
+    _triggerPendingState();
+    notifyListeners();
   }
-
-
 
   void uiAction(BossFightUiAction action) {
     switch (action) {
@@ -174,6 +195,16 @@ class BossFightProvider extends ChangeNotifier {
           _cardWithVisibleEffectDescription == (location, index)
               ? _cardWithVisibleEffectDescription = (null, -1)
               : _cardWithVisibleEffectDescription = (location, index);
+        }
+      case ShowPlayerEquipments():
+        {
+          _queueState(PlayerEquipmentsShown());
+          _triggerPendingState();
+        }
+      case ShowBossActions():
+        {
+          _queueState(BossActionsShown());
+          _triggerPendingState();
         }
       case Pause():
         {
