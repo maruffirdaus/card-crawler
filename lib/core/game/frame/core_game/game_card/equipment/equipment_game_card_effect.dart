@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import '../../types/game_card_effect_type.dart';
+import '../base/game_card_effect_type.dart';
 import '../base/game_card_effect.dart';
 import '../consumable/consumable_game_card.dart';
 import '../monster/monster_game_card.dart';

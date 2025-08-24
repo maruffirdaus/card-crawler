@@ -1,12 +1,12 @@
-import 'package:card_crawler/core/game/frame/core_game/core_game_frame_widget.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/core_game_frame_widget.dart';
 import 'package:card_crawler/core/game/frame/base/game_frame.dart';
 import 'package:card_crawler/core/game/scene/base/provider/game_scene_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../frame/conversation/conversation_frame.dart';
-import '../../frame/conversation/conversation_frame_widget.dart';
-import '../../frame/core_game/core_game_frame.dart';
+import '../../../frame/conversation/conversation_frame.dart';
+import '../../../frame/conversation/ui/conversation_frame_widget.dart';
+import '../../../frame/core_game/core_game_frame.dart';
 
 class GameScene extends StatefulWidget {
   const GameScene({super.key, required this.frames, required this.onComplete});

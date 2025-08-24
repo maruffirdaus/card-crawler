@@ -1,8 +1,8 @@
-import 'package:card_crawler/core/foundation/extensions/build_context_extensions.dart';
+import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
-import '../constants/game_card_aspect_ratio.dart';
+import '../../constants/game_card_aspect_ratio.dart';
 
 class EmptyGameCard extends StatelessWidget {
   const EmptyGameCard({super.key});

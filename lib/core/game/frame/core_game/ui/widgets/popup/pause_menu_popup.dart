@@ -1,9 +1,9 @@
-import 'package:card_crawler/core/foundation/extensions/build_context_extensions.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/popup/popup_scrim.dart';
+import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/popup_scrim.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../foundation/widgets/menu_container.dart';
-import '../../../../../foundation/widgets/menu_item.dart';
+import '../../../../../../foundation/ui/widgets/menu_container.dart';
+import '../../../../../../foundation/ui/widgets/menu_item.dart';
 
 class PauseMenuPopup extends StatelessWidget {
   const PauseMenuPopup({

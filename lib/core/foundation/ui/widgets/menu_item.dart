@@ -1,4 +1,4 @@
-import 'package:card_crawler/core/foundation/extensions/build_context_extensions.dart';
+import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class MenuItem extends StatelessWidget {

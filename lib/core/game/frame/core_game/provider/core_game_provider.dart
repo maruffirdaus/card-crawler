@@ -13,7 +13,7 @@ import '../types/core_game_state.dart';
 import '../types/core_game_ui_action.dart';
 import '../game_card/consumable/consumable_game_card_effect.dart';
 import '../game_card/weapon/weapon_card_effect.dart';
-import '../types/game_card_effect_type.dart';
+import '../game_card/base/game_card_effect_type.dart';
 import '../types/game_card_location.dart';
 
 class CoreGameProvider extends ChangeNotifier {

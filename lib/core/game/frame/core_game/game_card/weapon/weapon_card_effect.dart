@@ -1,4 +1,4 @@
-import '../../types/game_card_effect_type.dart';
+import '../base/game_card_effect_type.dart';
 import '../base/game_card_effect.dart';
 
 class WeaponGameCardEffect extends GameCardEffect {

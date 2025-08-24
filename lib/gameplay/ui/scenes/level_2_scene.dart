@@ -3,7 +3,7 @@ import 'package:card_crawler/core/game/frame/conversation/conversation_choice.da
 import 'package:card_crawler/core/game/frame/conversation/conversation_frame.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart';
 import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
-import 'package:card_crawler/core/game/scene/base/game_scene.dart';
+import 'package:card_crawler/core/game/scene/base/ui/game_scene.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/game/frame/conversation/character/character.dart';

@@ -1,10 +1,10 @@
-import 'package:card_crawler/core/foundation/extensions/build_context_extensions.dart';
+import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:card_crawler/core/game/frame/common/status_effect/status_effect.dart';
 import 'package:card_crawler/core/game/frame/conversation/provider/conversation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'conversation_frame.dart';
+import '../conversation_frame.dart';
 
 class ConversationFrameWidget extends StatefulWidget {
   const ConversationFrameWidget({

@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import '../../types/boss_fight_game_card_effect_type.dart';
+import '../base/boss_fight_game_card_effect_type.dart';
 import '../base/boss_fight_game_card_effect.dart';
 
 class PlayerActionGameCardEffect extends BossFightGameCardEffect {

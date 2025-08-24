@@ -1,5 +1,5 @@
 import 'package:card_crawler/core/game/frame/boss_fight/models/boss_fight_data.dart';
-import 'package:card_crawler/core/game/frame/boss_fight/types/boss_fight_game_card_effect_type.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card_effect_type.dart';
 
 import '../../core_game/models/core_game_data.dart';
 import 'status_effect_type.dart';

@@ -1,24 +1,24 @@
-import 'package:card_crawler/core/foundation/extensions/build_context_extensions.dart';
+import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:card_crawler/core/game/frame/core_game/core_game_frame.dart';
 import 'package:card_crawler/core/game/frame/core_game/provider/core_game_provider.dart';
 import 'package:card_crawler/core/game/frame/core_game/types/core_game_action.dart';
 import 'package:card_crawler/core/game/frame/core_game/types/core_game_state.dart';
 import 'package:card_crawler/core/game/frame/core_game/types/core_game_ui_action.dart';
 import 'package:card_crawler/core/game/frame/core_game/types/game_card_location.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/empty_game_card.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/game_card_widget.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/popup/card_effect_triggered_popup.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/popup/game_finished_popup.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/popup/graveyard_popup.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/popup/pause_menu_popup.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/popup/replace_accessory_card_popup.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/section/main_section.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/section/side_section.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/empty_game_card.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/game_card_widget.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/card_effect_triggered_popup.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/game_finished_popup.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/graveyard_popup.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/pause_menu_popup.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/replace_accessory_card_popup.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/section/main_section.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/section/side_section.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'constants/game_card_aspect_ratio.dart';
-import 'game_card/base/game_card.dart';
+import '../constants/game_card_aspect_ratio.dart';
+import '../game_card/base/game_card.dart';
 
 class CoreGameFrameWidget extends StatefulWidget {
   const CoreGameFrameWidget({

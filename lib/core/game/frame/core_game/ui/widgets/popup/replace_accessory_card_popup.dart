@@ -1,9 +1,9 @@
-import 'package:card_crawler/core/foundation/extensions/build_context_extensions.dart';
-import 'package:card_crawler/core/game/frame/core_game/widgets/popup/popup_scrim.dart';
+import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
+import 'package:card_crawler/core/game/frame/core_game/ui/widgets/popup/popup_scrim.dart';
 import 'package:flutter/material.dart';
 
-import '../../game_card/base/game_card.dart';
-import '../../types/game_card_location.dart';
+import '../../../game_card/base/game_card.dart';
+import '../../../types/game_card_location.dart';
 import '../game_card_widget.dart';
 
 class ReplaceEquipmentCardPopup extends StatelessWidget {

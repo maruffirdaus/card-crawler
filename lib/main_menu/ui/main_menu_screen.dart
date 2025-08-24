@@ -1,6 +1,6 @@
 import 'package:card_crawler/app_route.dart';
-import 'package:card_crawler/core/foundation/widgets/menu_container.dart';
-import 'package:card_crawler/core/foundation/widgets/menu_item.dart';
+import 'package:card_crawler/core/foundation/ui/widgets/menu_container.dart';
+import 'package:card_crawler/core/foundation/ui/widgets/menu_item.dart';
 import 'package:flutter/material.dart';
 
 class MainMenuScreen extends StatelessWidget {

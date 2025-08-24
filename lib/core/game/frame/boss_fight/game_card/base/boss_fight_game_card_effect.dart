@@ -1,4 +1,4 @@
-import 'package:card_crawler/core/game/frame/boss_fight/types/boss_fight_game_card_effect_type.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card_effect_type.dart';
 
 import '../../models/boss_fight_data.dart';
 
