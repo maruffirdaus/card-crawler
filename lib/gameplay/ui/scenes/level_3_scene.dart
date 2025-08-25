@@ -43,7 +43,7 @@ class _Level3SceneState extends State<Level3Scene> {
             '1': ConversationUnit(
               character: Character.lukas,
               texts: [
-                'Yeah, agreed. I didn\'t expect that *wizard* was talking the truth about a castle in the desert',
+                'Yeah, agreed. I didn\'t expect that old elder was talking the truth about a castle in the desert',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '2')],
             ),
@@ -158,7 +158,7 @@ class _Level3SceneState extends State<Level3Scene> {
               character: Character.cole,
               texts: [
                 'Sorry to hear about your wife\'s situation',
-                'Since you opened up, i\'ll tell you.',
+                '...',
                 'I just want my wife and my son back. There\'s something i haven\'t told them yet.',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '5.2.3')],
@@ -242,7 +242,7 @@ class _Level3SceneState extends State<Level3Scene> {
             ),
             '5.1.1': ConversationUnit(
               texts: [
-                'You managed to save Lukas, but you got hit instead. (-3 Health)',
+                'You managed to save Lukas, but you got hit instead.', //-3  health
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '5.1.2')],
             ),
@@ -297,7 +297,7 @@ class _Level3SceneState extends State<Level3Scene> {
             '1': ConversationUnit(
               character: Character.lukas,
               texts: [
-                'The door opened! Hurry, get inside *cole*.',
+                'The door opened! Hurry, get inside cole.',
                 'I\'ll hold them off!',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '2')],

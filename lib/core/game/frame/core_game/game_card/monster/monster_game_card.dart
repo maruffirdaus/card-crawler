@@ -27,7 +27,7 @@ class MonsterGameCard extends GameCard {
   static final amaranhig = MonsterGameCard._(
     //desert
     id: 1,
-    value: 1,
+    value: 4,
     effect: MonsterGameCardEffect.scaling,
     sprite: _spritePath('amaranhig.png'),
   );
@@ -35,7 +35,7 @@ class MonsterGameCard extends GameCard {
   static final amomongo = MonsterGameCard._(
     //snowy
     id: 2,
-    value: 4,
+    value: 6,
     effect: MonsterGameCardEffect.wrecker,
     sprite: _spritePath('amomongo.png'),
   );
@@ -43,7 +43,7 @@ class MonsterGameCard extends GameCard {
   static final boar = MonsterGameCard._(
     //snowy
     id: 3,
-    value: 8,
+    value: 6,
     effect: MonsterGameCardEffect.noEscape,
     sprite: _spritePath('boar.png'),
   );
@@ -67,8 +67,8 @@ class MonsterGameCard extends GameCard {
   static final busaw = MonsterGameCard._(
     //snowy
     id: 6,
-    value: 3,
-    effect: MonsterGameCardEffect.antiHeal,
+    value: 5,
+    effect: MonsterGameCardEffect.spiky,
     sprite: _spritePath('busaw.png'),
   );
 
@@ -89,17 +89,17 @@ class MonsterGameCard extends GameCard {
   );
 
   static final dwendeBlue = MonsterGameCard._(
-    //castle
+    //snowy
     id: 9,
-    value: 5,
-    effect: MonsterGameCardEffect.poisonous,
+    value: 7,
+    effect: MonsterGameCardEffect.freeze,
     sprite: _spritePath('dwende_blue.png'),
   );
 
   static final dwendeOrange = MonsterGameCard._(
-    //castle
+    //snowy
     id: 10,
-    value: 6,
+    value: 5,
     effect: MonsterGameCardEffect.poisonous,
     sprite: _spritePath('dwende_orange.png'),
   );
@@ -107,8 +107,8 @@ class MonsterGameCard extends GameCard {
   static final dwendeRed = MonsterGameCard._(
     //castle
     id: 11,
-    value: 7,
-    effect: MonsterGameCardEffect.poisonous,
+    value: 5,
+    effect: MonsterGameCardEffect.burn,
     sprite: _spritePath('dwende_red.png'),
   );
 
@@ -116,22 +116,22 @@ class MonsterGameCard extends GameCard {
     //castle
     id: 12,
     value: 4,
-    effect: MonsterGameCardEffect.poisonous,
+    effect: MonsterGameCardEffect.corrosive,
     sprite: _spritePath('dwende_yellow.png'),
   );
 
   static final ekEk = MonsterGameCard._(
     //desert
     id: 13,
-    value: 5,
-    effect: MonsterGameCardEffect.corrosive,
+    value: 10,
+    effect: MonsterGameCardEffect.burn,
     sprite: _spritePath('ek_ek.png'),
   );
 
   static final evilDwende = MonsterGameCard._(
     //castle
     id: 14,
-    value: 7,
+    value: 10,
     effect: MonsterGameCardEffect.vengeful,
     sprite: _spritePath('evil_dwende.png'),
   );
@@ -139,7 +139,7 @@ class MonsterGameCard extends GameCard {
   static final kapre = MonsterGameCard._(
     //snowy
     id: 15,
-    value: 7,
+    value: 8,
     effect: MonsterGameCardEffect.wrecker,
     sprite: _spritePath('kapre.png'),
   );
@@ -155,7 +155,7 @@ class MonsterGameCard extends GameCard {
   static final malakat = MonsterGameCard._(
     //desert
     id: 17,
-    value: 7,
+    value: 5,
     effect: MonsterGameCardEffect.aftermath,
     sprite: _spritePath('malakat.png'),
   );
@@ -171,7 +171,7 @@ class MonsterGameCard extends GameCard {
   static final nunoSaPunso = MonsterGameCard._(
     //desert
     id: 19,
-    value: 2,
+    value: 4,
     effect: MonsterGameCardEffect.scaling,
     sprite: _spritePath('nuno_sa_punso.png'),
   );
@@ -195,15 +195,15 @@ class MonsterGameCard extends GameCard {
   static final sigbin = MonsterGameCard._(
     //castle
     id: 22,
-    value: 7,
-    effect: MonsterGameCardEffect.scaling,
+    value: 3,
+    effect: MonsterGameCardEffect.freeze,
     sprite: _spritePath('sigbin.png'),
   );
 
   static final sirena = MonsterGameCard._(
     //castle
     id: 23,
-    value: 4,
+    value: 6,
     effect: MonsterGameCardEffect.corrosive,
     sprite: _spritePath('sirena.png'),
   );
@@ -211,7 +211,7 @@ class MonsterGameCard extends GameCard {
   static final syokoy = MonsterGameCard._(
     //castle
     id: 24,
-    value: 5,
+    value: 6,
     effect: MonsterGameCardEffect.antiHeal,
     sprite: _spritePath('syokoy.png'),
   );
@@ -220,14 +220,14 @@ class MonsterGameCard extends GameCard {
     //snowy
     id: 25,
     value: 9,
-    effect: MonsterGameCardEffect.wrecker,
+    effect: MonsterGameCardEffect.freeze,
     sprite: _spritePath('taong_tuod.png'),
   );
 
   static final tiburones = MonsterGameCard._(
     //castle
     id: 26,
-    value: 7,
+    value: 10,
     effect: MonsterGameCardEffect.noEscape,
     sprite: _spritePath('tiburones.png'),
   );
@@ -243,21 +243,20 @@ class MonsterGameCard extends GameCard {
   static final tiyanak = MonsterGameCard._(
     //castle //burn
     id: 28,
-    value: 6,
+    value: 5,
     effect: MonsterGameCardEffect.burn,
     sprite: _spritePath('tiyanak.png'),
   );
 
   static final witch = MonsterGameCard._(
     id: 29,
-    value: 5,
-    effect: MonsterGameCardEffect.opportunist,
+    value: 8,
+    effect: MonsterGameCardEffect.poisonous,
     sprite: _spritePath('witch.png'),
   );
 
   static final snowyEntries = [
     aghoy,
-    amaranhig,
     amomongo,
     boar,
     boar2,
@@ -266,6 +265,7 @@ class MonsterGameCard extends GameCard {
     dwendeOrange,
     kapre,
     taongTuod,
+    witch,
   ];
 
   static final desertEntries = [

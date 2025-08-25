@@ -60,7 +60,7 @@ class ConsumableGameCard extends GameCard {
 
   static final gildedElixir = ConsumableGameCard._(
     id: 22,
-    value: 8,
+    value: 7,
     effect: ConsumableGameCardEffect.volatileElixir,
     sprite: _spritePath('gilded_elixir.png'),
   );
@@ -130,14 +130,14 @@ class ConsumableGameCard extends GameCard {
 
   static final enigmaTonic = ConsumableGameCard._(
     id: 22,
-    value: 10,
+    value: 7,
     effect: ConsumableGameCardEffect.temporalDew,
     sprite: _spritePath('enigma_tonic.png'),
   );
 
   static final crimsonSerum = ConsumableGameCard._(
     id: 22,
-    value: 8,
+    value: 6,
     effect: ConsumableGameCardEffect.bloodthornBrew,
     sprite: _spritePath('crimson_serum.png'),
   );
@@ -151,7 +151,7 @@ class ConsumableGameCard extends GameCard {
 
   static final stoneHideElixir = ConsumableGameCard._(
     id: 22,
-    value: 8,
+    value: 5,
     effect: ConsumableGameCardEffect.titansShroom,
     sprite: _spritePath('stone_hide_elixir.png'),
   );

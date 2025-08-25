@@ -109,7 +109,7 @@ class WeaponGameCard extends GameCard {
 
   static final kris = WeaponGameCard._(
     id: 0,
-    value: 8,
+    value: 7,
     effect: WeaponGameCardEffect.kris,
     sprite: _spritePath('kris.png'),
   );
@@ -130,7 +130,7 @@ class WeaponGameCard extends GameCard {
 
   static final fangOfRiton = WeaponGameCard._(
     id: 0,
-    value: 5,
+    value: 7,
     effect: WeaponGameCardEffect.fangOfRiton,
     sprite: _spritePath('fang_of_riton.png'),
   );

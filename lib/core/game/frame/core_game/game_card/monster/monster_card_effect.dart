@@ -184,11 +184,20 @@ class MonsterGameCardEffect extends GameCardEffect {
     trigger: (data) {
       if (data.hasEquipment('lorica-segmentata')) {
         return; // skip burn
-      } else if (data.hasEquipment('ruby-wyrmbark-breastplate')) {
-        data.health += 2;
       }
       // Set burn for 3 turns
       data.burnCounter = 3;
+    },
+  );
+
+  static final freeze = MonsterGameCardEffect(
+    id: 'freeze',
+    name: 'Freeze',
+    description:
+    'This enemy will make your next equipment, consumable, or weapon card useless',
+    type: GameCardEffectType.onPicked,
+    trigger: (data) {
+      data.isFrozen = true;
     },
   );
 }

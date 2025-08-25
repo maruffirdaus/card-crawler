@@ -254,12 +254,9 @@ class WeaponGameCardEffect extends GameCardEffect {
   static final poseidonFang = WeaponGameCardEffect(
     id: 'poseidon-fang',
     name: 'Poseidon Fang',
-    description: 'This weapon will add durability by 2 if you take equipments',
+    description: 'This weapon will mitigate freeze effect',
     type: GameCardEffectType.onUse,
     trigger: (data) {
-      if (data.pickedCard is EquipmentGameCard) {
-        data.durability += 2;
-      }
     },
   );
 }

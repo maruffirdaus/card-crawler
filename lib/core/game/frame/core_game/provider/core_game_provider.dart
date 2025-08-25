@@ -64,11 +64,6 @@ class CoreGameProvider extends ChangeNotifier {
       }
     }
 
-    if (_data.burnCounter > 0) {
-      _data.reduceHealth(1);
-      _data.burnCounter--;
-    }
-
     _triggerPendingState();
 
     notifyListeners();
@@ -76,6 +71,18 @@ class CoreGameProvider extends ChangeNotifier {
 
   void action(CoreGameAction action) {
     _resetCardWidget();
+
+    if (_data.burnCounter > 0) {
+      if (_data.hasEquipment('ruby-wyrmbark-breastplate')) {
+        _data.health += 2;
+      }
+      _data.reduceHealth(1);
+      _data.burnCounter--;
+    }
+
+    if (_data.hasEquipment('poseidon-fang')){
+      _data.isFrozen = false;
+    }
 
     for (var card in _data.equipmentCards) {
       if (card.effect == EquipmentGameCardEffect.celestialAegis) {
@@ -103,6 +110,12 @@ class CoreGameProvider extends ChangeNotifier {
           switch (card) {
             case ConsumableGameCard():
               {
+                if (_data.isFrozen) {
+                  _data.isFrozen = false;
+                  _data.graveyardCards.add(card);
+                  break;
+                }
+
                 if (!_data.hasHealed) {
                   _data.health += card.value;
                   _data.hasHealed = true;
@@ -111,6 +124,12 @@ class CoreGameProvider extends ChangeNotifier {
               }
             case WeaponGameCard():
               {
+                if (_data.isFrozen) {
+                  _data.isFrozen = false;
+                  _data.graveyardCards.add(card);
+                  break;
+                }
+
                 if (_data.weaponCard == null) {
                   _data.weaponCard = card;
                 } else {
@@ -171,6 +190,12 @@ class CoreGameProvider extends ChangeNotifier {
               }
             case EquipmentGameCard():
               {
+                if (_data.isFrozen) {
+                  _data.isFrozen = false;
+                  _data.graveyardCards.add(card);
+                  break;
+                }
+
                 if (_data.equipmentCards.length < 3) {
                   _data.equipmentCards.add(card);
                 } else {

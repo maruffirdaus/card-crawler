@@ -236,7 +236,7 @@ class EquipmentGameCardEffect extends GameCardEffect {
     id: 'o-yoroi',
     name: 'O-Yoroi',
     description:
-        'When having this equipment equipped, you reduce health by 2, but increase weapon durability by 10',
+        'When having this equipment equipped, you reduce health by 1, but increase weapon durability by 5',
     type: GameCardEffectType.equipmentCard,
     trigger: (data) {
       if (data.pickedCard is MonsterGameCard) {

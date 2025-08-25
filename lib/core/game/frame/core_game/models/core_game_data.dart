@@ -22,6 +22,7 @@ class CoreGameData {
     this.hasHealed = false,
     this.canFlee = true,
     this.burnCounter = 0,
+    this.isFrozen = false,
   }) {
     this.deck = deck ?? List.empty(growable: true);
     this.dungeonFieldCards = dungeonFieldCards ?? List.filled(4, null);
@@ -49,6 +50,7 @@ class CoreGameData {
   bool hasHealed;
   bool canFlee;
   int burnCounter;
+  bool isFrozen;
 
   void removeCardFromDungeonField(int index) {
     dungeonFieldCards[index] = null;
