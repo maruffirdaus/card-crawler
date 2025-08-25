@@ -16,7 +16,7 @@ class AudioManager {
 
   static Future<void> playSfx(String asset) async {
     await _sfxPlayer.stop();
-    await _sfxPlayer.play(AssetSource(asset));
+    await _sfxPlayer.play(AssetSource(asset), mode: PlayerMode.lowLatency);
   }
 
   static Future<void> stopSfx() async {
