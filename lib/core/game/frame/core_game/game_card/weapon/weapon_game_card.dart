@@ -20,150 +20,150 @@ class WeaponGameCard extends GameCard {
     id: 0,
     value: 5,
     effect: WeaponGameCardEffect.stormSplitter,
-    sprite: _spritePath('battle_axe.png'),
+    sprite: _spritePath('storm_splitter.png'),
   );
 
   static final starForgedHammer = WeaponGameCard._(
     id: 1,
     value: 3,
     effect: WeaponGameCardEffect.starForgedHammer,
-    sprite: _spritePath('battle_hammer.png'),
+    sprite: _spritePath('star_forged_hammer.png'),
   );
 
   static final shadowFang = WeaponGameCard._(
     id: 2,
     value: 7,
     effect: WeaponGameCardEffect.shadowFang,
-    sprite: _spritePath('butcher_knife.png'),
+    sprite: _spritePath('shadow_fang.png'),
   );
 
   static final skullSplitter = WeaponGameCard._(
     id: 3,
     value: 6,
     effect: WeaponGameCardEffect.skullSplitter,
-    sprite: _spritePath('greatsword.png'),
+    sprite: _spritePath('skull_splitter.png'),
   );
 
   static final eternalCleaver = WeaponGameCard._(
     id: 4,
     value: 5,
     effect: WeaponGameCardEffect.eternalCleaver,
-    sprite: _spritePath('greatsword_2.png'),
+    sprite: _spritePath('eternal_cleaver.png'),
   );
 
   static final yamatsumi = WeaponGameCard._(
     id: 5,
     value: 3,
     effect: WeaponGameCardEffect.yamatsumi,
-    sprite: _spritePath('katana.png'),
+    sprite: _spritePath('yamatsumi.png'),
   );
 
   static final kokuryu = WeaponGameCard._(
     id: 6,
     value: 6,
     effect: WeaponGameCardEffect.kokuryu,
-    sprite: _spritePath('katana_2.png'),
+    sprite: _spritePath('kokuryu.png'),
   );
 
   static final stiletto = WeaponGameCard._(
     id: 7,
     value: 5,
     effect: WeaponGameCardEffect.stiletto,
-    sprite: _spritePath('knife.png'),
+    sprite: _spritePath('stiletto.png'),
   );
 
   static final morningStar = WeaponGameCard._(
     id: 8,
     value: 5,
     effect: WeaponGameCardEffect.morningStar,
-    sprite: _spritePath('mace.png'),
+    sprite: _spritePath('morning_star.png'),
   );
 
   static final bladedNunchaku = WeaponGameCard._(
     id: 9,
     value: 6,
     effect: WeaponGameCardEffect.bladedNunchaku,
-    sprite: _spritePath('nunchucks.png'),
+    sprite: _spritePath('bladed_nunchaku.png'),
   );
 
   static final excalibur = WeaponGameCard._(
     id: 0,
     value: 4,
     effect: WeaponGameCardEffect.excalibur,
-    sprite: _spritePath('rapier.png'),
+    sprite: _spritePath('excalibur.png'),
   );
 
   static final espadaLarga = WeaponGameCard._(
     id: 0,
     value: 6,
     effect: WeaponGameCardEffect.espadaLarga,
-    sprite: _spritePath('rapier_2.png'),
+    sprite: _spritePath('espada_larga.png'),
   );
 
   static final shamshir = WeaponGameCard._(
     id: 0,
     value: 6,
     effect: WeaponGameCardEffect.shamshir,
-    sprite: _spritePath('scimitar.png'),
+    sprite: _spritePath('shamshir.png'),
   );
 
   static final kris = WeaponGameCard._(
     id: 0,
     value: 8,
     effect: WeaponGameCardEffect.kris,
-    sprite: _spritePath('scimitar_2.png'),
+    sprite: _spritePath('kris.png'),
   );
 
   static final deathCrescent = WeaponGameCard._(
     id: 0,
     value: 5,
     effect: WeaponGameCardEffect.deathCrescent,
-    sprite: _spritePath('scythe.png'),
+    sprite: _spritePath('death_crescent.png'),
   );
 
   static final khopesh = WeaponGameCard._(
     id: 0,
     value: 6,
     effect: WeaponGameCardEffect.khopesh,
-    sprite: _spritePath('sickle.png'),
+    sprite: _spritePath('khopesh.png'),
   );
 
   static final fangOfRiton = WeaponGameCard._(
     id: 0,
     value: 5,
     effect: WeaponGameCardEffect.fangOfRiton,
-    sprite: _spritePath('spear.png'),
+    sprite: _spritePath('fang_of_riton.png'),
   );
 
   static final shepherdStaff = WeaponGameCard._(
     id: 0,
     value: 4,
     effect: WeaponGameCardEffect.shepherdStaff,
-    sprite: _spritePath('staff.png'),
+    sprite: _spritePath('shepherd_staff.png'),
   );
 
   static final gladius = WeaponGameCard._(
     id: 0,
     value: 7,
     effect: WeaponGameCardEffect.gladius,
-    sprite: _spritePath('sword.png'),
+    sprite: _spritePath('gladius.png'),
   );
 
   static final doomSpire = WeaponGameCard._(
     id: 0,
     value: 6,
     effect: WeaponGameCardEffect.doomSpire,
-    sprite: _spritePath('sword_2.png'),
+    sprite: _spritePath('doom_spire.png'),
   );
 
   static final poseidonFang = WeaponGameCard._(
     id: 0,
     value: 5,
     effect: WeaponGameCardEffect.poseidonFang,
-    sprite: _spritePath('trident.png'),
+    sprite: _spritePath('poseidon_fang.png'),
   );
 
-  static final entriesSnowy = [
+  static final snowyEntries = [
     stormSplitter,
     starForgedHammer,
     shadowFang,
@@ -173,7 +173,7 @@ class WeaponGameCard extends GameCard {
     kokuryu,
   ];
 
-  static final entriesDesert = [
+  static final desertEntries = [
     stiletto,
     morningStar,
     bladedNunchaku,
@@ -183,7 +183,7 @@ class WeaponGameCard extends GameCard {
     kris,
   ];
 
-  static final entriesCastle = [
+  static final castleEntries = [
     deathCrescent,
     khopesh,
     fangOfRiton,

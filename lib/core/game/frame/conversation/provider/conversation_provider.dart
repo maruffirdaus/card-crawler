@@ -19,12 +19,12 @@ class ConversationProvider extends ChangeNotifier {
   List<ConversationChoice> get currentChoices =>
       _conversations[_currentId]!.choices;
 
-  late GameStage _gameStage;
-  GameStage get gameStage => _gameStage;
+  GameStage? _gameStage;
+  GameStage? get gameStage => _gameStage;
 
   void init({
     required Map<String, ConversationUnit> conversations,
-    required GameStage gameStage,
+    required GameStage? gameStage,
   }) {
     _conversations = conversations;
     _currentId = conversations.keys.first;

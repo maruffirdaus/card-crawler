@@ -68,10 +68,10 @@ class _Level1SceneState extends State<Level1Scene> {
         ),
         '1': CoreGameFrame(
           gameCards: [
-            ...WeaponGameCard.entriesSnowy,
-            ...MonsterGameCard.entriesSnowy,
-            ...EquipmentGameCard.entriesSnowy,
-            ...ConsumableGameCard.entriesSnowy,
+            ...WeaponGameCard.snowyEntries,
+            ...MonsterGameCard.snowyEntries,
+            ...EquipmentGameCard.snowyEntries,
+            ...ConsumableGameCard.snowyEntries,
           ],
           gameStage: GameStage.snowyMountainForest,
           nextId: '2',

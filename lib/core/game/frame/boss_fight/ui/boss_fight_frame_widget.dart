@@ -277,7 +277,18 @@ class _BossFightFrameContent extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Expanded(flex: 1, child: SizedBox()),
+                        Expanded(
+                          flex: 1,
+                          child: Center(
+                            child: FilledButton(
+                              onPressed: () {
+                                provider.action(Renew());
+                              },
+                              style: buttonStyle,
+                              child: Text('PAUSE', style: buttonTextStyle),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),

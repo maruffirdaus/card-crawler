@@ -100,6 +100,10 @@ class BossFightProvider extends ChangeNotifier {
             _data.playerEquipmentCards[index] = card;
             _queueState(Playing());
           }
+        case Renew():
+          {
+            _data.renew();
+          }
         case SkipTurn():
           {}
       }

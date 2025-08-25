@@ -187,10 +187,10 @@ class _Level3SceneState extends State<Level3Scene> {
         ),
         '2': CoreGameFrame(
           gameCards: [
-            ...WeaponGameCard.entriesCastle,
-            ...EquipmentGameCard.entriesCastle,
-            ...MonsterGameCard.entriesCastle,
-            ...ConsumableGameCard.entriesCastle,
+            ...WeaponGameCard.castleEntries,
+            ...EquipmentGameCard.castleEntries,
+            ...MonsterGameCard.castleEntries,
+            ...ConsumableGameCard.castleEntries,
           ],
           gameStage: GameStage.castle,
           nextId: '3',
@@ -280,10 +280,10 @@ class _Level3SceneState extends State<Level3Scene> {
         ),
         '4': CoreGameFrame(
           gameCards: [
-            ...WeaponGameCard.entriesCastle,
-            ...ConsumableGameCard.entriesCastle,
-            ...MonsterGameCard.entriesCastle,
-            ...EquipmentGameCard.entriesCastle,
+            ...WeaponGameCard.castleEntries,
+            ...ConsumableGameCard.castleEntries,
+            ...MonsterGameCard.castleEntries,
+            ...EquipmentGameCard.castleEntries,
           ],
           gameStage: GameStage.castle,
           nextId: '5',

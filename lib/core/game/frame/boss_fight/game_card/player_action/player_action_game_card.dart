@@ -17,61 +17,61 @@ class PlayerActionGameCard extends BossFightGameCard {
   static final knightlyRending = PlayerActionGameCard._(
     id: 'p0',
     effect: PlayerActionGameCardEffect.knightlyRending,
-    sprite: _spritePath('sword.png'),
+    sprite: _spritePath('knightly_rending.png'),
   );
 
   static final mistyDodge = PlayerActionGameCard._(
     id: 'p1',
     effect: PlayerActionGameCardEffect.mistyDodge,
-    sprite: _spritePath('ba24.png'),
+    sprite: _spritePath('misty_dodge.png'),
   );
 
   static final fancyFootwork = PlayerActionGameCard._(
     id: 'p2',
     effect: PlayerActionGameCardEffect.fancyFootwork,
-    sprite: _spritePath('rapier_2.png'),
+    sprite: _spritePath('fancy_footwork.png'),
   );
 
   static final boneChill = PlayerActionGameCard._(
     id: 'p3',
     effect: PlayerActionGameCardEffect.boneChill,
-    sprite: _spritePath('ba22.png'),
+    sprite: _spritePath('bone_chill.png'),
   );
 
   static final enhanceWeapon = PlayerActionGameCard._(
     id: 'p4',
     effect: PlayerActionGameCardEffect.enhanceWeapon,
-    sprite: _spritePath('ba20.png'),
+    sprite: _spritePath('enhance_weapon.png'),
   );
 
   static final healingPotion = PlayerActionGameCard._(
     id: 'p5',
     effect: PlayerActionGameCardEffect.healingPotion,
-    sprite: _spritePath('c3.png'),
+    sprite: _spritePath('healing_potion.png'),
   );
 
   static final haste = PlayerActionGameCard._(
     id: 'p6',
     effect: PlayerActionGameCardEffect.haste,
-    sprite: _spritePath('ba25.png'),
+    sprite: _spritePath('haste.png'),
   );
 
   static final followUp = PlayerActionGameCard._(
     id: 'p7',
     effect: PlayerActionGameCardEffect.followUp,
-    sprite: _spritePath('scimitar_2.png'),
+    sprite: _spritePath('follow_up.png'),
   );
 
   static final cyclone = PlayerActionGameCard._(
     id: 'p8',
     effect: PlayerActionGameCardEffect.cyclone,
-    sprite: _spritePath('sickle.png'),
+    sprite: _spritePath('cyclone.png'),
   );
 
   static final ironskinPotion = PlayerActionGameCard._(
     id: 'p9',
     effect: PlayerActionGameCardEffect.ironskinPotion,
-    sprite: _spritePath('c5.png'),
+    sprite: _spritePath('ironskin_potion.png'),
   );
 
   //new cards for boss 2
@@ -79,97 +79,97 @@ class PlayerActionGameCard extends BossFightGameCard {
   static final pocketSand = PlayerActionGameCard._(
     id: 'p10',
     effect: PlayerActionGameCardEffect.pocketSand,
-    sprite: _spritePath('knife.png'),
+    sprite: _spritePath('pocket_sand.png'),
   );
 
   static final weaken = PlayerActionGameCard._(
     id: 'p11',
     effect: PlayerActionGameCardEffect.weaken,
-    sprite: _spritePath('ba15.png'),
+    sprite: _spritePath('weaken.png'),
   );
 
   static final allOutAttack = PlayerActionGameCard._(
     id: 'p12',
     effect: PlayerActionGameCardEffect.allOutAttack,
-    sprite: _spritePath('greatsword_2.png'),
+    sprite: _spritePath('all_out_attack.png'),
   );
 
   static final divineSmite = PlayerActionGameCard._(
     id: 'p13',
     effect: PlayerActionGameCardEffect.divineSmite,
-    sprite: _spritePath('trident.png'),
+    sprite: _spritePath('divine_smite.png'),
   );
 
   static final holyPrayers = PlayerActionGameCard._(
     id: 'p14',
     effect: PlayerActionGameCardEffect.holyPrayers,
-    sprite: _spritePath('ba8.png'),
+    sprite: _spritePath('holy_prayers.png'),
   );
 
   static final massHealingWard = PlayerActionGameCard._(
     id: 'p15',
     effect: PlayerActionGameCardEffect.massHealingWard,
-    sprite: _spritePath('ba9.png'),
+    sprite: _spritePath('mass_healing_ward.png'),
   );
 
   static final everbloom = PlayerActionGameCard._(
     id: 'p16',
     effect: PlayerActionGameCardEffect.everbloom,
-    sprite: _spritePath('ba7.png'),
+    sprite: _spritePath('everbloom.png'),
   );
 
   static final bloodBlade = PlayerActionGameCard._(
     id: 'p17',
     effect: PlayerActionGameCardEffect.bloodBlade,
-    sprite: _spritePath('katana_2.png'),
+    sprite: _spritePath('blood_blade.png'),
   );
 
   static final darkDetermination = PlayerActionGameCard._(
     id: 'p18',
     effect: PlayerActionGameCardEffect.darkDetermination,
-    sprite: _spritePath('ba1.png'),
+    sprite: _spritePath('dark_determination.png'),
   );
 
   static final finishingBlow = PlayerActionGameCard._(
     id: 'p19',
     effect: PlayerActionGameCardEffect.finishingBlow,
-    sprite: _spritePath('greatsword.png'),
+    sprite: _spritePath('finishing_blow.png'),
   );
 
   static final metallica = PlayerActionGameCard._(
     id: 'p20',
     effect: PlayerActionGameCardEffect.metallica,
-    sprite: _spritePath('ba0.png'),
+    sprite: _spritePath('metallica.png'),
   );
 
   static final singularity = PlayerActionGameCard._(
     id: 'p21',
     effect: PlayerActionGameCardEffect.singularity,
-    sprite: _spritePath('ba11.png'),
+    sprite: _spritePath('singularity.png'),
   );
 
   static final soulEater = PlayerActionGameCard._(
     id: 'p22',
     effect: PlayerActionGameCardEffect.soulEater,
-    sprite: _spritePath('scythe.png'),
+    sprite: _spritePath('soul_eater.png'),
   );
 
   static final eldritchContract = PlayerActionGameCard._(
     id: 'p23',
     effect: PlayerActionGameCardEffect.eldritchContract,
-    sprite: _spritePath('ba3.png'),
+    sprite: _spritePath('eldritch_contract.png'),
   );
 
   static final divineInterference = PlayerActionGameCard._(
     id: 'p24',
     effect: PlayerActionGameCardEffect.divineInterference,
-    sprite: _spritePath('ba6.png'),
+    sprite: _spritePath('divine_interference.png'),
   );
 
   static final angelicRespite = PlayerActionGameCard._(
     id: 'p25',
     effect: PlayerActionGameCardEffect.angelicRespite,
-    sprite: _spritePath('ba5.png'),
+    sprite: _spritePath('angelic_respite.png'),
   );
 
   static final entries1 = [

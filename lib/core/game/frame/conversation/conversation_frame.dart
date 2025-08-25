@@ -3,8 +3,8 @@ import 'package:card_crawler/core/game/frame/common/game_stage/game_stage.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_unit.dart';
 
 class ConversationFrame extends GameFrame {
-  ConversationFrame({required this.conversations, required this.gameStage});
+  ConversationFrame({required this.conversations, this.gameStage});
 
   final Map<String, ConversationUnit> conversations;
-  final GameStage gameStage;
+  final GameStage? gameStage;
 }

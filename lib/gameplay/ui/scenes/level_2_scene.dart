@@ -122,10 +122,10 @@ class _Level2SceneState extends State<Level2Scene> {
         ),
         '1': CoreGameFrame(
           gameCards: [
-            ...WeaponGameCard.entriesDesert,
-            ...MonsterGameCard.entriesDesert,
-            ...EquipmentGameCard.entriesDesert,
-            ...ConsumableGameCard.entriesDesert,
+            ...WeaponGameCard.desertEntries,
+            ...MonsterGameCard.desertEntries,
+            ...EquipmentGameCard.desertEntries,
+            ...ConsumableGameCard.desertEntries,
           ],
           gameStage: GameStage.desert,
           nextId: '2',
@@ -240,7 +240,6 @@ class _Level2SceneState extends State<Level2Scene> {
               choices: [ConversationChoice(text: 'Next', nextFrameId: '6')],
             ),
           },
-          gameStage: GameStage.black,
         ),
         '6': ConversationFrame(
           conversations: {

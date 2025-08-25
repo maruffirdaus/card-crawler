@@ -17,109 +17,109 @@ class PlayerEquipmentGameCard extends BossFightGameCard {
   static final lightArmor = PlayerEquipmentGameCard._(
     id: 'be0',
     effect: PlayerEquipmentGameCardEffect.lightArmor,
-    sprite: _spritePath('pe19.png'),
+    sprite: _spritePath('light_armor.png'),
   );
 
   static final amethystGauntlet = PlayerEquipmentGameCard._(
     id: 'be1',
     effect: PlayerEquipmentGameCardEffect.amethystGauntlet,
-    sprite: _spritePath('pe4.png'),
+    sprite: _spritePath('amethyst_gauntlet.png'),
   );
 
   static final knightsBreastplate = PlayerEquipmentGameCard._(
     id: 'be2',
     effect: PlayerEquipmentGameCardEffect.knightsBreastplate,
-    sprite: _spritePath('pe2.png'),
+    sprite: _spritePath('knights_breastplate.png'),
   );
 
   static final emeraldGauntlet = PlayerEquipmentGameCard._(
     id: 'be3',
     effect: PlayerEquipmentGameCardEffect.emeraldGauntlet,
-    sprite: _spritePath('pe1.png'),
+    sprite: _spritePath('emerald_gauntlet.png'),
   );
 
   static final swordsmanArmor = PlayerEquipmentGameCard._(
     id: 'be4',
     effect: PlayerEquipmentGameCardEffect.swordsmanArmor,
-    sprite: _spritePath('pe9.png'),
+    sprite: _spritePath('swordsman_armor.png'),
   );
 
   static final superiorArmor = PlayerEquipmentGameCard._(
     id: 'be5',
     effect: PlayerEquipmentGameCardEffect.superiorArmor,
-    sprite: _spritePath('pe7.png'),
+    sprite: _spritePath('superior_armor.png'),
   );
 
   static final desertArmor = PlayerEquipmentGameCard._(
     id: 'be6',
     effect: PlayerEquipmentGameCardEffect.desertArmor,
-    sprite: _spritePath('pe6.png'),
+    sprite: _spritePath('desert_armor.png'),
   );
 
   static final cursedShield = PlayerEquipmentGameCard._(
     id: 'be7',
     effect: PlayerEquipmentGameCardEffect.cursedShield,
-    sprite: _spritePath('pe3.png'),
+    sprite: _spritePath('cursed_shield.png'),
   );
 
   static final maddeningShelter = PlayerEquipmentGameCard._(
     id: 'be8',
     effect: PlayerEquipmentGameCardEffect.maddeningShelter,
-    sprite: _spritePath('pe5.png'),
+    sprite: _spritePath('maddening_shelter.png'),
   );
 
   static final vulnerabilityExposer = PlayerEquipmentGameCard._(
     id: 'be9',
     effect: PlayerEquipmentGameCardEffect.vulnerabilityExposer,
-    sprite: _spritePath('pe8.png'),
+    sprite: _spritePath('vulnerability_exposer.png'),
   );
 
   static final unholyAura = PlayerEquipmentGameCard._(
     id: 'be10',
     effect: PlayerEquipmentGameCardEffect.unholyAura,
-    sprite: _spritePath('pe18.png'),
+    sprite: _spritePath('unholy_aura.png'),
   );
 
   static final vampiricStrength = PlayerEquipmentGameCard._(
     id: 'be11',
     effect: PlayerEquipmentGameCardEffect.vampiricStrength,
-    sprite: _spritePath('pe17.png'),
+    sprite: _spritePath('vampiric_strength.png'),
   );
 
   static final midasTouch = PlayerEquipmentGameCard._(
     id: 'be12',
     effect: PlayerEquipmentGameCardEffect.midasTouch,
-    sprite: _spritePath('pe15.png'),
+    sprite: _spritePath('midas_touch.png'),
   );
 
   static final timelessPiece = PlayerEquipmentGameCard._(
     id: 'be13',
     effect: PlayerEquipmentGameCardEffect.timelessPiece,
-    sprite: _spritePath('pe10.png'),
+    sprite: _spritePath('timeless_piece.png'),
   );
 
   static final icarusWings = PlayerEquipmentGameCard._(
     id: 'be14',
     effect: PlayerEquipmentGameCardEffect.icarusWings,
-    sprite: _spritePath('pe14.png'),
+    sprite: _spritePath('icarus_wings.png'),
   );
 
   static final pandorasBox = PlayerEquipmentGameCard._(
     id: 'be15',
     effect: PlayerEquipmentGameCardEffect.pandorasBox,
-    sprite: _spritePath('pe20.png'),
+    sprite: _spritePath('pandoras_box.png'),
   );
 
   static final monkeysGloves = PlayerEquipmentGameCard._(
     id: 'be16',
     effect: PlayerEquipmentGameCardEffect.monkeysGloves,
-    sprite: _spritePath('pe13.png'),
+    sprite: _spritePath('monkeys_gloves.png'),
   );
 
   static final conquerersArmor = PlayerEquipmentGameCard._(
     id: 'be17',
     effect: PlayerEquipmentGameCardEffect.conquerersArmor,
-    sprite: _spritePath('pe16.png'),
+    sprite: _spritePath('conquerers_armor.png'),
   );
 
   static final entries1 = [

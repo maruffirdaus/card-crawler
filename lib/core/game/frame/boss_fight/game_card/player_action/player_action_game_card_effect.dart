@@ -110,7 +110,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       data.reduceBossHealth(data.playerDamageCalculator(6));
-      data.refresh();
+      data.renew();
     },
   );
 

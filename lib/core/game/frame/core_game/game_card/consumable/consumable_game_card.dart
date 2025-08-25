@@ -20,150 +20,150 @@ class ConsumableGameCard extends GameCard {
     id: 16,
     value: 5,
     effect: ConsumableGameCardEffect.bloodthornBrew,
-    sprite: _spritePath('c0.png'),
+    sprite: _spritePath('ash_draught.png'),
   );
 
   static final greyMatterPotion = ConsumableGameCard._(
     id: 17,
     value: 7,
     effect: ConsumableGameCardEffect.titansShroom,
-    sprite: _spritePath('c1.png'),
+    sprite: _spritePath('grey_matter_potion.png'),
   );
 
   static final etherGreyTonic = ConsumableGameCard._(
     id: 18,
     value: 6,
     effect: ConsumableGameCardEffect.temporalDew,
-    sprite: _spritePath('c2.png'),
+    sprite: _spritePath('ether_grey_tonic.png'),
   );
 
   static final vitalisPotion = ConsumableGameCard._(
     id: 19,
     value: 4,
     effect: ConsumableGameCardEffect.emeticElixir,
-    sprite: _spritePath('c3.png'),
+    sprite: _spritePath('vitalis_potion.png'),
   );
 
   static final goldenTonic = ConsumableGameCard._(
     id: 20,
     value: 3,
     effect: ConsumableGameCardEffect.bolterPotion,
-    sprite: _spritePath('c4.png'),
+    sprite: _spritePath('golden_tonic.png'),
   );
 
   static final solEssence = ConsumableGameCard._(
     id: 21,
     value: 7,
     effect: ConsumableGameCardEffect.agedBerries,
-    sprite: _spritePath('c5.png'),
+    sprite: _spritePath('sol_essence.png'),
   );
 
   static final gildedElixir = ConsumableGameCard._(
     id: 22,
     value: 8,
     effect: ConsumableGameCardEffect.volatileElixir,
-    sprite: _spritePath('c6.png'),
+    sprite: _spritePath('gilded_elixir.png'),
   );
 
   static final verdantElixir = ConsumableGameCard._(
     id: 22,
     value: 5,
     effect: ConsumableGameCardEffect.temporalDew,
-    sprite: _spritePath('c7.png'),
+    sprite: _spritePath('verdant_elixir.png'),
   );
 
   static final vineBrew = ConsumableGameCard._(
     id: 22,
     value: 4,
     effect: ConsumableGameCardEffect.emeticElixir,
-    sprite: _spritePath('c8.png'),
+    sprite: _spritePath('vine_brew.png'),
   );
 
   static final purgeBrew = ConsumableGameCard._(
     id: 22,
     value: 5,
     effect: ConsumableGameCardEffect.volatileElixir,
-    sprite: _spritePath('c9.png'),
+    sprite: _spritePath('purge_brew.png'),
   );
 
   static final indigoSerum = ConsumableGameCard._(
     id: 22,
     value: 4,
     effect: ConsumableGameCardEffect.bolterPotion,
-    sprite: _spritePath('c10.png'),
+    sprite: _spritePath('indigo_serum.png'),
   );
 
   static final azureElixir = ConsumableGameCard._(
     id: 22,
     value: 6,
     effect: ConsumableGameCardEffect.agedBerries,
-    sprite: _spritePath('c11.png'),
+    sprite: _spritePath('azure_elixir.png'),
   );
 
   static final oceanMist = ConsumableGameCard._(
     id: 22,
     value: 7,
     effect: ConsumableGameCardEffect.titansShroom,
-    sprite: _spritePath('c12.png'),
+    sprite: _spritePath('ocean_mist.png'),
   );
 
   static final venomBrew = ConsumableGameCard._(
     id: 22,
     value: 3,
     effect: ConsumableGameCardEffect.volatileElixir,
-    sprite: _spritePath('c13.png'),
+    sprite: _spritePath('venom_brew.png'),
   );
 
   static final arcanaElixir = ConsumableGameCard._(
     id: 22,
     value: 5,
     effect: ConsumableGameCardEffect.bloodthornBrew,
-    sprite: _spritePath('c14.png'),
+    sprite: _spritePath('arcana_elixir.png'),
   );
 
   static final lavenderEssence = ConsumableGameCard._(
     id: 22,
     value: 7,
     effect: ConsumableGameCardEffect.emeticElixir,
-    sprite: _spritePath('c15.png'),
+    sprite: _spritePath('lavender_essence.png'),
   );
 
   static final enigmaTonic = ConsumableGameCard._(
     id: 22,
     value: 10,
     effect: ConsumableGameCardEffect.temporalDew,
-    sprite: _spritePath('c16.png'),
+    sprite: _spritePath('enigma_tonic.png'),
   );
 
   static final crimsonSerum = ConsumableGameCard._(
     id: 22,
     value: 8,
     effect: ConsumableGameCardEffect.bloodthornBrew,
-    sprite: _spritePath('c17.png'),
+    sprite: _spritePath('crimson_serum.png'),
   );
 
   static final fireVeinTonic = ConsumableGameCard._(
     id: 22,
     value: 6,
     effect: ConsumableGameCardEffect.bloodthornBrew,
-    sprite: _spritePath('c18.png'),
+    sprite: _spritePath('fire_vein_tonic.png'),
   );
 
   static final stoneHideElixir = ConsumableGameCard._(
     id: 22,
     value: 8,
     effect: ConsumableGameCardEffect.titansShroom,
-    sprite: _spritePath('c19.png'),
+    sprite: _spritePath('stone_hide_elixir.png'),
   );
 
   static final ivoryDraught = ConsumableGameCard._(
     id: 22,
     value: 7,
     effect: ConsumableGameCardEffect.temporalDew,
-    sprite: _spritePath('c20.png'),
+    sprite: _spritePath('ivory_draught.png'),
   );
 
-  static final entriesSnowy = [
+  static final snowyEntries = [
     ashDraught,
     greyMatterPotion,
     etherGreyTonic,
@@ -173,7 +173,7 @@ class ConsumableGameCard extends GameCard {
     gildedElixir,
   ];
 
-  static final entriesDesert = [
+  static final desertEntries = [
     verdantElixir,
     vineBrew,
     purgeBrew,
@@ -183,7 +183,7 @@ class ConsumableGameCard extends GameCard {
     venomBrew,
   ];
 
-  static final entriesCastle = [
+  static final castleEntries = [
     arcanaElixir,
     lavenderEssence,
     enigmaTonic,

@@ -255,7 +255,7 @@ class MonsterGameCard extends GameCard {
     sprite: _spritePath('witch.png'),
   );
 
-  static final entriesSnowy = [
+  static final snowyEntries = [
     aghoy,
     amaranhig,
     amomongo,
@@ -268,7 +268,7 @@ class MonsterGameCard extends GameCard {
     taongTuod,
   ];
 
-  static final entriesDesert = [
+  static final desertEntries = [
     amaranhig,
     bungisngis,
     buwaya,
@@ -281,7 +281,7 @@ class MonsterGameCard extends GameCard {
     tikbalang,
   ];
 
-  static final entriesCastle = [
+  static final castleEntries = [
     chicken,
     dwendeRed,
     dwendeYellow,

@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   provider: ^6.1.2
   dotted_border: ^2.1.0
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +49,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
   rename: ^3.1.0
+  icons_launcher: ^3.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -106,3 +108,19 @@ flutter:
     - assets/card_sprites/player_action/
     - assets/card_sprites/player_equipment/
     - assets/character_sprites/
+
+icons_launcher:
+  image_path: "assets/app_icons/icon.png"
+  platforms:
+    android:
+      enable: true
+    ios:
+      enable: true
+    macos:
+      enable: true
+    windows:
+      enable: true
+    web:
+      enable: true
+    linux:
+      enable: true

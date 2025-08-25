@@ -61,12 +61,14 @@ class _ConversationFrameContent extends StatelessWidget {
           },
           child: Stack(
             children: [
-              Positioned.fill(
-                child: Image.asset(
-                  provider.gameStage.background,
-                  fit: BoxFit.cover,
-                ),
-              ),
+              provider.gameStage != null
+                  ? Positioned.fill(
+                      child: Image.asset(
+                        provider.gameStage!.background,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  : Container(color: Colors.black),
               SafeArea(
                 child: Align(
                   alignment: Alignment.bottomCenter,

@@ -138,7 +138,7 @@ class BossFightData {
     }
   }
 
-  void refresh() {
+  void renew() {
     fieldCards.shuffle();
     for (int i = 0; i < fieldCards.length; i++) {
       fieldCards[i] = null;
