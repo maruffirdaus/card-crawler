@@ -70,6 +70,8 @@ class BossFightProvider extends ChangeNotifier {
   }
 
   void action(BossFightAction action) {
+    print('action');
+    print(_pendingStates);
     for (var equipment in _data.playerEquipmentCards) {
       if (equipment.effect.type == BossFightGameCardEffectType.equipmentCard) {
         equipment.effect.trigger(_data);
@@ -95,6 +97,7 @@ class BossFightProvider extends ChangeNotifier {
                 card.effect.trigger(_data);
                 _queueState(BossFightGameCardEffectTriggered(card: card));
               } else {
+                card.effect.trigger(_data);
                 _queueState(ReplacingPlayerEquipmentGameCard());
               }
             } else {
@@ -108,7 +111,6 @@ class BossFightProvider extends ChangeNotifier {
         case ReplacePlayerEquipmentCard(index: var index):
           {
             _data.playerEquipmentCards[index] = _data.playerPickedCard!;
-            _queueState(Playing());
           }
         case Renew():
           {
@@ -135,7 +137,7 @@ class BossFightProvider extends ChangeNotifier {
       _data.bossAttackMultiplier += _data.bossAttackMultiplier;
     }
 
-    if (!_data.bossSkipped) {
+    if (!_data.bossSkipped && action is! ReplacePlayerEquipmentCard) {
       _queueState(BossTurn());
       _data.bossPickedCard = _data.bossActions.removeLast();
       _data.bossActions.insert(0, _data.bossPickedCard!);
@@ -143,7 +145,7 @@ class BossFightProvider extends ChangeNotifier {
       _queueState(
         BossFightGameCardEffectTriggered(card: _data.bossPickedCard!),
       );
-    } else {
+    } else if (_data.bossSkipped) {
       _queueState(BossTurnSkipped());
     }
 
@@ -209,7 +211,7 @@ class BossFightProvider extends ChangeNotifier {
       }
     }
 
-    if (!_data.playerSkipped) {
+    if (!_data.playerSkipped && action is! ReplacePlayerEquipmentCard) {
       _queueState(PlayerTurn());
     }
 
@@ -218,6 +220,8 @@ class BossFightProvider extends ChangeNotifier {
   }
 
   void uiAction(BossFightUiAction action) {
+    print('uiAction');
+    print(_pendingStates);
     switch (action) {
       case TapCard(location: var location, index: var index):
         {
