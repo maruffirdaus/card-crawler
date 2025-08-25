@@ -26,7 +26,6 @@ class BossFightProvider extends ChangeNotifier {
   List<BossFightGameCard> get bossActionCards => _data.bossActions;
   int get playerHealth => _data.playerHealth;
   int get bossHealth => _data.bossHealth;
-
   late GameStage _gameStage;
   GameStage get gameStage => _gameStage;
 
@@ -53,8 +52,9 @@ class BossFightProvider extends ChangeNotifier {
     _data =
         data ??
         (BossFightData(
-          deck: playerGameCards.toList()..shuffle(),
-          bossActions: bossGameCards.toList()..shuffle(),
+          deck: playerGameCards.map((card) => card.copy()).toList()..shuffle(),
+          bossActions: bossGameCards.map((card) => card.copy()).toList()
+            ..shuffle(),
           bossHealth: boss.health,
           bossMaxHealth: boss.health,
         )..refillFieldCards());
@@ -66,16 +66,16 @@ class BossFightProvider extends ChangeNotifier {
     _queueState(PlayerTurn());
 
     _triggerPendingState();
-
     notifyListeners();
   }
 
   void action(BossFightAction action) {
-    for (var acc in _data.playerEquipmentCards) {
-      if (acc.effect.type == BossFightGameCardEffectType.equipmentCard) {
-        acc.effect.trigger(_data);
+    for (var equipment in _data.playerEquipmentCards) {
+      if (equipment.effect.type == BossFightGameCardEffectType.equipmentCard) {
+        equipment.effect.trigger(_data);
       }
     }
+
     if (!_data.playerSkipped) {
       switch (action) {
         case SelectCardFromField(card: var card, index: var index):
@@ -108,18 +108,10 @@ class BossFightProvider extends ChangeNotifier {
           {
             _data.renew();
           }
-        case SkipTurn():
-          {}
       }
     } else {
       _queueState(PlayerTurnSkipped());
     }
-    /*for (var status in _data.playerEquipmentCards) { // NOT EQUIPMENT, CHANGE TO STATUS
-      if (status.effect.type == BossFightGameCardEffectType.equipmentCard) {
-        status.effect.trigger(_data);
-        _queueState(BossFightGameCardEffectTriggered(card: status));
-      }
-    }*/
 
     if (_data.playerHealth <= 0) {
       _queueState(Finished(isWin: false));
@@ -211,7 +203,9 @@ class BossFightProvider extends ChangeNotifier {
       }
     }
 
-    _queueState(PlayerTurn());
+    if (!_data.playerSkipped) {
+      _queueState(PlayerTurn());
+    }
 
     _triggerPendingState();
     notifyListeners();

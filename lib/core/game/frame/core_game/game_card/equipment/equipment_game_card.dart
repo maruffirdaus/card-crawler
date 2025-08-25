@@ -12,6 +12,10 @@ class EquipmentGameCard extends GameCard {
          iconSmall: 'assets/card_icons/equipment_16.png',
        );
 
+  @override
+  GameCard copy() =>
+      EquipmentGameCard._(id: id, value: value, effect: effect, sprite: sprite);
+
   static String _spritePath(String fileName) =>
       'assets/card_sprites/equipment/$fileName';
 

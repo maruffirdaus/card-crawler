@@ -11,6 +11,10 @@ class BossActionGameCard extends BossFightGameCard {
          iconSmall: 'assets/card_icons/boss_action_16.png',
        );
 
+  @override
+  BossFightGameCard copy() =>
+      BossActionGameCard._(id: id, effect: effect, sprite: sprite);
+
   static String _spritePath(String fileName) =>
       'assets/card_sprites/boss_action/$fileName';
 

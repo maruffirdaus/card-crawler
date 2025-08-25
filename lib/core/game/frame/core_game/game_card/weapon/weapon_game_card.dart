@@ -1,4 +1,4 @@
-import 'package:card_crawler/core/game/frame/core_game/game_card/weapon/weapon_card_effect.dart';
+import 'package:card_crawler/core/game/frame/core_game/game_card/weapon/weapon_game_card_effect.dart';
 
 import '../base/game_card.dart';
 
@@ -12,6 +12,10 @@ class WeaponGameCard extends GameCard {
          icon: 'assets/card_icons/weapon_32.png',
          iconSmall: 'assets/card_icons/weapon_16.png',
        );
+
+  @override
+  GameCard copy() =>
+      WeaponGameCard._(id: id, value: value, effect: effect, sprite: sprite);
 
   static String _spritePath(String fileName) =>
       'assets/card_sprites/weapon/$fileName';

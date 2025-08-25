@@ -111,10 +111,8 @@ class _BossFightFrameContent extends StatelessWidget {
             switch (provider.state) {
               case Playing():
                 provider.uiAction(Pause());
-              case PlayerTurnSkipped():
-                provider.action(SkipTurn());
-              case BossTurnSkipped():
-                provider.action(SkipTurn());
+              case ReplacePlayerEquipmentCard():
+                {}
               case Finished():
                 {
                   (provider.state as Finished).isWin
@@ -350,14 +348,14 @@ class _BossFightFrameContent extends StatelessWidget {
               if (provider.state is PlayerTurnSkipped)
                 TextPopup(
                   onDismiss: () {
-                    provider.action(SkipTurn());
+                    provider.uiAction(DismissPopup());
                   },
                   text: 'Your turn skipped',
                 ),
               if (provider.state is BossTurnSkipped)
                 TextPopup(
                   onDismiss: () {
-                    provider.action(SkipTurn());
+                    provider.uiAction(DismissPopup());
                   },
                   text: 'Enemy\'s turn skipped',
                 ),

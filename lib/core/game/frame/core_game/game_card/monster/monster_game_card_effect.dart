@@ -194,7 +194,7 @@ class MonsterGameCardEffect extends GameCardEffect {
     id: 'freeze',
     name: 'Freeze',
     description:
-    'This enemy will make your next equipment, consumable, or weapon card useless',
+        'This enemy will make your next equipment, consumable, or weapon card useless',
     type: GameCardEffectType.onPicked,
     trigger: (data) {
       data.isFrozen = true;

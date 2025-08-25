@@ -17,5 +17,3 @@ class ReplacePlayerEquipmentCard extends BossFightAction {
 }
 
 class Renew extends BossFightAction {}
-
-class SkipTurn extends BossFightAction {}

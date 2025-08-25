@@ -108,6 +108,8 @@ class _CoreGameFrameContent extends StatelessWidget {
             switch (provider.state) {
               case Playing():
                 provider.uiAction(Pause());
+              case ReplacingEquipmentGameCard():
+                {}
               case Finished():
                 {
                   (provider.state as Finished).isWin

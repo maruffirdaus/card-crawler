@@ -1,6 +1,6 @@
 import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card_effect.dart';
 
-class BossFightGameCard {
+abstract class BossFightGameCard {
   BossFightGameCard({
     required this.id,
     required this.effect,
@@ -15,13 +15,5 @@ class BossFightGameCard {
   String iconSmall;
   String sprite;
 
-  BossFightGameCard copy() {
-    return BossFightGameCard(
-      id: id,
-      effect: effect,
-      icon: icon,
-      iconSmall: iconSmall,
-      sprite: sprite,
-    );
-  }
+  BossFightGameCard copy();
 }

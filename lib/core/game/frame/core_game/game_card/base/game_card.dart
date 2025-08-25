@@ -1,6 +1,6 @@
 import 'game_card_effect.dart';
 
-class GameCard {
+abstract class GameCard {
   GameCard({
     required this.id,
     required this.value,
@@ -17,14 +17,5 @@ class GameCard {
   String iconSmall;
   String sprite;
 
-  GameCard copy() {
-    return GameCard(
-      id: id,
-      value: value,
-      effect: effect,
-      icon: icon,
-      iconSmall: iconSmall,
-      sprite: sprite,
-    );
-  }
+  GameCard copy();
 }

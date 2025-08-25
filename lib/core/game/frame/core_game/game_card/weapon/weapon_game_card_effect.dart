@@ -1,7 +1,6 @@
 import 'package:card_crawler/core/game/frame/core_game/game_card/consumable/consumable_game_card.dart';
 import 'package:card_crawler/core/game/frame/core_game/game_card/equipment/equipment_game_card.dart';
 import 'package:card_crawler/core/game/frame/core_game/game_card/monster/monster_game_card.dart';
-import 'package:card_crawler/core/game/frame/core_game/game_card/weapon/weapon_game_card.dart';
 
 import '../base/game_card_effect_type.dart';
 import '../base/game_card_effect.dart';
@@ -256,7 +255,6 @@ class WeaponGameCardEffect extends GameCardEffect {
     name: 'Poseidon Fang',
     description: 'This weapon will mitigate freeze effect',
     type: GameCardEffectType.onUse,
-    trigger: (data) {
-    },
+    trigger: (data) {},
   );
 }

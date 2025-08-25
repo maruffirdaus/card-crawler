@@ -11,6 +11,10 @@ class PlayerEquipmentGameCard extends BossFightGameCard {
          iconSmall: 'assets/card_icons/player_equipment_16.png',
        );
 
+  @override
+  BossFightGameCard copy() =>
+      PlayerEquipmentGameCard._(id: id, effect: effect, sprite: sprite);
+
   static String _spritePath(String fileName) =>
       'assets/card_sprites/player_equipment/$fileName';
 

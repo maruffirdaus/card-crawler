@@ -13,6 +13,14 @@ class ConsumableGameCard extends GameCard {
          iconSmall: 'assets/card_icons/consumable_16.png',
        );
 
+  @override
+  GameCard copy() => ConsumableGameCard._(
+    id: id,
+    value: value,
+    effect: effect,
+    sprite: sprite,
+  );
+
   static String _spritePath(String fileName) =>
       'assets/card_sprites/consumable/$fileName';
 
