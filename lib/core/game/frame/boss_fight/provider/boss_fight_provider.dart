@@ -76,6 +76,12 @@ class BossFightProvider extends ChangeNotifier {
       }
     }
 
+    if (_data.bossHealth <= 0) {
+      _queueState(Finished(isWin: true));
+    } else if (_data.playerHealth <= 0) {
+      _queueState(Finished(isWin: false));
+    }
+
     if (!_data.playerSkipped) {
       switch (action) {
         case SelectCardFromField(card: var card, index: var index):

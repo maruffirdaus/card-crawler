@@ -92,7 +92,7 @@ class PlayerActionGameCardEffect extends BossFightGameCardEffect {
     id: 'p7',
     name: 'Follow Up',
     description:
-        'Deal 5 damage, but if it is not your first action this turn, deal 12 damage.',
+        'Deal 5 damage, but if it is your 3rd action or more from this turn, deal 12 damage.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
       if (data.bossSkipped) {

@@ -165,6 +165,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     description: 'Deal 8 damage, your next attack will do 10% less damage.',
     type: BossFightGameCardEffectType.attack,
     trigger: (data) {
+      data.reducePlayerHealth(data.bossDamageCalculator(8));
       data.cursedCount += 2;
       data.cursedModifier += 0.1;
     },
