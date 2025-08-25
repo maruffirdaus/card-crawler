@@ -63,6 +63,10 @@ class BossFightProvider extends ChangeNotifier {
 
     _resetCardWidget();
 
+    _queueState(PlayerTurn());
+
+    _triggerPendingState();
+
     notifyListeners();
   }
 
@@ -108,7 +112,7 @@ class BossFightProvider extends ChangeNotifier {
           {}
       }
     } else {
-      //_queueState(TurnSkipped());
+      _queueState(PlayerTurnSkipped());
     }
     /*for (var status in _data.playerEquipmentCards) { // NOT EQUIPMENT, CHANGE TO STATUS
       if (status.effect.type == BossFightGameCardEffectType.equipmentCard) {
@@ -134,6 +138,7 @@ class BossFightProvider extends ChangeNotifier {
     }
 
     if (!_data.bossSkipped) {
+      _queueState(BossTurn());
       _data.bossPickedCard = _data.bossActions.removeLast();
       _data.bossActions.insert(0, _data.bossPickedCard!);
       _data.bossPickedCard!.effect.trigger(_data);
@@ -141,7 +146,7 @@ class BossFightProvider extends ChangeNotifier {
         BossFightGameCardEffectTriggered(card: _data.bossPickedCard!),
       );
     } else {
-      //_queueState(TurnSkipped());
+      _queueState(BossTurnSkipped());
     }
 
     if (_data.poison > 0) {
@@ -205,6 +210,8 @@ class BossFightProvider extends ChangeNotifier {
         _data.reducePlayerHealth(_data.bossDamageCalculator(5));
       }
     }
+
+    _queueState(PlayerTurn());
 
     _triggerPendingState();
     notifyListeners();

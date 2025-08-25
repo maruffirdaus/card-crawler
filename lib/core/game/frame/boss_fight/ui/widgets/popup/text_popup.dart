@@ -2,10 +2,11 @@ import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensi
 import 'package:card_crawler/core/foundation/ui/widgets/popup_scrim.dart';
 import 'package:flutter/material.dart';
 
-class TurnSkippedPopup extends StatelessWidget {
-  const TurnSkippedPopup({super.key, required this.onDismiss});
+class TextPopup extends StatelessWidget {
+  const TextPopup({super.key, required this.onDismiss, required this.text});
 
   final Function() onDismiss;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class TurnSkippedPopup extends StatelessWidget {
       onDismiss: onDismiss,
       margin: EdgeInsets.all(64.0 * uiScale),
       child: Text(
-        'Turn skipped',
+        text,
         style: TextStyle(color: Colors.white, fontSize: 32.0 * uiScale),
         textAlign: TextAlign.center,
       ),

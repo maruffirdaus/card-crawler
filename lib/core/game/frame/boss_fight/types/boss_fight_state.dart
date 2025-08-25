@@ -4,6 +4,10 @@ sealed class BossFightState {}
 
 class Playing extends BossFightState {}
 
+class PlayerTurn extends BossFightState {}
+
+class BossTurn extends BossFightState {}
+
 class ReplacingPlayerEquipmentGameCard extends BossFightState {}
 
 class BossFightGameCardEffectTriggered extends BossFightState {
@@ -12,7 +16,9 @@ class BossFightGameCardEffectTriggered extends BossFightState {
   final BossFightGameCard card;
 }
 
-class TurnSkipped extends BossFightState {}
+class PlayerTurnSkipped extends BossFightState {}
+
+class BossTurnSkipped extends BossFightState {}
 
 class PlayerEquipmentsShown extends BossFightState {}
 

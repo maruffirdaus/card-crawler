@@ -5,7 +5,7 @@ import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/boss_ac
 import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/boss_fight_game_card_effect_triggered_popup.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/player_equipments_popup.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/replace_player_equipment_game_card_popup.dart';
-import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/turn_skipped_popup.dart';
+import 'package:card_crawler/core/game/frame/boss_fight/ui/widgets/popup/text_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -111,7 +111,9 @@ class _BossFightFrameContent extends StatelessWidget {
             switch (provider.state) {
               case Playing():
                 provider.uiAction(Pause());
-              case TurnSkipped():
+              case PlayerTurnSkipped():
+                provider.action(SkipTurn());
+              case BossTurnSkipped():
                 provider.action(SkipTurn());
               case Finished():
                 {
@@ -285,7 +287,7 @@ class _BossFightFrameContent extends StatelessWidget {
                                 provider.action(Renew());
                               },
                               style: buttonStyle,
-                              child: Text('PAUSE', style: buttonTextStyle),
+                              child: Text('RENEW', style: buttonTextStyle),
                             ),
                           ),
                         ),
@@ -294,6 +296,20 @@ class _BossFightFrameContent extends StatelessWidget {
                   ),
                 ],
               ),
+              if (provider.state is PlayerTurn)
+                TextPopup(
+                  onDismiss: () {
+                    provider.uiAction(DismissPopup());
+                  },
+                  text: 'Your turn',
+                ),
+              if (provider.state is BossTurn)
+                TextPopup(
+                  onDismiss: () {
+                    provider.uiAction(DismissPopup());
+                  },
+                  text: 'Enemy\'s turn',
+                ),
               if (provider.state is ReplacingPlayerEquipmentGameCard)
                 ReplacePlayerEquipmentGameCardPopup(
                   playerEquipmentCards: provider.playerEquipmentCards,
@@ -331,11 +347,19 @@ class _BossFightFrameContent extends StatelessWidget {
                       (provider.state as BossFightGameCardEffectTriggered).card,
                   cardWidth: cardWidth,
                 ),
-              if (provider.state is TurnSkipped)
-                TurnSkippedPopup(
+              if (provider.state is PlayerTurnSkipped)
+                TextPopup(
                   onDismiss: () {
                     provider.action(SkipTurn());
                   },
+                  text: 'Your turn skipped',
+                ),
+              if (provider.state is BossTurnSkipped)
+                TextPopup(
+                  onDismiss: () {
+                    provider.action(SkipTurn());
+                  },
+                  text: 'Enemy\'s turn skipped',
                 ),
               if (provider.state is PlayerEquipmentsShown)
                 PlayerEquipmentsPopup(
