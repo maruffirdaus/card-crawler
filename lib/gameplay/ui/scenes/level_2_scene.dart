@@ -159,7 +159,7 @@ class _Level2SceneState extends State<Level2Scene> {
             '4': ConversationUnit(
               texts: [
                 'You see a giant smoke of cloud moving at your direction, a typhoon?.',
-                'It\'s moving too fast to be a typhoon, as it gets closer, you can digging sounds in the distance.',
+                'It\'s moving too fast to be a typhoon, as it gets closer, you can digging bgms in the distance.',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '5')],
             ),

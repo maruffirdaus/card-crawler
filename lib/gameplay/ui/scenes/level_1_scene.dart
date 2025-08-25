@@ -137,7 +137,7 @@ class _Level1SceneState extends State<Level1Scene> {
             ),
             '7': ConversationUnit(
               texts: [
-                'Could he be going to the same village as you? Someone to accompany your trek does sounds good...',
+                'Could he be going to the same village as you? Someone to accompany your trek does bgms good...',
                 '...But is it actually safer to go with a stranger?',
               ],
               choices: [ConversationChoice(text: 'Next', nextUnitId: '8')],

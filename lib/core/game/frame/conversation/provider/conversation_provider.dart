@@ -1,3 +1,4 @@
+import 'package:card_crawler/core/foundation/utils/audio_manager.dart';
 import 'package:card_crawler/core/game/frame/common/game_stage/game_stage.dart';
 import 'package:card_crawler/core/game/frame/conversation/character/character.dart';
 import 'package:card_crawler/core/game/frame/conversation/conversation_choice.dart';
@@ -10,7 +11,6 @@ class ConversationProvider extends ChangeNotifier {
   late String _currentId;
 
   int _currentTextIndex = 0;
-
   Character? get currentCharacter => _conversations[_currentId]!.character;
 
   String get currentText =>
@@ -30,6 +30,10 @@ class ConversationProvider extends ChangeNotifier {
     _currentId = conversations.keys.first;
     _currentTextIndex = 0;
     _gameStage = gameStage;
+
+    if (_gameStage != null) {
+      AudioManager.playBgm(_gameStage!.bgm);
+    }
   }
 
   bool isConversationFinished() =>

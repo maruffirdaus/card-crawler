@@ -1,3 +1,4 @@
+import 'package:card_crawler/core/foundation/utils/audio_manager.dart';
 import 'package:flutter/material.dart';
 
 import '../game_card/consumable/consumable_game_card.dart';
@@ -66,8 +67,9 @@ class CoreGameProvider extends ChangeNotifier {
     }
 
     _triggerPendingState();
-
     notifyListeners();
+
+    AudioManager.playBgm('bgms/core_game.mp3');
   }
 
   void action(CoreGameAction action) {

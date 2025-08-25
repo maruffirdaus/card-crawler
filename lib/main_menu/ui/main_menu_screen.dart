@@ -2,6 +2,7 @@ import 'package:card_crawler/app_route.dart';
 import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
 import 'package:card_crawler/core/foundation/ui/widgets/menu_container.dart';
 import 'package:card_crawler/core/foundation/ui/widgets/menu_item.dart';
+import 'package:card_crawler/core/foundation/utils/audio_manager.dart';
 import 'package:card_crawler/main_menu/ui/widgets/popup/credits_popup.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,12 @@ class MainMenuScreen extends StatefulWidget {
 
 class _MainMenuScreenState extends State<MainMenuScreen> {
   bool isCreditsPopupVisible = false;
+
+  @override
+  void initState() {
+    super.initState();
+    AudioManager.playBgm('bgms/forest.mp3');
+  }
 
   @override
   Widget build(BuildContext context) {

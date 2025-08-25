@@ -1,3 +1,4 @@
+import 'package:card_crawler/core/foundation/utils/audio_manager.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/game_card/base/boss_fight_game_card_effect_type.dart';
 import 'package:card_crawler/core/game/frame/boss_fight/models/boss_fight_data.dart';
@@ -67,11 +68,13 @@ class BossFightProvider extends ChangeNotifier {
 
     _triggerPendingState();
     notifyListeners();
+
+    AudioManager.playBgm('bgms/boss_fight.mp3');
   }
 
   void action(BossFightAction action) {
-    print('action');
-    print(_pendingStates);
+    _resetCardWidget();
+
     for (var equipment in _data.playerEquipmentCards) {
       if (equipment.effect.type == BossFightGameCardEffectType.equipmentCard) {
         equipment.effect.trigger(_data);
@@ -220,8 +223,6 @@ class BossFightProvider extends ChangeNotifier {
   }
 
   void uiAction(BossFightUiAction action) {
-    print('uiAction');
-    print(_pendingStates);
     switch (action) {
       case TapCard(location: var location, index: var index):
         {
