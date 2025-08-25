@@ -18,7 +18,7 @@ class Character {
   );
 
   static final witch = Character._(
-    name: 'Witch',
+    name: 'Elder',
     sprite: _spritePath('witch.png'),
   );
 
