@@ -109,7 +109,8 @@ flutter:
     - assets/card_sprites/player_action/
     - assets/card_sprites/player_equipment/
     - assets/character_sprites/
-    - assets/bgms/
+    - assets/sounds/bgm/
+    - assets/sounds/sfx/
 
 icons_launcher:
   image_path: "assets/app_icons/icon.png"

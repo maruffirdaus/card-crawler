@@ -1,15 +1,25 @@
 import 'package:audioplayers/audioplayers.dart';
 
 class AudioManager {
-  static final AudioPlayer player = AudioPlayer();
+  static final AudioPlayer _bgmPlayer = AudioPlayer();
+  static final AudioPlayer _sfxPlayer = AudioPlayer();
 
   static Future<void> playBgm(String asset) async {
-    await player.stop();
-    await player.setReleaseMode(ReleaseMode.loop);
-    await player.play(AssetSource(asset));
+    await _bgmPlayer.stop();
+    await _bgmPlayer.setReleaseMode(ReleaseMode.loop);
+    await _bgmPlayer.play(AssetSource(asset), volume: 0.2);
   }
 
   static Future<void> stopBgm() async {
-    await player.stop();
+    await _bgmPlayer.stop();
+  }
+
+  static Future<void> playSfx(String asset) async {
+    await _sfxPlayer.stop();
+    await _sfxPlayer.play(AssetSource(asset));
+  }
+
+  static Future<void> stopSfx() async {
+    await _sfxPlayer.stop();
   }
 }

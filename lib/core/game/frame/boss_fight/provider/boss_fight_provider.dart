@@ -69,7 +69,7 @@ class BossFightProvider extends ChangeNotifier {
     _triggerPendingState();
     notifyListeners();
 
-    AudioManager.playBgm('bgms/boss_fight.mp3');
+    AudioManager.playBgm('sounds/bgm/boss_fight.mp3');
   }
 
   void action(BossFightAction action) {

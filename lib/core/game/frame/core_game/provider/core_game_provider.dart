@@ -69,7 +69,7 @@ class CoreGameProvider extends ChangeNotifier {
     _triggerPendingState();
     notifyListeners();
 
-    AudioManager.playBgm('bgms/core_game.mp3');
+    AudioManager.playBgm('sounds/bgm/core_game.mp3');
   }
 
   void action(CoreGameAction action) {

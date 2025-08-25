@@ -7,7 +7,7 @@ class GameStage {
   static String _backgroundPath(String fileName) =>
       'assets/backgrounds/$fileName';
 
-  static String _bgmPath(String fileName) => 'bgms/$fileName';
+  static String _bgmPath(String fileName) => 'sounds/bgm/$fileName';
 
   static final forest = GameStage._(
     background: _backgroundPath('forest.png'),

@@ -1,4 +1,5 @@
 import 'package:card_crawler/core/foundation/ui/extensions/build_context_extensions.dart';
+import 'package:card_crawler/core/foundation/utils/audio_manager.dart';
 import 'package:card_crawler/core/game/frame/common/status_effect/status_effect.dart';
 import 'package:card_crawler/core/game/frame/conversation/provider/conversation_provider.dart';
 import 'package:flutter/material.dart';
@@ -171,6 +172,9 @@ class _ConversationFrameContent extends StatelessWidget {
                                               provider.nextUnit(
                                                 choice.nextUnitId!,
                                               );
+                                              AudioManager.playSfx(
+                                                'sounds/sfx/dialogue_blips.mp3',
+                                              );
                                             } else {
                                               onComplete(
                                                 choice.nextFrameId,
@@ -194,7 +198,12 @@ class _ConversationFrameContent extends StatelessWidget {
                                     Align(
                                       alignment: Alignment.bottomRight,
                                       child: TextButton(
-                                        onPressed: provider.nextTextIndex,
+                                        onPressed: () {
+                                          provider.nextTextIndex();
+                                          AudioManager.playSfx(
+                                            'sounds/sfx/dialogue_blips.mp3',
+                                          );
+                                        },
                                         style: TextButton.styleFrom(
                                           foregroundColor: Colors.black,
                                           overlayColor: Colors.black,

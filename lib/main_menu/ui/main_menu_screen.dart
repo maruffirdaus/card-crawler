@@ -19,7 +19,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
   @override
   void initState() {
     super.initState();
-    AudioManager.playBgm('bgms/forest.mp3');
+    AudioManager.playBgm('sounds/bgm/forest.mp3');
   }
 
   @override
