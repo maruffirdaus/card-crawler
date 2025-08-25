@@ -94,10 +94,10 @@ class CreditsPopup extends StatelessWidget {
               ),
               Divider(),
               CreditItem(
-                assetName: 'The Battle',
+                assetName: 'Dialogue Blips',
                 assetSource: 'OpenGameArt.org',
-                assetCreator: 'Marcus Rasseli',
-                licenseType: LicenseType.ccBy30,
+                assetCreator: 'nicolebutspooky',
+                licenseType: LicenseType.ccBy40,
               ),
             ],
           ),

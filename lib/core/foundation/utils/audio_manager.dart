@@ -7,7 +7,7 @@ class AudioManager {
   static Future<void> playBgm(String asset) async {
     await _bgmPlayer.stop();
     await _bgmPlayer.setReleaseMode(ReleaseMode.loop);
-    await _bgmPlayer.play(AssetSource(asset), volume: 0.2);
+    await _bgmPlayer.play(AssetSource(asset), volume: 0.1);
   }
 
   static Future<void> stopBgm() async {
