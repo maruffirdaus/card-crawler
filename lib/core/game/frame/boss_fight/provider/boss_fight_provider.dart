@@ -99,9 +99,9 @@ class BossFightProvider extends ChangeNotifier {
               _data.refillFieldCards();
             }
           }
-        case ReplacePlayerEquipmentCard(card: var card, index: var index):
+        case ReplacePlayerEquipmentCard(index: var index):
           {
-            _data.playerEquipmentCards[index] = card;
+            _data.playerEquipmentCards[index] = _data.playerPickedCard!;
             _queueState(Playing());
           }
         case Renew():
