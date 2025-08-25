@@ -218,7 +218,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     id: 'g18',
     name: 'Body Possession',
     description:
-        'The spirit possesses you, healing itself for 6 and stunning you.',
+        'The spirit possesses you, healing itself for 4 and stunning you.',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.increaseBossHealth(6);
@@ -231,7 +231,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     id: 'g19',
     name: 'Necrotic Rebirth',
     description:
-        'Recovers 8 HP, and removing any debuff on the boss\'s attacks and defense.',
+        'Recovers 6 HP, and removing any debuff on the boss\'s attacks and defense.',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.increaseBossHealth(8);
@@ -244,7 +244,7 @@ class BossActionGameCardEffect extends BossFightGameCardEffect {
     id: 'g20',
     name: 'Ectoplasm Slam',
     description:
-        'Dealing 10 damage, and your next 2 attacks will do 10% less damage',
+        'Dealing 8 damage, and your next 2 attacks will do 10% less damage',
     type: BossFightGameCardEffectType.heal,
     trigger: (data) {
       data.cursedCount += 3;
