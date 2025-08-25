@@ -15,6 +15,7 @@ class CreditsPopup extends StatelessWidget {
 
     return PopupScrim(
       onDismiss: onDismiss,
+      margin: EdgeInsets.all(64.0 * uiScale),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -22,7 +23,7 @@ class CreditsPopup extends StatelessWidget {
         ),
         width: 576.0 * uiScale + 48.0,
         clipBehavior: Clip.antiAlias,
-        child: Padding(
+        child: SingleChildScrollView(
           padding: EdgeInsets.all(24.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
