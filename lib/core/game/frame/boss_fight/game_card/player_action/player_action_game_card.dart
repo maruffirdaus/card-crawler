@@ -208,14 +208,6 @@ class PlayerActionGameCard extends BossFightGameCard {
     massHealingWard,
     everbloom,
     bloodBlade,
-    darkDetermination,
-    finishingBlow,
-    metallica,
-    singularity,
-    soulEater,
-    eldritchContract,
-    divineInterference,
-    angelicRespite,
   ];
 
   static final entries3 = [
